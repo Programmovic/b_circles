@@ -1,6 +1,7 @@
 import config from "@config/config.json";
 import Base from "@layouts/Baseof";
 import Cta from "@layouts/components/Cta";
+import Hero from "@layouts/components/hero";
 import { markdownify } from "@lib/utils/textConverter";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,6 +10,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
 import { getListPage } from "../lib/contentParser";
 
+
+
 const Home = ({ frontmatter }) => {
   const { banner, feature, services, workflow, call_to_action } = frontmatter;
   const { title } = config.site;
@@ -16,39 +19,8 @@ const Home = ({ frontmatter }) => {
   return (
     <Base title={title}>
       {/* Banner */}
-      <section className="section min-h-min flex items-center">
-        <div className="container">
-          <div className="row text-start">
-            <div className="lg:col-12 flex flex-wrap items-center">
-              
-              <div className="lg:w-1/2">
-                <h1 className="font-third font-bold">{banner.title}</h1>
-                <p className="mt-4 font-third">{markdownify(banner.content)}</p>
-                {banner.button.enable && (
-                  <Link
-                    className="btn btn-primary mt-4"
-                    href={banner.button.link}
-                    rel={banner.button.rel}
-                  >
-                    {banner.button.label}
-                  </Link>
-                )}
-              </div>
-              <div className="lg:w-1/2">
-                <Image
-                  className="mx-auto mt-12"
-                  src={banner.image}
-                  width={750}
-                  height={390}
-                  alt="banner image"
-                  priority
-                />
-              </div>
 
-            </div>
-          </div>
-        </div>
-      </section>
+      <Hero banner={banner}/>
 
       {/* Features */}
       <section className="section bg-theme-light">
