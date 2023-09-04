@@ -6,29 +6,18 @@ import { useRouter } from "next/router";
 import React, { useState, useEffect } from "react";
 
 const Header = () => {
-  //router
   const router = useRouter();
-
-  // distructuring the main menu from menu object
   const { main } = menu;
-
-  // states declaration
   const [navOpen, setNavOpen] = useState(false);
-
-  // logo source
   const { logo } = config.site;
   const { enable, label, link } = config.nav_button;
   const [isSticky, setIsSticky] = useState(false);
-
-  // Add event listener on mount to check scroll position
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
-  // Function to handle scroll event and update sticky state
   const handleScroll = () => {
     if (window.pageYOffset > 0) {
       setIsSticky(true);
