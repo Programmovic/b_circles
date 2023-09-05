@@ -9,6 +9,7 @@ import { Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
 import { getListPage } from "../lib/contentParser";
+import { motion } from "framer-motion";
 
 
 
@@ -22,17 +23,26 @@ const Home = ({ frontmatter }) => {
 
       <Hero banner={banner}/>
 
-      {/* Features */}
-      <section className="section bg-theme-light dark:bg-[#231f20]">
+      <motion.section
+        className="section bg-theme-light dark:bg-[#231f20]"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+      >
         <div className="container">
           <div className="text-center">
-            <h2 className="font-third dark:text-white">{markdownify(feature.title)}</h2>
+            <h2 className="font-third dark:text-white">
+              {markdownify(feature.title)}
+            </h2>
           </div>
           <div className="mt-8 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
             {feature.features.map((item, i) => (
-              <div
+              <motion.div
                 className="cursor-pointer feature-card rounded-xl bg-white p-5 pb-8 text-center"
                 key={`feature-${i}`}
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: i * 0.1 }}
               >
                 {item.icon && (
                   <Image
@@ -47,11 +57,11 @@ const Home = ({ frontmatter }) => {
                   {markdownify(item.name, "h3", "h5")}
                   <p className="mt-3">{item.content}</p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* services */}
       {services.map((service, index) => {
@@ -59,7 +69,7 @@ const Home = ({ frontmatter }) => {
         return (
           <section
             key={`service-${index}`}
-            className={`section ${isOdd && "bg-theme-light"}`}
+            className={`section ${isOdd && "dark:bg-[#231f20]"}`}
           >
             <div className="container">
               <div className="items-center gap-8 md:grid md:grid-cols-2">
@@ -90,7 +100,7 @@ const Home = ({ frontmatter }) => {
                   className={`service-content mt-5 md:mt-0 ${!isOdd && "md:order-1"
                     }`}
                 >
-                  <h2 className="font-bold leading-[40px]">{service?.title}</h2>
+                  <h2 className="font-bold leading-[40px] dark:text-white">{service?.title}</h2>
                   <p className="mt-4 mb-2">{service?.content}</p>
                   {service.button.enable && (
                     <Link
@@ -115,12 +125,12 @@ const Home = ({ frontmatter }) => {
       })}
 
       {/* workflow */}
-      <section className="section pb-0">
+      <section className="section pb-0 ">
         <div className="mb-8 text-center">
           {markdownify(
             workflow.title,
             "h2",
-            "mx-auto max-w-[400px] font-bold leading-[44px]"
+            "mx-auto max-w-[400px] font-bold leading-[44px] dark:text-white"
           )}
           {markdownify(workflow.description, "p", "mt-3")}
         </div>
