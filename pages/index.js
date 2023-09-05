@@ -23,10 +23,10 @@ const Home = ({ frontmatter }) => {
       <Hero banner={banner}/>
 
       {/* Features */}
-      <section className="section bg-theme-light">
+      <section className="section bg-theme-light dark:bg-[#231f20]">
         <div className="container">
           <div className="text-center">
-            <h2 className="font-third">{markdownify(feature.title)}</h2>
+            <h2 className="font-third dark:text-white">{markdownify(feature.title)}</h2>
           </div>
           <div className="mt-8 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
             {feature.features.map((item, i) => (

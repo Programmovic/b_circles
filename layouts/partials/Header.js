@@ -4,6 +4,8 @@ import menu from "@config/menu.json";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState, useEffect } from "react";
+import ThemeSwitcher from "@layouts/components/ThemeSwitcher";
+
 
 const Header = () => {
   const router = useRouter();
@@ -25,9 +27,10 @@ const Header = () => {
       setIsSticky(false);
     }
   };
+  
 
   return (
-    <header className={`header header fixed w-full z-50 ${isSticky ? "shadow-md" : null}`}>
+    <header className={`dark:bg-[#704125bf] backdrop-blur-lg header fixed w-full z-50 ${isSticky ? "shadow-md" : null}`}>
       <nav className="navbar container">
         {/* logo */}
         <div className="order-0">
@@ -59,9 +62,8 @@ const Header = () => {
         {/* Menu */}
         <div
           id="nav-menu"
-          className={`order-3 md:order-1 ${
-            navOpen ? "max-h-[1000px]" : "max-h-0"
-          }`}
+          className={`order-3 md:order-1 ${navOpen ? "max-h-[1000px]" : "max-h-0"
+            }`}
         >
           <ul className="navbar-nav block w-full md:flex md:w-auto lg:space-x-2">
             {main.map((menu, i) => (
@@ -87,18 +89,19 @@ const Header = () => {
                       ))}
                     </ul>
                   </li>
+
                 ) : (
                   <li className="nav-item">
                     <Link
                       href={menu.url}
                       onClick={() => setNavOpen(false)}
-                      className={`nav-link font-third block ${
-                        router.asPath === menu.url ? "nav-link-active" : ""
-                      }`}
+                      className={`dark:text-white nav-link font-third block ${router.asPath === menu.url ? "nav-link-active" : ""
+                        }`}
                     >
                       {menu.name}
                     </Link>
                   </li>
+
                 )}
               </React.Fragment>
             ))}
@@ -113,6 +116,9 @@ const Header = () => {
                 </Link>
               </li>
             )}
+            <li className="nav-item">
+              <ThemeSwitcher />
+            </li>
           </ul>
         </div>
         {enable && (

@@ -28,7 +28,7 @@ const Document = () => {
           content="#000"
         />
       </Head>
-      <body>
+      <body className="dark:bg-[#1b1718] dark:text-white">
         <Main />
         {/* <TwSizeIndicator /> */}
         <NextScript />

@@ -25,7 +25,7 @@ const Logo = ({ src }) => {
             alt={title}
             priority
           /> */}
-          <span class="self-center  text-2xl font-semibold">{logo_text}</span>
+          <span class="self-center  text-2xl font-semibold dark:text-white">{logo_text}</span>
         </>
       ) : logo_text ? (
         logo_text

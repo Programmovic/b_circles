@@ -29,6 +29,7 @@ module.exports = {
     "./layouts/**/*.{js,ts,jsx,tsx}",
     "./content/**/*.{md,mdx}",
   ],
+  darkMode: ["class"],
   theme: {
     screens: {
       sm: "540px",
@@ -51,6 +52,10 @@ module.exports = {
         body: theme.colors.default.theme_color.body,
         border: theme.colors.default.theme_color.border,
         "theme-light": theme.colors.default.theme_color.theme_light,
+      },
+      backgroundColor: {
+        light: theme.colors.default.text_color.light,
+        dark: theme.colors.default.text_color.dark,
       },
       fontSize: {
         base: font_base + "px",

@@ -30,7 +30,7 @@ function Hero({ banner }) {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h1 className="font-third font-bold">{banner.title}</h1>
+              <h1 className="font-third font-bold dark:text-white">{banner.title}</h1>
               <motion.p
                 className="mt-4 font-third"
                 initial={{ opacity: 0 }}
