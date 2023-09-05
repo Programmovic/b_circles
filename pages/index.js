@@ -3,13 +3,14 @@ import Base from "@layouts/Baseof";
 import Cta from "@layouts/components/Cta";
 import Hero from "@layouts/components/hero";
 import { markdownify } from "@lib/utils/textConverter";
-import Image from "next/image";
 import Link from "next/link";
 import { Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
 import { getListPage } from "../lib/contentParser";
-import { motion } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
+import Image from "next/image";
+
 
 
 
@@ -55,7 +56,7 @@ const Home = ({ frontmatter }) => {
                 )}
                 <div className="mt-4">
                   {markdownify(item.name, "h3", "h5")}
-                  <p className="mt-3">{item.content}</p>
+                  <p className="mt-3 dark:text-dark">{item.content}</p>
                 </div>
               </motion.div>
             ))}

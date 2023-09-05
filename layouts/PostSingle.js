@@ -1,8 +1,8 @@
 import { markdownify } from "@lib/utils/textConverter";
 import shortcodes from "@shortcodes/all";
 import { MDXRemote } from "next-mdx-remote";
-import Image from "next/image";
 import Base from "./Baseof";
+import Image from "next/image";
 
 const PostSingle = ({ frontmatter, content, mdxContent }) => {
   let { description, title, image } = frontmatter;

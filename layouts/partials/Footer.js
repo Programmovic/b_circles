@@ -3,8 +3,8 @@ import config from "@config/config.json";
 import menu from "@config/menu.json";
 import social from "@config/social.json";
 import { markdownify } from "@lib/utils/textConverter";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 
 const Footer = () => {
   const { copyright, footer_content } = config.params;
