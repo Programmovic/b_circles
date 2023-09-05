@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
+import { FaSun, FaMoon } from 'react-icons/fa';
 
 
 
@@ -24,8 +25,8 @@ const ThemeSwitcher = () => {
 
   return (
     <>
-      <button onClick={toggleTheme}>
-        {theme === "light" ? "Switch to Dark Mode" : "Switch to Light Mode"}
+      <button onClick={toggleTheme} className="btn btn-primary z-0 p-[5px]">
+        {theme === "light" ? <FaMoon/> : <FaSun/>}
       </button>
     </>
 
