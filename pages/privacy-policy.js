@@ -47,4 +47,5 @@ export const getStaticProps = async () => {
   };
 };
 
+
 export default PrivacyPolicy;
