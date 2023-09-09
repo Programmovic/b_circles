@@ -30,7 +30,7 @@ const Header = () => {
   
 
   return (
-    <header className={`dark:bg-[#141111d9] header fixed w-full z-50 bg-transparent ${isSticky ? "backdrop-blur-lg shadow-md" : null}`}>
+    <header className={`dark:bg-[#141111d9] header backdrop-blur-lg fixed w-full z-50 bg-transparent ${isSticky ? " shadow-md" : null}`}>
       <nav className="navbar container">
         {/* logo */}
         <div className="order-0">
@@ -116,7 +116,7 @@ const Header = () => {
                 </Link>
               </li>
             )}
-            <li className="nav-item flex items-center">
+            <li className="nav-item flex justify-center items-center">
               <ThemeSwitcher />
             </li>
           </ul>

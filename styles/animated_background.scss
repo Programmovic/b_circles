@@ -132,3 +132,8 @@
 		opacity: 0;
 	}
 }
+@media only screen and (max-width: 600px) {
+	.hero-img {
+	  display: none;
+	}
+  }
