@@ -1,7 +1,7 @@
 ---
 banner:
   title: The search ends here.
-  content: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam nihil enim maxime corporis cumque <br/> totam aliquid nam sint inventore optio modi neque laborum officiis necessitatibus
+  content: B Circles is a digital solutions and consulting company that helps businesses of all sizes increase their income. They offer customized strategies and goals for each client, as well as effective consulting, strategic partnerships, and sales services. B Circles is unique in that they offer a one-stop shop for all of a business's digital needs.
   image: /images/banner-art.svg
   button:
     label: "Contact Us"
