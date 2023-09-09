@@ -19,29 +19,20 @@
       "name": "Company",
       "menu": [
         {
-          "text": "Pricing",
-          "url": "/pricing"
+          "text": "Home",
+          "url": "/"
+        },
+        {
+          "text": "About Us",
+          "url": "/#about"
+        },
+        {
+          "text": "Services",
+          "url": "/#services"
         },
         {
           "text": "Quick Start",
-          "url": "#"
-        }
-      ]
-    },
-    {
-      "name": "Product",
-      "menu": [
-        {
-          "text": "Features",
-          "url": "#"
-        },
-        {
-          "text": "Platform",
-          "url": "#"
-        },
-        {
-          "text": "Pricing",
-          "url": "/pricing"
+          "url": "/contact"
         }
       ]
     },

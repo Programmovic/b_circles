@@ -29,6 +29,7 @@ const Home = ({ frontmatter }) => {
       <Hero banner={banner} />
       <section
         className={`section bg-theme-light dark:bg-[#231f20]`}
+        id='about'
       >
         <div className="container">
           <div className="items-center gap-8 md:grid md:grid-cols-2">
@@ -48,19 +49,7 @@ const Home = ({ frontmatter }) => {
             >
               <h2 className="font-bold leading-[40px] dark:text-white">About Us</h2>
               <p className="mt-4 mb-2">We at B circles provide digital solutions and consulting that guarantee increased income for any business of any kind. We offer strategies and goals specific to each client, not only in the digital marketing field on the Internet or web development, but we also offer effective solutions on the ground from effective consulting, strategic partnerships, sales services that will take Your business is at an advanced and more prosperous stage, which makes us unique in what we offer under the slogan &quot;all under one roof&quot;</p>
-              <Link
-                href="{service?.button.link}"
-                className="cta-link cursor-pointer inline-flex items-center text-primary"
-              >
-
-                <Image
-                  className="ml-1"
-                  src="/images/arrow-right.svg"
-                  width={18}
-                  height={14}
-                  alt="arrow"
-                />
-              </Link>
+              
             </div>
           </div>
         </div>
@@ -70,6 +59,7 @@ const Home = ({ frontmatter }) => {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
+        id='services'
       >
         <div className="container">
           <div className="text-center">
