@@ -3,11 +3,40 @@ import { markdownify } from "@lib/utils/textConverter";
 import { FaMarker, FaPhone, FaPaperPlane, FaGlobe } from "react-icons/fa";
 import c_photo from "../public/images/banner-bg.jpg";
 import Image from "next/image";
+import { useState } from "react";
 
 const Contact = ({ data }) => {
   const { frontmatter } = data;
   const { title, info } = frontmatter;
   const { contact_form_action } = config.params;
+  const [formStatus, setFormStatus] = useState(null);
+  const [formStatusClass, setFormStatusClass] = useState(null);
+  
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    
+    // Get the form values
+    const nameInput = event.target.elements.name.value;
+    const emailInput = event.target.elements.email.value;
+    const subjectInput = event.target.elements.subject.value;
+    const messageInput = event.target.elements.message.value;
+    
+    // Perform form validation
+    if (!nameInput || !emailInput || !subjectInput || !messageInput) {
+      setFormStatus("Please fill in all the required fields.");
+      setFormStatusClass("bg-red-400");
+      return;
+    }
+    
+    // Perform additional validation if needed
+    
+    // If the form is valid, submit the form and display a success message
+    setFormStatus("Your message was sent, thank you!");
+    setFormStatusClass("bg-green-400");
+    
+    // Reset the form fields
+    event.target.reset();
+  };
 
   return (
     <section className="section">
@@ -36,7 +65,10 @@ const Contact = ({ data }) => {
                 <div className="text-center">
                   <p className="mt-2">
                     <span className="font-bold">Email:</span>{" "}
-                    <a href="mailto:info@yoursite.com">info@yoursite.com</a>
+
+                    <a href="mailto:info@b-circles.co">info@b-circles.co</a><br></br>
+                    <a href="mailto:support@b-circles.co">support@b-circles.co</a><br></br>
+                    <a href="mailto:contact@b-circles.co">contact@b-circles.co</a>
                   </p>
                 </div>
               </div>
@@ -58,14 +90,11 @@ const Contact = ({ data }) => {
               <div className="w-2/3 c_inputs">
                 <div className="p-8">
                   <h3 className="mb-4 text-2xl font-bold dark:text-white">Contact Us</h3>
-                  <div id="form-message-status" className="mb-4">
-                    Your message was sent, thank you!
+                  <div id="form-message-status" className={`mb-4 text-white p-3 rounded-lg ${formStatusClass}`}>
+                    {formStatus}
                   </div>
                   <form
-                    method="POST"
-                    id="contactForm"
-                    name="contactForm"
-                    className="contactForm"
+                    onSubmit={handleSubmit} method="POST" id="contactForm" name="contactForm" className="contactForm"
                   >
                     <div className="-mx-4 flex flex-wrap">
                       <div className="w-1/2 px-4">

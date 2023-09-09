@@ -12,7 +12,7 @@ import { motion, useScroll } from "framer-motion";
 import Image from "next/image";
 import { Tabs, Tab } from 'react-bootstrap';
 import { useState } from "react";
-import about_bg from '../public/images/about us.jpg'
+import about_bg from '../public/images/about us.jpeg'
 
 
 
@@ -90,8 +90,8 @@ const Home = ({ frontmatter }) => {
                   <Image
                     className="mx-auto"
                     src={item.icon}
-                    width={30}
-                    height={30}
+                    width={70}
+                    height={70}
                     alt=""
                   />
                 )}
