@@ -33,15 +33,7 @@ const Home = ({ frontmatter }) => {
       >
         <div className="container">
           <div className="items-center gap-8 md:grid md:grid-cols-2">
-            {/* Carousel */}
-            <div className={`service-carousel md:order-2`}>
-              <Image
-                className="w-full ml-1 rounded"
-                src={about_bg}
-                alt="arrow"
-              />
-            </div>
-
+           
             {/* Content */}
             <div
               className={`service-content mt-5 md:mt-0 md:order-1
