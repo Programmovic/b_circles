@@ -12,6 +12,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "aos": "^2.3.4",
     "framer-motion": "^10.16.2",
     "github-slugger": "^2.0.0",
     "gray-matter": "^4.0.3",

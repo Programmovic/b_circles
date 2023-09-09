@@ -10,17 +10,21 @@ import "swiper/swiper.min.css";
 import { getListPage } from "../lib/contentParser";
 import { motion, useScroll } from "framer-motion";
 import Image from "next/image";
-import { Tabs, Tab } from 'react-bootstrap';
+import { Tabs, Tab } from "react-bootstrap";
 import { useState } from "react";
-import about_bg from '../public/images/about us.jpeg'
-
-
-
+import about_bg from "../public/images/about us.jpeg";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Home = ({ frontmatter }) => {
   const { banner, feature, services, workflow, call_to_action } = frontmatter;
   const { title } = config.site;
-  const [activeTab, setActiveTab] = useState('1');
+  useEffect(() => {
+    AOS.init({
+      duration: 1500, // Animation duration in milliseconds
+    });
+  }, []);
 
   return (
     <Base title={title}>
@@ -29,19 +33,37 @@ const Home = ({ frontmatter }) => {
       <Hero banner={banner} />
       <section
         className={`section bg-theme-light dark:bg-[#231f20]`}
-        id='about'
+        id="about"
+        data-aos="fade-left"
       >
         <div className="container">
           <div className="items-center gap-8 md:grid md:grid-cols-2">
-           
+            <div className={`service-carousel md:order-2`}>
+              <Image
+                className="ml-1 w-full rounded"
+                src={about_bg}
+                alt="arrow"
+              />
+            </div>
             {/* Content */}
             <div
-              className={`service-content mt-5 md:mt-0 md:order-1
+              className={`service-content mt-5 md:order-1 md:mt-0
                     `}
             >
-              <h2 className="font-bold leading-[40px] dark:text-white">About Us</h2>
-              <p className="mt-4 mb-2">We at B circles provide digital solutions and consulting that guarantee increased income for any business of any kind. We offer strategies and goals specific to each client, not only in the digital marketing field on the Internet or web development, but we also offer effective solutions on the ground from effective consulting, strategic partnerships, sales services that will take Your business is at an advanced and more prosperous stage, which makes us unique in what we offer under the slogan &quot;all under one roof&quot;</p>
-              
+              <h2 className="font-bold leading-[40px] dark:text-white">
+                About Us
+              </h2>
+              <p className="mb-2 mt-4">
+                We at B circles provide digital solutions and consulting that
+                guarantee increased income for any business of any kind. We
+                offer strategies and goals specific to each client, not only in
+                the digital marketing field on the Internet or web development,
+                but we also offer effective solutions on the ground from
+                effective consulting, strategic partnerships, sales services
+                that will take Your business is at an advanced and more
+                prosperous stage, which makes us unique in what we offer under
+                the slogan &quot;all under one roof&quot;
+              </p>
             </div>
           </div>
         </div>
@@ -51,7 +73,8 @@ const Home = ({ frontmatter }) => {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        id='services'
+        id="services"
+        data-aos="fade-up"
       >
         <div className="container">
           <div className="text-center">
@@ -62,11 +85,12 @@ const Home = ({ frontmatter }) => {
           <div className="mt-8 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
             {feature?.features.map((item, i) => (
               <motion.div
-                className="cursor-pointer feature-card rounded-xl bg-white p-5 pb-8 text-center"
+                className="feature-card cursor-pointer rounded-xl bg-white p-5 pb-8 text-center"
                 key={`feature-${i}`}
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
+                data-aos="fade-left"
               >
                 {item?.icon && (
                   <Image
@@ -93,7 +117,9 @@ const Home = ({ frontmatter }) => {
         return (
           <section
             key={`service-${index}`}
-            className={`section ${!isOdd && "bg-theme-light dark:bg-[#231f20]"}`}
+            className={`section ${
+              !isOdd && "bg-theme-light dark:bg-[#231f20]"
+            }`}
           >
             <div className="container">
               <div className="items-center gap-8 md:grid md:grid-cols-2">
@@ -121,15 +147,18 @@ const Home = ({ frontmatter }) => {
 
                 {/* Content */}
                 <div
-                  className={`service-content mt-5 md:mt-0 ${!isOdd && "md:order-1"
-                    }`}
+                  className={`service-content mt-5 md:mt-0 ${
+                    !isOdd && "md:order-1"
+                  }`}
                 >
-                  <h2 className="font-bold leading-[40px] font-third dark:text-white">{service?.title}</h2>
-                  <p className="mt-4 mb-2">{service?.content}</p>
+                  <h2 className="font-third font-bold leading-[40px] dark:text-white">
+                    {service?.title}
+                  </h2>
+                  <p className="mb-2 mt-4">{service?.content}</p>
                   {service.button.enable && (
                     <Link
                       href={service?.button.link}
-                      className="cta-link cursor-pointer inline-flex items-center text-primary"
+                      className="cta-link inline-flex cursor-pointer items-center text-primary"
                     >
                       {service?.button.label}
                       <Image
