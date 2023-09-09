@@ -13,11 +13,11 @@ function Hero({ banner }) {
         <li className="circle" />
         <li className="circle" />
         <li className="circle" />
+        {/* <li className="circle" />
         <li className="circle" />
         <li className="circle" />
         <li className="circle" />
-        <li className="circle" />
-        <li className="circle" />
+        <li className="circle" /> */}
         <li className="circle" />
         <li className="circle" />
       </ul>
