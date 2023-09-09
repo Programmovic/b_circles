@@ -14,7 +14,7 @@ const PrivacyPolicy = ({ data }) => {
             <div>
               {markdownify(title, "h1", "font-normal dark:text-white mb-5")}
               <span className="font-normal dark:text-white">Last Updated: 9th Sep 2023</span>
-              <p className="mt-5">This Privacy Policy describes how B-Circles (the "Site", "we", "us", or "our") collects, uses, and discloses your personal information when you visit, use our services. For purposes of this Privacy Policy, "you" and "your" means you as the user of the Services, whether you are a customer, website visitor, or another individual whose information we have collected pursuant to this Privacy Policy.<br></br>
+              <p className="mt-5">This Privacy Policy describes how B-Circles (the &quot;,Site&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) collects, uses, and discloses your personal information when you visit, use our services. For purposes of this Privacy Policy, &quot;you&quot; and &quot;your&quot; means you as the user of the Services, whether you are a customer, website visitor, or another individual whose information we have collected pursuant to this Privacy Policy.<br></br>
 
                 Please read this Privacy Policy carefully. By using and accessing any of the Services, you agree to the collection, use, and disclosure of your information as described in this Privacy Policy. If you do not agree to this Privacy Policy, please do not use or access any of the Services.
               </p>
