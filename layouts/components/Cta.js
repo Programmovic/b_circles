@@ -19,13 +19,13 @@ function Cta({ cta }) {
           <div className="mt-5 text-center md:mt-0 md:text-left md:col-6 lg:col-5">
             <h2 className="dark:text-white">{cta?.title}</h2>
             <p className="mt-6">{markdownify(cta?.content)}</p>
-            {cta.button.enable && (
+            {cta?.button.enable && (
               <Link
                 className="btn btn-primary mt-4"
-                href={cta.button.link}
-                rel={cta.button.rel}
+                href={cta?.button.link}
+                rel={cta?.button.rel}
               >
-                {cta.button.label}
+                {cta?.button.label}
               </Link>
             )}
           </div>

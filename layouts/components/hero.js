@@ -30,25 +30,25 @@ function Hero({ banner }) {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h1 className="font-third font-bold dark:text-white">{banner.title}</h1>
+              <h1 className="font-third font-bold dark:text-white">{banner?.title}</h1>
               <motion.p
                 className="mt-4 font-third"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.6 }}
               >
-                {markdownify(banner.content)}
+                {markdownify(banner?.content)}
               </motion.p>
-              {banner.button.enable && (
+              {banner?.button.enable && (
                 <motion.a
                   className="btn btn-primary mt-4"
-                  href={banner.button.link}
-                  rel={banner.button.rel}
+                  href={banner?.button.link}
+                  rel={banner?.button.rel}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6, duration: 0.6 }}
                 >
-                  {banner.button.label}
+                  {banner?.button.label}
                 </motion.a>
               )}
             </motion.div>
@@ -60,7 +60,7 @@ function Hero({ banner }) {
             >
               <motion.img
                 className="mx-auto mt-12"
-                src={banner.image}
+                src={banner?.image}
                 width={750}
                 height={390}
                 alt="banner image"

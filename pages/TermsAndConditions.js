@@ -99,6 +99,74 @@ const TermsAndConditions = ({ data }) => {
 
                 </p>
               </div>
+              <div className="p-3 bg-theme-light dark:bg-[#141111d9] rounded mt-3">
+                <h3 className="dark:text-white">Disputes Resolution</h3>
+                <p>If You have any concern or dispute about the Service, You agree to first try to resolve the dispute informally by contacting the Company.
+
+
+
+
+                </p>
+              </div>
+              <div className="p-3 bg-theme-light dark:bg-[#141111d9] rounded mt-3">
+                <h3 className="dark:text-white">For European Union (EU) Users</h3>
+                <p>If You are a European Union consumer, you will benefit from any mandatory provisions of the law of the country in which you are resident in.
+
+
+
+
+                </p>
+              </div>
+              <div className="p-3 bg-theme-light dark:bg-[#141111d9] rounded mt-3">
+                <h3 className="dark:text-white">Severability and Waiver</h3>
+                <p>
+                  <span className="font-bold">Severability </span>
+
+                  If any provision of these Terms is held to be unenforceable or invalid, such provision will be changed and interpreted to accomplish the objectives of such provision to the greatest extent possible under applicable law and the remaining provisions will continue in full force and effect.<br></br>
+                  <span className="font-bold">Waiver </span>
+                  Except as provided herein, the failure to exercise a right or to require performance of an obligation under these Terms shall not effect a party's ability to exercise such right or require such performance at any time thereafter nor shall the waiver of a breach constitute a waiver of any subsequent breach.
+
+
+
+
+
+                </p>
+              </div>
+              <div className="p-3 bg-theme-light dark:bg-[#141111d9] rounded mt-3">
+                <h3 className="dark:text-white">Translation Interpretation</h3>
+                <p>
+                  These Terms and Conditions may have been translated if We have made them available to You on our Service. You agree that the original English text shall prevail in the case of a dispute.
+                </p>
+              </div>
+              <div className="p-3 bg-theme-light dark:bg-[#141111d9] rounded mt-3">
+                <h3 className="dark:text-white">Changes to These Terms and Conditions</h3>
+                <p>
+
+                  We reserve the right, at Our sole discretion, to modify or replace these Terms at any time. If a revision is material We will make reasonable efforts to provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at Our sole discretion.<br></br>
+                  By continuing to access or use Our Service after those revisions become effective, You agree to be bound by the revised terms. If You do not agree to the new terms, in whole or in part, please stop using the website and the Service.
+
+
+
+
+
+
+                </p>
+              </div>
+              <div className="p-3 bg-theme-light dark:bg-[#141111d9] rounded mt-3">
+                <h3 className="dark:text-white">Contact Us</h3>
+                <p>
+
+                  If you have any questions about these Terms and Conditions, You can contact us:<br></br>
+                  By email: contact@b-circles.co<br></br>
+                  By visiting this page on our website: http://www.b-circles.com/contact
+
+
+
+
+
+
+                </p>
+              </div>
 
             </div>
           </div>

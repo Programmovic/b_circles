@@ -11,64 +11,70 @@ banner:
 feature: 
   title: Our Services
   features:
-  - name: "Clean Code"
+  - name: "Social media "
     icon: "/images/code.svg"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit quam nihil"
-  - name: "Object Oriented"
+  - name: "Web development"
     icon: "/images/oop.svg"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit quam nihil"
-  - name: "24h Service"
+  - name: "Graphic design"
     icon: "/images/user-clock.svg"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit quam nihil"
-  - name: "Value for Money"
+  - name: "Content creation"
     icon: "/images/love.svg"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit quam nihil"
-  - name: "Faster Response"
+  - name: "Consulting"
     icon: "/images/speedometer.svg"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit quam nihil"
-  - name: "Cloud Support"
+  - name: "Strategic partnerships."
     icon: "/images/cloud.svg"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit quam nihil"
+  - name: "Sales "
+    icon: "/images/cloud.svg"
 
 # services
 services:
-  - title: "It is the most advanced digital marketing and it company."
-    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat tristique eget amet, tempus eu at consecttur. Leo facilisi nunc viverra tellus. Ac laoreet sit vel consquat. consectetur adipiscing elit. Consequat tristique eget amet, tempus eu at consecttur. Leo facilisi nunc viverra tellus. Ac laoreet sit vel consquat."
+  - title: "Social media"
+    content: "Your audience and customers exist somewhere in this world, our mission is to help you reach them, through a strong and professional team specialized in market research, competitor analysis, creating creative and effective content, launching advertising campaigns, analyzing data, dashboards, and more, as we turn regular browsers into customers who are Confident in what you offer."
     images:
-      - "/images/service-slide-1.png"
-      - "/images/service-slide-2.png"
-      - "/images/service-slide-3.png"
+      - "/images/social media.jpg"
     button:
       enable: true
       label: Check it out
       link: /contact
 
-  - title: "It is a privately owned Information and cyber security company"
-    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat tristique eget amet, tempus eu at consecttur. Leo facilisi nunc viverra tellus. Ac laoreet sit vel consquat. consectetur adipiscing elit. Consequat tristique eget amet, tempus eu at consecttur. Leo facilisi nunc viverra tellus. Ac laoreet sit vel consquat."
+  - title: "Web development"
+    content: "B circles believes in constant development in the era of artificial intelligence and technological development. Through user experience and continuous analysis, development comes in a way that suits the work. Therefore, we are always with you. We design websites that are user-friendly and visually attractive, E-commerce shops, landing page, not This is just we create and develop websites and web applications. We also help you with Chabot's social media customize bots, LLMs employing like chatgpt, bard etc."
     images: 
-      - "/images/service-slide-1.png"
+      - "/images/web development.jpg"
     button:
       enable: true
       label: Check it out
       link: /contact
   
-  - title: "It’s a team of experienced and skilled people with distributions"
-    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat tristique eget amet, tempus eu at consecttur. Leo facilisi nunc viverra tellus. Ac laoreet sit vel consquat. consectetur adipiscing elit. Consequat tristique eget amet, tempus eu at consecttur. Leo facilisi nunc viverra tellus. Ac laoreet sit vel consquat."
+  - title: "Graphic design"
+    content: "At B CIRCLES, we are not just people behind the devices that produce designs. We are artists who practice our work with love and creativity. We understand and master all the details to produce what suits every project. We deliver your idea to the highest levels to deliver the message to customers. We design images, logos, videos, and web pages with full flexibility."
     images:
-      - "/images/service-slide-1.png"
-      - "/images/service-slide-2.png"
-      - "/images/service-slide-3.png"
+      - "/images/graphic dsn.jpg"
     button:
       enable: true
       label: Check it out
       link: /contact
 
-  - title: "A company standing different from others"
+  - title: "Content creation "
     content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat tristique eget amet, tempus eu at consecttur. Leo facilisi nunc viverra tellus. Ac laoreet sit vel consquat. consectetur adipiscing elit. Consequat tristique eget amet, tempus eu at consecttur. Leo facilisi nunc viverra tellus. Ac laoreet sit vel consquat."
     images:
-      - "/images/service-slide-1.png"
-      - "/images/service-slide-2.png"
-      - "/images/service-slide-3.png"
+      - "/images/content creation.jpg"
+    button:
+      enable: true
+      label: Check it out
+      link: /contact
+  - title: "Consulting"
+    content: "You cannot continue to succeed until you know where you stand until you know what you are doing with your available capabilities. Therefore, we develop your strategy, identify your areas of strength, weakness, and opportunities, and then chart the path for you to reach your goals."
+    images:
+      - "/images/content creation.jpg"
+    button:
+      enable: true
+      label: Check it out
+      link: /contact
+  - title: "Strategic partnerships."
+    content: "We at b circles provide you with the power that your company or organization needs through partnerships with other companies to deliver and provide you with all the needs to reach your goals in a more effective way, so that complete agreement is made through documented contracts with all the clear terms of the agreement. Not only this, but it is possible for us to manage it for you through Dedicated team."
+    images:
+      - "/images/strategic partnership.jpg"
     button:
       enable: true
       label: Check it out
