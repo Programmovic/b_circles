@@ -54,11 +54,11 @@
         },
         {
           "text": "Privacy Policy",
-          "url": "/PrivacyPolicy"
+          "url": "/privacy-policy"
         },
         {
           "text": "Terms & Conditions",
-          "url": "#"
+          "url": "TermsAndConditions"
         }
       ]
     }
