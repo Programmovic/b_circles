@@ -30,7 +30,7 @@ const Header = () => {
   
 
   return (
-    <header className={`dark:bg-[#141111d9] backdrop-blur-lg header fixed w-full z-50 ${isSticky ? "shadow-md" : null}`}>
+    <header className={`dark:bg-[#141111d9] header fixed w-full z-50 bg-transparent ${isSticky ? "backdrop-blur-lg shadow-md" : null}`}>
       <nav className="navbar container">
         {/* logo */}
         <div className="order-0">

@@ -10,6 +10,8 @@ import "swiper/swiper.min.css";
 import { getListPage } from "../lib/contentParser";
 import { motion, useScroll } from "framer-motion";
 import Image from "next/image";
+import { Tabs, Tab } from 'react-bootstrap';
+import { useState } from "react";
 
 
 
@@ -17,12 +19,13 @@ import Image from "next/image";
 const Home = ({ frontmatter }) => {
   const { banner, feature, services, workflow, call_to_action } = frontmatter;
   const { title } = config.site;
+  const [activeTab, setActiveTab] = useState('1');
 
   return (
     <Base title={title}>
       {/* Banner */}
 
-      <Hero banner={banner}/>
+      <Hero banner={banner} />
 
       <motion.section
         className="section bg-theme-light dark:bg-[#231f20]"
@@ -63,7 +66,7 @@ const Home = ({ frontmatter }) => {
           </div>
         </div>
       </motion.section>
-
+      
       {/* services */}
       {services.map((service, index) => {
         const isOdd = index % 2 > 0;

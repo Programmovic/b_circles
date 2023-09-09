@@ -8,20 +8,20 @@ function Hero({ banner }) {
 
   return (
     <section className="section hero-section min-h-screen flex items-center">
+      
       <ul className='circles'>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li className="circle" />
+        <li className="circle" />
+        <li className="circle" />
+        <li className="circle" />
+        <li className="circle" />
+        <li className="circle" />
+        <li className="circle" />
+        <li className="circle" />
+        <li className="circle" />
+        <li className="circle" />
       </ul>
-      <div className="gradient-overlay"></div>
-      <div className="container">
+      <div className="container z-10">
         <div className="row text-start">
           <div className="lg:col-12 flex flex-wrap items-center">
             <motion.div
