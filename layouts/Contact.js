@@ -1,10 +1,10 @@
 import config from "@config/config.json";
 import { markdownify } from "@lib/utils/textConverter";
 import { FaMarker, FaPhone, FaPaperPlane, FaGlobe } from "react-icons/fa";
-import c_photo from "../public/images/banner-bg.jpg";
 import Image from "next/image";
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
+export const dynamic = "force-dynamic";
 
 const Contact = ({ data }) => {
   const { frontmatter } = data;

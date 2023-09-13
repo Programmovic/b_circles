@@ -1,5 +1,6 @@
 import { markdownify } from "@lib/utils/textConverter";
 
+
 const NotFound = ({ data }) => {
   const { frontmatter, content } = data;
 

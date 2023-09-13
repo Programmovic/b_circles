@@ -12,10 +12,11 @@ import { motion, useScroll } from "framer-motion";
 import Image from "next/image";
 import { Tabs, Tab } from "react-bootstrap";
 import { useState } from "react";
-import about_bg from "../public/images/about us.jpeg";
+import about_bg from "../public/images/about us.webp";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useRouter } from "next/router";
 
 const Home = ({ frontmatter }) => {
   const { banner, feature, services, workflow, call_to_action } = frontmatter;
@@ -25,7 +26,7 @@ const Home = ({ frontmatter }) => {
       duration: 1500, // Animation duration in milliseconds
     });
   }, []);
-
+  const { locale } = useRouter()
   return (
     <Base title={title}>
       {/* Banner */}
@@ -117,9 +118,8 @@ const Home = ({ frontmatter }) => {
         return (
           <section
             key={`service-${index}`}
-            className={`section ${
-              !isOdd && "bg-theme-light dark:bg-[#231f20]"
-            }`}
+            className={`section ${!isOdd && "bg-theme-light dark:bg-[#231f20]"
+              }`}
           >
             <div className="container">
               <div className="items-center gap-8 md:grid md:grid-cols-2">
@@ -147,9 +147,8 @@ const Home = ({ frontmatter }) => {
 
                 {/* Content */}
                 <div
-                  className={`service-content mt-5 md:mt-0 ${
-                    !isOdd && "md:order-1"
-                  }`}
+                  className={`service-content mt-5 md:mt-0 ${!isOdd && "md:order-1"
+                    }`}
                 >
                   <h2 className="font-third font-bold leading-[40px] dark:text-white">
                     {service?.title}
@@ -159,6 +158,7 @@ const Home = ({ frontmatter }) => {
                     <Link
                       href={service?.button.link}
                       className="cta-link inline-flex cursor-pointer items-center text-primary"
+                      title={service?.button.label}
                     >
                       {service?.button.label}
                       <Image
@@ -202,11 +202,12 @@ const Home = ({ frontmatter }) => {
 };
 
 export const getStaticProps = async () => {
-  const homePage = await getListPage("content/_index.md");
+  const homePage = await getListPage(`public/locales/en-US/_index.md`);
   const { frontmatter } = homePage;
   return {
     props: {
       frontmatter,
+      // ...(await serverSideTranslations(locale, ['common', 'footer'])),
     },
   };
 };

@@ -25,10 +25,10 @@ const ThemeSwitcher = () => {
 
   return (
     <>
-    <div className='py-[14px]'><button onClick={toggleTheme} className="btn btn-primary z-0 p-[5px]">
-        {theme === "light" ? <FaMoon/> : <FaSun/>}
+      <div className='py-[14px]'><button title="Switch Theme" onClick={toggleTheme} className="btn btn-primary z-0 p-[5px]">
+        {theme === "light" ? <FaMoon /> : <FaSun />}
       </button></div>
-      
+
     </>
 
   );

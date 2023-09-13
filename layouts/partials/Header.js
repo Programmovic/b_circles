@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState, useEffect } from "react";
 import ThemeSwitcher from "@layouts/components/ThemeSwitcher";
+import LangSwitcher from "@layouts/components/LangSwitcher";
 
 
 const Header = () => {
@@ -27,6 +28,7 @@ const Header = () => {
       setIsSticky(false);
     }
   };
+  const {locale, locales, push} = useRouter()
   
 
   return (
@@ -42,6 +44,7 @@ const Header = () => {
           id="show-button"
           className="order-2 flex cursor-pointer items-center md:hidden md:order-1"
           onClick={() => setNavOpen(!navOpen)}
+          title="Open Menu"
         >
           {navOpen ? (
             <svg className="h-6 fill-current" viewBox="0 0 20 20">
@@ -97,6 +100,7 @@ const Header = () => {
                       onClick={() => setNavOpen(false)}
                       className={`dark:text-white nav-link font-third block ${router.asPath === menu.url ? "nav-link-active" : ""
                         }`}
+                      locale = {locale}
                     >
                       {menu.name}
                     </Link>
@@ -119,6 +123,9 @@ const Header = () => {
             <li className="nav-item flex justify-center items-center">
               <ThemeSwitcher />
             </li>
+            {/* <li className="nav-item flex justify-center items-center">
+              <LangSwitcher />
+            </li> */}
           </ul>
         </div>
         {enable && (

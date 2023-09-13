@@ -1,9 +1,14 @@
 import Base from "@layouts/Baseof";
 import { getRegularPage } from "../lib/contentParser";
-import { markdownify } from "@lib/utils/textConverter";
+import Head from "next/head";
 
 const TermsAndConditions = ({ data }) => {
   return (
+    <>
+    <Head>
+      <title>B-Codskagok</title>
+
+    </Head>
     <Base>
       <section className="section">
         <div className="container">
@@ -173,6 +178,7 @@ const TermsAndConditions = ({ data }) => {
         </div>
       </section>
     </Base>
+    </>
   );
 };
 

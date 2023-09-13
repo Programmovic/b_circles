@@ -12,19 +12,19 @@ feature:
   title: Our Services
   features:
   - name: "Social media "
-    icon: "/images/social media.png"
+    icon: "/images/social.webp"
   - name: "Web development"
-    icon: "/images/web development.png"
+    icon: "/images/web-dev.webp"
   - name: "Graphic design"
-    icon: "/images/graphic dsn.png"
+    icon: "/images/graphic-dsn.webp"
   - name: "Content creation"
-    icon: "/images/content creation.png"
+    icon: "/images/content-creation.webp"
   - name: "Consulting"
-    icon: "/images/consulting.png"
+    icon: "/images/consulting.webp"
   - name: "Strategic partnerships."
-    icon: "/images/strategic partnership.png"
+    icon: "/images/strategic.webp"
   - name: "Sales "
-    icon: "/images/sales.png"
+    icon: "/images/sales.webp"
 
 # services
 services:

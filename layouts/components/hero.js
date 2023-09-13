@@ -47,6 +47,7 @@ function Hero({ banner }) {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6, duration: 0.6 }}
+                  title={banner?.button.label}
                 >
                   {banner?.button.label}
                 </motion.a>

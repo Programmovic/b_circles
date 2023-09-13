@@ -1,6 +1,8 @@
 import config from "@config/config.json";
 import { Head, Html, Main, NextScript } from "next/document";
 
+
+
 const Document = () => {
   // destructuring items from config object
   const { favicon } = config.site;

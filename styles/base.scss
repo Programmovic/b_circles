@@ -1,9 +1,12 @@
 html {
   @apply text-base;
 }
-
+[lang="ar"] {
+  --dir: rtl;
+}
 body {
   @apply bg-body font-third font-normal leading-relaxed text-text;
+  direction: var(--dir);
 }
 
 h1,
