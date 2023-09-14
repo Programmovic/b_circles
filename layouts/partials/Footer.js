@@ -5,7 +5,6 @@ import social from "@config/social.json";
 import { markdownify } from "@lib/utils/textConverter";
 import Link from "next/link";
 import Image from "next/image";
-
 const Footer = () => {
   const { copyright, footer_content } = config.params;
   const { footer } = menu;
@@ -40,7 +39,7 @@ const Footer = () => {
                 src={config.site.logo}
                 width={config.site.logo_width}
                 height={config.site.logo_height}
-                alt=""
+                alt="B-Circles"
               />
             </Link>
           </div>
@@ -58,5 +57,7 @@ const Footer = () => {
     </footer>
   );
 };
+
+
 
 export default Footer;

@@ -1,5 +1,6 @@
 html {
   @apply text-base;
+  scroll-behavior: smooth;
 }
 [lang="ar"] {
   --dir: rtl;
@@ -7,6 +8,7 @@ html {
 body {
   @apply bg-body font-third font-normal leading-relaxed text-text;
   direction: var(--dir);
+  overflow-x: hidden;
 }
 
 h1,

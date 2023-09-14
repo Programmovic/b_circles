@@ -29,11 +29,30 @@ const Document = () => {
           media="(prefers-color-scheme: dark)"
           content="#000"
         />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+                (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                })(window,document,'script','dataLayer','GTM-MK8ZCMWN');
+              `,
+          }}
+        />
       </Head>
       <body className="dark:bg-[#1b1718] dark:text-white">
         <Main />
         {/* <TwSizeIndicator /> */}
         <NextScript />
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-MK8ZCMWN"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }} // Use an object for style
+          ></iframe>
+        </noscript>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" async></script>
         <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.waves.min.js" async></script>
       </body>

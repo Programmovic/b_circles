@@ -1,11 +1,26 @@
 import { markdownify } from "@lib/utils/textConverter";
+import Base from "./Baseof";
+import config from "@config/config.json";
 
 const Faq = ({data}) => {
   const { frontmatter } = data;
   const { title, faqs } = frontmatter;
 
   return (
+    
     <section className="section">
+      <ul className='circles'>
+        <li className="circle" />
+        <li className="circle" />
+        <li className="circle" />
+        {/* <li className="circle" />
+        <li className="circle" />
+        <li className="circle" />
+        <li className="circle" />
+        <li className="circle" /> */}
+        <li className="circle" />
+        <li className="circle" />
+      </ul>
       <div className="container">
         {markdownify(title, "h1", "text-center font-normal dark:text-white")}
         <div className="grid  -mt-6">

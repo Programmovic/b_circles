@@ -1,10 +1,12 @@
 import NotFound from "@layouts/404";
 import Base from "@layouts/Baseof";
 import { getRegularPage } from "@lib/contentParser";
+import config from "@config/config.json";
+const { title } = config.site;
 
 const notFound = ({ data }) => {
   return (
-    <Base>
+    <Base title={`${title} | Not Found`}>
       <NotFound data={data} />
     </Base>
   );

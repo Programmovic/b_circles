@@ -1,9 +1,12 @@
+import React, { useState, useEffect } from "react";
 import config from "@config/config.json";
 import { plainify } from "@lib/utils/textConverter";
 import Footer from "@partials/Footer";
 import Header from "@partials/Header";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import { FaArrowUp } from 'react-icons/fa';
+
 
 const Base = ({
   title,
@@ -17,6 +20,34 @@ const Base = ({
   const { meta_image, meta_author, meta_description } = config.metadata;
   const { base_url } = config.site;
   const router = useRouter();
+  const [showScrollButton, setShowScrollButton] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Show the scroll-to-top button when the user scrolls down 20 pixels or more
+      if (window.pageYOffset > 20) {
+        setShowScrollButton(true);
+      } else {
+        setShowScrollButton(false);
+      }
+    };
+
+    // Attach the scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    // Scroll to the top of the page
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <>
@@ -93,6 +124,29 @@ const Base = ({
       {/* main site */}
       <main>{children}</main>
       <Footer />
+
+      {/* Scroll to top button */}
+      {showScrollButton && (
+        <button className="scroll-to-top" onClick={scrollToTop}>
+          <FaArrowUp/>
+        </button>
+      )}
+
+      {/* Styles for the scroll to top button */}
+      <style jsx>{`
+        .scroll-to-top {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          background-color: #325aa5;
+          color: #fff;
+          border: none;
+          border-radius: 50%;
+          padding: 10px;
+          font-size: 16px;
+          cursor: pointer;
+        }
+      `}</style>
     </>
   );
 };

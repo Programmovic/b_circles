@@ -2,7 +2,7 @@ import config from "@config/config.json";
 import Image from "next/image";
 import Link from "next/link";
 
-const Logo = ({ src }) => {
+const Logo = ({ src, className }) => {
   // destructuring items from config object
   const { base_url, logo, logo_width, logo_height, logo_text, title } =
     config.site;
@@ -25,7 +25,7 @@ const Logo = ({ src }) => {
             alt={title}
             priority
           /> */}
-          <span class="self-center  text-2xl font-semibold dark:text-white">{logo_text}</span>
+          <span className={`self-center  text-2xl font-semibold dark:text-white ${className}`}>{logo_text}</span>
         </>
       ) : logo_text ? (
         logo_text

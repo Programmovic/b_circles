@@ -4,14 +4,14 @@
       "name": "Home",
       "url": "/"
     },
-    
+
     {
       "name": "Contact",
-      "url": "/contact"
+      "url": "/contact-us"
     },
     {
       "name": "FAQ",
-      "url": "/faq"
+      "url": "/faqs"
     }
   ],
   "footer": [
@@ -32,7 +32,7 @@
         },
         {
           "text": "Quick Start",
-          "url": "/contact"
+          "url": "/contact-us"
         }
       ]
     },
@@ -41,7 +41,7 @@
       "menu": [
         {
           "text": "FAQ",
-          "url": "/faq"
+          "url": "/faqs"
         },
         {
           "text": "Privacy Policy",
@@ -50,6 +50,27 @@
         {
           "text": "Terms & Conditions",
           "url": "TermsAndConditions"
+        }
+      ]
+    },
+    {
+      "name": "Services",
+      "menu": [
+        {
+          "text": "Social media",
+          "url": "/#Social-media"
+        },
+        {
+          "text": "Web development",
+          "url": "/#Web-development"
+        },
+        {
+          "text": "Graphic design",
+          "url": "/#Graphic-design"
+        },
+        {
+          "text": "Consulting",
+          "url": "/#Consulting"
         }
       ]
     }

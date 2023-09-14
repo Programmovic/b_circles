@@ -4,7 +4,7 @@ import { FaMarker, FaPhone, FaPaperPlane, FaGlobe } from "react-icons/fa";
 import Image from "next/image";
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
-export const dynamic = "force-dynamic";
+
 
 const Contact = ({ data }) => {
   const { frontmatter } = data;
@@ -52,7 +52,20 @@ const Contact = ({ data }) => {
   };
 
   return (
+    
     <section className="section">
+      <ul className='circles'>
+        <li className="circle" />
+        <li className="circle" />
+        <li className="circle" />
+        {/* <li className="circle" />
+        <li className="circle" />
+        <li className="circle" />
+        <li className="circle" />
+        <li className="circle" /> */}
+        <li className="circle" />
+        <li className="circle" />
+      </ul>
       <div className="container mx-auto">
         <div className="flex justify-center">
           <div className="w-full">

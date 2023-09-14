@@ -1,13 +1,13 @@
 import Base from "@layouts/Baseof";
 import { getListPage } from "../lib/contentParser";
 import { markdownify } from "@lib/utils/textConverter";
+import config from "@config/config.json";
 
 const PrivacyPolicy = ({ data }) => {
   const { frontmatter } = data;
   const { title, last_updated, policies } = frontmatter;
-  console.log(last_updated)
   return (
-    <Base>
+    <Base title={`${config.site.title} | ${title}`}>
       <section className="section">
         <div className="container">
           <div className="flex items-center justify-center">

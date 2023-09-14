@@ -1,15 +1,12 @@
 import Base from "@layouts/Baseof";
 import { getRegularPage } from "../lib/contentParser";
 import Head from "next/head";
+import config from "@config/config.json";
 
 const TermsAndConditions = ({ data }) => {
   return (
     <>
-    <Head>
-      <title>B-Codskagok</title>
-
-    </Head>
-    <Base>
+    <Base title={`${config.site.title} | Terms And Conditions`}>
       <section className="section">
         <div className="container">
           <div className="flex items-center justify-start">

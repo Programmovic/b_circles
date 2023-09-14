@@ -11,7 +11,7 @@ banner:
 feature: 
   title: Our Services
   features:
-  - name: "Social media "
+  - name: "Social media"
     icon: "/images/social.webp"
   - name: "Web development"
     icon: "/images/web-dev.webp"
@@ -23,7 +23,7 @@ feature:
     icon: "/images/consulting.webp"
   - name: "Strategic partnerships."
     icon: "/images/strategic.webp"
-  - name: "Sales "
+  - name: "Sales"
     icon: "/images/sales.webp"
 
 # services
@@ -32,6 +32,14 @@ services:
     content: "Your audience and customers exist somewhere in this world, our mission is to help you reach them, through a strong and professional team specialized in market research, competitor analysis, creating creative and effective content, launching advertising campaigns, analyzing data, dashboards, and more, as we turn regular browsers into customers who are Confident in what you offer."
     images:
       - "/images/social media.webp"
+    button:
+      enable: true
+      label: Check it out
+      link: /contact
+  - title: "Sales"
+    content: "When there is a professional seller who can sell you anything, this seller is always distinguished by using different and more innovative strategies than the rest. In this way, our team works using the latest strategies and plans to build a customer base that is more confident in your product and services and achieve more profit for the company."
+    images:
+      - "/images/saless.webp"
     button:
       enable: true
       label: Check it out
@@ -45,17 +53,18 @@ services:
       enable: true
       label: Check it out
       link: /contact
+      
   
   - title: "Graphic design"
     content: "At B CIRCLES, we are not just people behind the devices that produce designs. We are artists who practice our work with love and creativity. We understand and master all the details to produce what suits every project. We deliver your idea to the highest levels to deliver the message to customers. We design images, logos, videos, and web pages with full flexibility."
     images:
-      - "/images/graphic dsn.wepb"
+      - "/images/graphic dsn.webp"
     button:
       enable: true
       label: Check it out
       link: /contact
 
-  - title: "Content creation "
+  - title: "Content creation"
     content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat tristique eget amet, tempus eu at consecttur. Leo facilisi nunc viverra tellus. Ac laoreet sit vel consquat. consectetur adipiscing elit. Consequat tristique eget amet, tempus eu at consecttur. Leo facilisi nunc viverra tellus. Ac laoreet sit vel consquat."
     images:
       - "/images/content creation.webp"
@@ -66,7 +75,7 @@ services:
   - title: "Consulting"
     content: "You cannot continue to succeed until you know where you stand until you know what you are doing with your available capabilities. Therefore, we develop your strategy, identify your areas of strength, weakness, and opportunities, and then chart the path for you to reach your goals."
     images:
-      - "/images/consulting.wepb"
+      - "/images/consulting-bg.webp"
     button:
       enable: true
       label: Check it out
@@ -74,7 +83,7 @@ services:
   - title: "Strategic partnerships."
     content: "We at b circles provide you with the power that your company or organization needs through partnerships with other companies to deliver and provide you with all the needs to reach your goals in a more effective way, so that complete agreement is made through documented contracts with all the clear terms of the agreement. Not only this, but it is possible for us to manage it for you through Dedicated team."
     images:
-      - "/images/strategic partnership.wepb"
+      - "/images/strategic partnership.webp"
     button:
       enable: true
       label: Check it out

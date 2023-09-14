@@ -8,6 +8,7 @@ import ThemeSwitcher from "@layouts/components/ThemeSwitcher";
 import LangSwitcher from "@layouts/components/LangSwitcher";
 
 
+
 const Header = () => {
   const router = useRouter();
   const { main } = menu;
@@ -22,21 +23,21 @@ const Header = () => {
     };
   }, []);
   const handleScroll = () => {
-    if (window.pageYOffset > 0) {
+    if (window.pageYOffset > 20) {
       setIsSticky(true);
     } else {
       setIsSticky(false);
     }
   };
   const {locale, locales, push} = useRouter()
-  
-
+  const isHomepage = router.asPath === "/";
   return (
-    <header className={`dark:bg-[#141111d9] header backdrop-blur-lg fixed w-full z-50 bg-transparent ${isSticky ? " shadow-md" : null}`}>
+    <header className={`dark:text-white header fixed w-full z-50 bg-transparent backdrop-blur-lg ${isSticky ? "dark:bg-[#141111d9] shadow-md" : "text-white"}`}>
       <nav className="navbar container">
         {/* logo */}
         <div className="order-0">
-          <Logo src={logo} />
+        <Logo src={logo} className={isHomepage && !isSticky ? "text-white" : "text-dark"} />
+
         </div>
 
         {/* navbar toggler */}
@@ -98,7 +99,7 @@ const Header = () => {
                     <Link
                       href={menu.url}
                       onClick={() => setNavOpen(false)}
-                      className={`dark:text-white nav-link font-third block ${router.asPath === menu.url ? "nav-link-active" : ""
+                      className={`dark:text-white ${isHomepage && !isSticky ? "text-white" : "text-dark"} nav-link font-third block ${router.asPath === menu.url ? "nav-link-active" : ""
                         }`}
                       locale = {locale}
                     >
