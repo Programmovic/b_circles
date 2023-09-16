@@ -31,18 +31,19 @@ const Home = ({ frontmatter }) => {
   return (
     <>
 
-      <Base title={`${title} | Home`}>
+      <Base title={`B-circles | Digital Marketing Agency - Business Solutions`}>
 
         {/* Banner */}
 
         <Hero banner={banner} />
         <section
-          className={`section bg-theme-light dark:bg-[#231f20]`}
+          className={`section bg-theme-light dark:bg-[#231f20] overflow-hidden`}
           id="about"
-          data-aos="fade-left"
+
         >
           <div className="container">
-            <div className="items-center gap-8 md:grid md:grid-cols-2">
+            <div className="items-center gap-8 md:grid md:grid-cols-2"
+              data-aos="flip-up">
               <div className={`service-carousel md:order-2`}>
                 <Image
                   className="ml-1 w-full rounded"
@@ -56,7 +57,7 @@ const Home = ({ frontmatter }) => {
                 className={`service-content mt-5 md:order-1 md:mt-0
                     `}
               >
-                <h2 className="font-bold leading-[40px] dark:text-white">
+                <h2 className="font-bold  leading-[40px] dark:text-white uppercase">
                   About Us
                 </h2>
                 <p className="mb-2 mt-4">
@@ -75,20 +76,22 @@ const Home = ({ frontmatter }) => {
           </div>
         </section>
         <motion.section
-          className="section bg-light dark:bg-[#231f20]"
+          className="section bg-light dark:bg-[#231f20] pt-0"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           id="services"
           data-aos="fade-up"
         >
+          <div className="text-center  bg-[#eb671b] py-5 " data-aos="flip-down">
+            <h2 className="font-third text-white uppercase">
+              {markdownify(feature?.title)}
+            </h2>
+
+          </div>
           <div className="container">
-            <div className="text-center">
-              <h2 className="font-third dark:text-white">
-                {markdownify(feature?.title)}
-              </h2>
-            </div>
-            <div className="mt-8 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
+
+            <div className="mt-8 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3" data-aos="zoom-in">
               {feature?.features.map((item, i) => (
                 <Link
                   href={`/#${item.name.replace(' ', '-')}`}
@@ -96,12 +99,12 @@ const Home = ({ frontmatter }) => {
                   key={`feature-${i}`}
                 >
                   <motion.div
-                    className="feature-card cursor-pointer rounded-xl bg-white p-5 pb-8 text-center"
-                    
+                    className="feature-card cursor-pointer rounded-xl p-5 pb-8 text-center"
+
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: i * 0.1 }}
-                    data-aos="fade-left"
+                    data-aos="fade-up"
                   >
                     {item?.icon && (
                       <Image
@@ -113,7 +116,7 @@ const Home = ({ frontmatter }) => {
                       />
                     )}
                     <div className="mt-4">
-                      {markdownify(item.name, "h3", "h5")}
+                      {markdownify(item.name, "h3", "h5 dark:text-white uppercase")}
                       <p className="mt-3 dark:text-dark">{item?.content}</p>
                     </div>
                   </motion.div>
@@ -127,12 +130,14 @@ const Home = ({ frontmatter }) => {
         {services?.map((service, index) => {
           const isOdd = index % 2 > 0;
           return (
+            <>
             <section
               key={`service-${index}`}
               className={`section ${!isOdd && "bg-theme-light dark:bg-[#231f20]"
                 }`}
               id={service?.title.replace(' ', '-')}
             >
+              
               <div className="container">
                 <div className="items-center gap-8 md:grid md:grid-cols-2">
                   {/* Carousel */}
@@ -150,8 +155,9 @@ const Home = ({ frontmatter }) => {
                     >
                       {/* Slides */}
                       {service?.images.map((slide, index) => (
-                        <SwiperSlide key={index}>
-                          <Image src={slide} alt="" width={600} height={500} />
+                        <SwiperSlide key={index}
+                          data-aos="fade-out">
+                          <Image src={slide} alt={service?.title} width={600} height={500} />
                         </SwiperSlide>
                       ))}
                     </Swiper>
@@ -162,10 +168,10 @@ const Home = ({ frontmatter }) => {
                     className={`service-content mt-5 md:mt-0 ${!isOdd && "md:order-1"
                       }`}
                   >
-                    <h2 className="font-third font-bold leading-[40px] dark:text-white">
+                    <h2 className="font-third font-bold leading-[40px] dark:text-white uppercase" data-aos="fade-in">
                       {service?.title}
                     </h2>
-                    <p className="mb-2 mt-4">{service?.content}</p>
+                    <p className="mb-2 mt-4" data-aos="fade-out">{service?.content}</p>
                     {service.button.enable && (
                       <Link
                         href={service?.button.link}
@@ -186,6 +192,7 @@ const Home = ({ frontmatter }) => {
                 </div>
               </div>
             </section>
+            </>
           );
         })}
 

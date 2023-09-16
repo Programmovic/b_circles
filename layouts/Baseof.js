@@ -145,6 +145,7 @@ const Base = ({
           padding: 10px;
           font-size: 16px;
           cursor: pointer;
+          z-index: 999;
         }
       `}</style>
     </>

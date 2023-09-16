@@ -25,7 +25,7 @@ const Logo = ({ src, className }) => {
             alt={title}
             priority
           /> */}
-          <span className={`self-center  text-2xl font-semibold dark:text-white ${className}`}>{logo_text}</span>
+          <h1 className={`self-center font-third text-2xl font-semibold dark:text-white ${className}`}>{logo_text}</h1>
         </>
       ) : logo_text ? (
         logo_text

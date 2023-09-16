@@ -129,7 +129,9 @@
 		transform: translateY(-60vh) rotate(360deg);
 		opacity: 1;
 	}
-
+	75% {
+		opacity: 0;
+	}
 	100% {
 		transform: translateY(-120vh) rotate(720deg);
 		opacity: 0;
@@ -137,9 +139,7 @@
 }
 
 @media only screen and (max-width: 600px) {
-	.hero-img {
-		display: none;
-	}
+	
 
 	.contact-details {
 		flex-direction: column;
@@ -159,8 +159,13 @@
 		width: 100%;
 	}
 	.animated-svg{
-		top: -80%;
+		top: -45%;
 	}
+}
+.animated-svg svg{
+	transform: scaleX(-1);
+	position: absolute;
+    right: -50%;
 }
 $body-color: blue;
 $poppins: 'Poppins', sans-serif;
@@ -173,7 +178,20 @@ $poppins: 'Poppins', sans-serif;
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  
+  background-image: url("https://lh3.googleusercontent.com/p7DBFiPuat7cjIUIO0l2wbPF9dlcZS43ztlmJHBBEmDymVAiGvZ_FwljukP7vyqXerAaBwpyEpXZirtkgA=s1600");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  &:before {
+    content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: black;
+        opacity: .92; 
+  }
 
   .overlay {
     position: absolute;

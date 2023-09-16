@@ -2,13 +2,14 @@ import React, { useState, useEffect, useRef } from 'react'
 import BIRDS from 'vanta/dist/vanta.birds.min'
 import { motion } from 'framer-motion';
 import { markdownify } from "@lib/utils/textConverter";
+import Link from 'next/link';
 
 function Hero({ banner }) {
 
 
   return (
 
-    <section className="hero relative">
+    <section className="hero relative flex items-center">
       <ul className='circles'>
         <li className="circle" />
         <li className="circle" />
@@ -21,7 +22,7 @@ function Hero({ banner }) {
         <li className="circle" />
         <li className="circle" />
       </ul>
-      <span className="absolute -z-10 -top-1/4 m-auto block w-full animated-svg">
+      {/* <span className="absolute -z-10 -top-1/4 m-auto block w-full animated-svg">
         <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" height={680} preserveAspectRatio="none" viewBox="0 0 1920 880">
           <g transform="translate(960,440) scale(1,1) translate(-960,-440)">
             <linearGradient id="lg-0.047955344060927496" x1={0} x2={1} y1={0} y2={0}>
@@ -50,26 +51,59 @@ function Hero({ banner }) {
             </path>
           </g>
         </svg>
-      </span>
+      </span> */}
+
       <div className="overlay">
         <div className="content text-white">
           <div className="row text-start">
-            <div className="lg:col-12 flex flex-wrap items-center">
+            <div className="lg:col-12 flex flex-wrap items-center justify-center">
               <motion.div
-                className="lg:w-1/2"
-                initial={{ opacity: 0, x: -100 }}
-                animate={{ opacity: 1, x: 0 }}
+                className="lg:col-12 hero-img"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <h1 className="font-third font-bold dark:text-white">{banner?.title}</h1>
-                <motion.p
-                  className="mt-4 font-third dark:text-white text-dark"
+                <motion.img
+                  className="mx-auto mb-5"
+                  src={banner?.image}
+                  width={200}
+                  height={200}
+                  alt="banner image"
+                  priority
+                />
+              </motion.div>
+              <motion.div
+                className="lg:col-12 text-center"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+              >
+                <div className="font-third font-bold text-white mb-2">
+                  <span className="pb-2 text-[15px] uppercase">Welcome to B-Circles</span>
+                  <div className="flex space-x-4 justify-center py-4">
+                    <Link href={`/contact-us`}
+                  title='Contact Us' className="bg-[#eb671b] text-[15px] border border-solid border-gray-500 px-10 p-2 text-white text-light hover:text-gray-300 focus:outline-none hover:bg-transparent uppercase rounded">
+                      Contact
+                    </Link>
+                    <Link href={`/#about`}
+                  title="About Us" className="bg-[#eb671b] text-[15px] border border-solid border-gray-500 p-2 px-10 text-white hover:text-gray-300 hover:bg-transparent focus:outline-none uppercase rounded">
+                      About
+                    </Link>
+                  </div>
+                </div>
+
+                <div className='flex justify-center'>
+                  <h1 className="w-fit border-t border-solid border-gray-500 font-third font-bold text-white py-4 uppercase">{banner?.title}</h1>
+                </div>
+
+                {/* <motion.p
+                  className="mt-4 font-third text-white"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.3, duration: 0.6 }}
                 >
                   {markdownify(banner?.content)}
-                </motion.p>
+                </motion.p> */}
                 {banner?.button.enable && (
                   <motion.a
                     className="btn btn-primary mt-4"
@@ -84,26 +118,12 @@ function Hero({ banner }) {
                   </motion.a>
                 )}
               </motion.div>
-              <motion.div
-                className="lg:w-1/2 hero-img"
-                initial={{ opacity: 0, x: -100 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
-              >
-                <motion.img
-                  className="mx-auto mt-12"
-                  src={banner?.image}
-                  width={750}
-                  height={390}
-                  alt="banner image"
-                  priority
-                />
-              </motion.div>
-
             </div>
+
           </div>
         </div>
       </div>
+
     </section>
   );
 }

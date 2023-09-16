@@ -23,20 +23,21 @@ const Header = () => {
     };
   }, []);
   const handleScroll = () => {
-    if (window.pageYOffset > 20) {
+    if (window.scrollY > 1000) {
       setIsSticky(true);
     } else {
       setIsSticky(false);
     }
   };
-  const {locale, locales, push} = useRouter()
-  const isHomepage = router.asPath === "/";
+  const { locale, locales, push } = useRouter()
+  // Determine if you are on the homepage
+  const isHomePage = router.pathname === "/";
   return (
-    <header className={`dark:text-white header fixed w-full z-50 bg-transparent backdrop-blur-lg ${isSticky ? "dark:bg-[#141111d9] shadow-md" : "text-white"}`}>
+    <header className={`dark:text-white header fixed w-full z-50 bg-transparent backdrop-blur-lg ${isSticky && "dark:bg-[#141111d9] shadow-md"}`}>
       <nav className="navbar container">
         {/* logo */}
         <div className="order-0">
-        <Logo src={logo} className={isHomepage && !isSticky ? "text-white" : "text-dark"} />
+          <Logo src={logo} className={(isHomePage && !isSticky ? 'text-white' : 'text-dark')} />
 
         </div>
 
@@ -67,7 +68,7 @@ const Header = () => {
         <div
           id="nav-menu"
           className={`order-3 md:order-1 ${navOpen ? "max-h-[1000px]" : "max-h-0"
-            }`}
+            } `}
         >
           <ul className="navbar-nav block w-full md:flex md:w-auto lg:space-x-2">
             {main.map((menu, i) => (
@@ -99,9 +100,9 @@ const Header = () => {
                     <Link
                       href={menu.url}
                       onClick={() => setNavOpen(false)}
-                      className={`dark:text-white ${isHomepage && !isSticky ? "text-white" : "text-dark"} nav-link font-third block ${router.asPath === menu.url ? "nav-link-active" : ""
+                      className={`dark:text-white nav-link font-third block ${(isHomePage && !isSticky ? 'text-white' : 'text-dark')} ${router.asPath === menu.url ? "nav-link-active" : ""
                         }`}
-                      locale = {locale}
+                      locale={locale}
                     >
                       {menu.name}
                     </Link>
