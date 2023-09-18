@@ -4,26 +4,24 @@ layout: faq
 draft: false
 faqs:
 - title: Who we are?
-  answer: An innovative outsourcing company that offers a wide range of services to business, firms, & startups. With a strong emphasis on digital marketing, B-Circles acts as a strategic partner, assisting clients to achieve unparalleled success & market prominence. We have expert team in their field can provide and creative the most professional services for our clients.
+  answer: "We are an innovative outsourcing company that offers a wide range of services to businesses, firms, and startups. With a strong emphasis on digital marketing, B-Circles acts as a strategic partner, assisting clients in achieving unparalleled success and market prominence. Our expert team in their respective fields can provide the most professional services for our clients."
 
-
-
-- title: What are the services that B-Circles provide?
+- title: What services does B-Circles provide?
   answer: |-
-    * Digital Marketing.
-    * Web Developing.
-    * Sales.
-    * Graphic design.
-    * Business Partnership.
-    * Training and workshops.
+    - Digital Marketing.<br>
+    - Web Development.<br>
+    - Sales.<br>
+    - Graphic Design.<br>
+    - Business Partnership.<br>
+    - Training and Workshops.
 
-
-- title: How Can I Reach B-Circles team?
-  answer: We are available 24/7, all you need to e-mail us (Contact us) and we will reply in less than 24 hours.
+- title: How can I reach the B-Circles team?
+  answer: "We are available 24/7. All you need to do is email us through our 'Contact Us' page, and we will reply in less than 24 hours."
 
 - title: Why should I choose B-Circles?
-  answer: B-Circles provide experts in each field, we are a strategic partner, assisting clients to achieve unparalleled success & market prominence. We aim to be the driving force behind its clients' success, offering innovative ideas & a comprehensive circle of services to propel businesses to new heights. We are flexible and have the availability to reach client’s needs.
+  answer: "B-Circles provides experts in each field. We are a strategic partner, assisting clients in achieving unparalleled success and market prominence. We aim to be the driving force behind our clients' success, offering innovative ideas and a comprehensive range of services to propel businesses to new heights. We are flexible and readily available to meet our clients' needs."
 
-- title: How long it takes to get an initial plan for my project?
-  answer: Maximum one week, we can provide you with the initial business plan, designs.
+- title: How long does it take to get an initial plan for my project?
+  answer: "It takes a maximum of one week for us to provide you with the initial business plan and designs."
 ---
+

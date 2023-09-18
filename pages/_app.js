@@ -46,6 +46,7 @@ const App = ({ Component, pageProps }) => {
           href="https://fonts.gstatic.com"
           crossOrigin="true"
         />
+        <link rel="canonical" href="https://b-circles.co/"/>
         <style
           dangerouslySetInnerHTML={{
             __html: `${fontcss}`,
@@ -56,6 +57,7 @@ const App = ({ Component, pageProps }) => {
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=5"
         />
+
       </Head>
       <ThemeProvider attribute="class" defaultTheme="system" enableSystem >
         <Component {...pageProps} />

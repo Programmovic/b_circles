@@ -1,18 +1,3 @@
-.hero-section {
-	min-height: 80vh;
-
-}
-
-.circles {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: -1;
-	overflow: hidden;
-}
-
 .circles li {
 	position: absolute;
 	display: block;
@@ -21,6 +6,18 @@
 	animation: animate_horizontal 25s linear infinite;
 	bottom: calc(-150px - 40vh);
 	overflow: hidden;
+	z-index: 1;
+}
+.fixed_circle{
+	position: absolute;
+	display: block;
+	background: #3325aa;
+	width: 80px;
+	height: 80px;
+	overflow: hidden;
+	border-radius: 50%;
+	opacity: .1;
+	z-index: 99;
 }
 
 .circles li:nth-child(1) {
@@ -43,7 +40,7 @@
 }
 
 .circles li:nth-child(3) {
-	left: 70%;
+	left: 2%;
 	width: 70px;
 	height: 70px;
 	animation-delay: 0s;
@@ -62,7 +59,7 @@
 }
 
 .circles li:nth-child(5) {
-	left: 65%;
+	right: 10%;
 	width: 100px;
 	height: 100px;
 	animation-delay: 0s;
@@ -178,7 +175,7 @@ $poppins: 'Poppins', sans-serif;
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  background-image: url("https://lh3.googleusercontent.com/p7DBFiPuat7cjIUIO0l2wbPF9dlcZS43ztlmJHBBEmDymVAiGvZ_FwljukP7vyqXerAaBwpyEpXZirtkgA=s1600");
+  background-image: url("../public/images/bg2.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -258,3 +255,18 @@ $poppins: 'Poppins', sans-serif;
     transform: scaleX(1);
   }
 }
+.animated-logo {
+    animation: bounce 1s infinite; // Adjust animation duration and other properties as needed
+  }
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-10px);
+    }
+    60% {
+      transform: translateY(-5px);
+    }
+  }

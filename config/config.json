@@ -4,6 +4,7 @@
     "base_url": "/",
     "favicon": "/images/BC LOGO2-01.webp",
     "logo": "/images/BC LOGO2-01.webp",
+    "logo_dark": "/images/BC-LOGO-01.webp",
     "logo_width": "200",
     "logo_height": "48",
     "logo_text": "B-Circles"

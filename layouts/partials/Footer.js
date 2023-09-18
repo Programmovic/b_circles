@@ -5,9 +5,12 @@ import social from "@config/social.json";
 import { markdownify } from "@lib/utils/textConverter";
 import Link from "next/link";
 import Image from "next/image";
+import { useTheme } from "next-themes";
 const Footer = () => {
   const { copyright, footer_content } = config.params;
   const { footer } = menu;
+  const { theme, isDarkMode } = useTheme();
+  const isDark = theme === "dark";
   return (
     <footer className="section bg-theme-light pb-0 dark:text-white dark:bg-[#141111d9]">
       <div className="container">
@@ -36,7 +39,7 @@ const Footer = () => {
           <div className="md-12 sm:col-6 lg:col-2 flex justify-center ">
             <Link href="/" aria-label="B-Circles">
               <Image
-                src={config.site.logo}
+                src={!isDark ? config.site.logo_dark : config.site.logo}
                 width={config.site.logo_width}
                 height={config.site.logo_height}
                 alt="B-Circles"

@@ -112,4 +112,11 @@
     @apply font-semibold text-dark;
   }
 }
+.feature-card img {
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover img {
+  transform: scale(1.1); /* You can adjust the scaling factor as needed */
+}
 

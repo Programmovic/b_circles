@@ -1,3 +1,20 @@
+/* Define the styles for the scrollbar track (the background) */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+/* Define the styles for the scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background: #325aa5; /* Color of the scrollbar thumb */
+  border-radius: 6px; /* Rounded corners for the thumb */
+  cursor: pointer;
+}
+
+/* Define the styles for the scrollbar track when it's hovered over */
+::-webkit-scrollbar-thumb:hover {
+  background: #1f3764; /* Color of the thumb on hover */
+}
+
 html {
   @apply text-base;
   scroll-behavior: smooth;

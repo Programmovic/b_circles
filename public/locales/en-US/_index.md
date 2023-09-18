@@ -11,17 +11,17 @@ banner:
 feature: 
   title: Our Services
   features:
-  - name: "Social media"
+  - name: "Social Media"
     icon: "/images/social.webp"
-  - name: "Web development"
+  - name: "Web Development"
     icon: "/images/web-dev.webp"
-  - name: "Graphic design"
+  - name: "Graphic Design"
     icon: "/images/graphic-dsn.webp"
-  - name: "Content creation"
+  - name: "Content Creation"
     icon: "/images/content-creation.webp"
   - name: "Consulting"
     icon: "/images/consulting.webp"
-  - name: "Strategic partnerships"
+  - name: "Strategic Partnerships"
     icon: "/images/strategic.webp"
   - name: "Sales"
     icon: "/images/sales.webp"
