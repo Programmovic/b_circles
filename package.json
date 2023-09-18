@@ -17,7 +17,6 @@
     "github-slugger": "^2.0.0",
     "gray-matter": "^4.0.3",
     "heroku-ssl-redirect": "^0.1.1",
-    "i18next": "^23.5.1",
     "marked": "^4.2.4",
     "next": "13.0.6",
     "next-i18next": "^14.0.3",
