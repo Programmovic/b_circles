@@ -66,7 +66,7 @@ const Contact = ({ data }) => {
         setTimeout(() => {
           setFormStatus(null);
           setFormStatusClass(null);
-        }, 30000); // Clear the message status after 30 seconds
+        }, 30000); // Clear the message status after 30 secondss
       } else {
         setFormStatus("Error while sending the message. Please try again.");
         setFormStatusClass("bg-red-400");
