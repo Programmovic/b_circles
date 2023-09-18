@@ -66,4 +66,4 @@ const App = ({ Component, pageProps }) => {
   );
 };
 
-export default appWithTranslation(App);
+export default App;
