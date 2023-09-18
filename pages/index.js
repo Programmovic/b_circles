@@ -22,7 +22,7 @@ const Home = ({ frontmatter }) => {
   const { title } = config.site;
   useEffect(() => {
     AOS.init({
-      duration: 1500, // Animation duration in milliseconds
+      duration: 500, // Animation duration in milliseconds
     });
   }, []);
   const { locale } = useRouter()

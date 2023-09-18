@@ -9,18 +9,7 @@ const Faq = ({data}) => {
   return (
     
     <section className="section">
-      <ul className='circles'>
-        <li className="circle" />
-        <li className="circle" />
-        <li className="circle" />
-        {/* <li className="circle" />
-        <li className="circle" />
-        <li className="circle" />
-        <li className="circle" />
-        <li className="circle" /> */}
-        <li className="circle" />
-        <li className="circle" />
-      </ul>
+      
       <div className="container">
         {markdownify(title, "h1", "text-center font-normal dark:text-white")}
         <div className="grid  -mt-6">

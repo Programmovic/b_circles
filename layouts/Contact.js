@@ -44,7 +44,7 @@ const Contact = ({ data }) => {
     setFormStatusClass("bg-orange-400");
   
     try {
-      const response = await fetch("/api/sendEmail", {
+      const response = await fetch("https://nodemailer-sd5s.onrender.com/sendEmail", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -84,18 +84,7 @@ const Contact = ({ data }) => {
 
   return (
     <section className="section">
-      <ul className='circles'>
-        <li className="circle" />
-        <li className="circle" />
-        <li className="circle" />
-        {/* <li className="circle" />
-        <li className="circle" />
-        <li className="circle" />
-        <li className="circle" />
-        <li className="circle" /> */}
-        <li className="circle" />
-        <li className="circle" />
-      </ul>
+      
       <div className="container mx-auto">
         <div className="flex justify-center">
           <div className="w-full">
