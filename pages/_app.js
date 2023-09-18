@@ -6,7 +6,6 @@ import TagManager from "react-gtm-module";
 import "styles/style.scss";
 import 'styles/animated_background.scss'
 import { ThemeProvider } from "next-themes";
-import { appWithTranslation } from 'next-i18next'
 
 
 
