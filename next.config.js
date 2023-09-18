@@ -11,7 +11,7 @@ const nextConfig = {
   },
   trailingSlash: true,
   // assetPrefix: isProd ? 'https://cdn.b-circles.co' : undefined,
-  // i18n,
+  // i18n,.
 };
 
 module.exports = nextConfig;
