@@ -12,7 +12,7 @@ const Document = () => {
       <Head>
         {/* favicon */}
         <link
-          rel="shortcut icon"
+          rel="icon"
           type="image/png"
           sizes="32x32"
           href={favicon}
