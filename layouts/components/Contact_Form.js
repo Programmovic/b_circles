@@ -80,7 +80,7 @@ const Contact_Form = (props) => {
 
 
   return (
-    <div className={`flex flex-col md:flex-row rounded bg-theme-light dark:bg-[#141111d9] ${props.className}`}>
+    <div className={`flex flex-col md:flex-row rounded bg-theme-light ${props.className}`}>
       <div className="c_inputs w-full md:w-2/3 md:pr-4">
         <div className="p-8">
           <h3 className="mb-4 text-2xl font-bold dark:text-white">
