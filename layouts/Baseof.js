@@ -5,7 +5,8 @@ import Footer from "@partials/Footer";
 import Header from "@partials/Header";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { FaArrowUp } from 'react-icons/fa';
+import { FaArrowUp, FaFacebookMessenger, FaWindowClose } from 'react-icons/fa';
+import Contact_Form from "./components/Contact_Form";
 
 
 const Base = ({
@@ -47,6 +48,12 @@ const Base = ({
       top: 0,
       behavior: "smooth",
     });
+  };
+  const [showContactForm, setShowContactForm] = useState(false);
+
+  // Function to toggle the visibility of the contact form
+  const toggleContactForm = () => {
+    setShowContactForm(!showContactForm);
   };
 
   return (
@@ -122,15 +129,31 @@ const Base = ({
       </Head>
       <Header />
       {/* main site */}
-      <main>{children}</main>
+      <main>
+        {children}
+        {showContactForm && (
+          <div className="container floating-contact-us">
+            <Contact_Form onClose={toggleContactForm} className="w-3/4 fixed top-1/2 left-1/2 transform -translate-x-1/2  -translate-y-1/2 rounded-10 z-50 shadow-lg" />
+            </div>
+
+
+        )}
+      </main>
       <Footer />
 
       {/* Scroll to top button */}
       {showScrollButton && (
         <button className="scroll-to-top" onClick={scrollToTop}>
-          <FaArrowUp/>
+          <FaArrowUp />
         </button>
       )}
+      
+      <button className="floating-contact-button shadow-lg" onClick={toggleContactForm}>
+        
+       {!showContactForm ? <FaFacebookMessenger/> : <FaWindowClose/>}
+      </button>
+
+
 
       {/* Styles for the scroll to top button */}
       <style jsx>{`
@@ -147,6 +170,20 @@ const Base = ({
           cursor: pointer;
           z-index: 999;
         }
+        .floating-contact-button {
+          position: fixed;
+          bottom: 20px;
+          left: 20px;
+          background-color: #ff5722; /* Change the color as needed */
+          color: #fff;
+          border: none;
+          border-radius: 50%;
+          padding: 10px;
+          font-size: 25px;
+          cursor: pointer;
+          z-index: 999;
+        }
+        
       `}</style>
     </>
   );

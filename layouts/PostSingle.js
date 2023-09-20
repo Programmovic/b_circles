@@ -3,13 +3,14 @@ import shortcodes from "@shortcodes/all";
 import { MDXRemote } from "next-mdx-remote";
 import Base from "./Baseof";
 import Image from "next/image";
+import config from "@config/config.json";
 
 const PostSingle = ({ frontmatter, content, mdxContent }) => {
   let { description, title, image } = frontmatter;
   description = description ? description : content.slice(0, 120);
 
   return (
-    <Base title={title} description={description}>
+    <Base title={`${config.site.title} | ${title}`} description={description}>
       <section className="section">
         <div className="container">
           <div className="row">

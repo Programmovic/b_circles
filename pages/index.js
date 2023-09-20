@@ -154,7 +154,7 @@ const Home = ({ frontmatter }) => {
                         {service?.images.map((slide, index) => (
                           <SwiperSlide key={index}
                             data-aos="fade-out">
-                            <Image src={slide} alt={service?.title} width={600} height={500} />
+                            <Image src={slide} alt={service?.title} width={600} height={500} className="rounded-lg" />
                           </SwiperSlide>
                         ))}
                       </Swiper>

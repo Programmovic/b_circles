@@ -64,7 +64,7 @@ function Hero({ banner }) {
                 transition={{ duration: 0.6 }}
               >
                 <motion.img
-                  className="mx-auto mb-5 animated-logo"
+                  className="mx-auto mb-5 animated-logo pointer-events-none select-none"
                   src={banner?.image}
                   width={200}
                   height={200}
@@ -82,11 +82,11 @@ function Hero({ banner }) {
                   <h1 className="m-0 text-[15px] uppercase text-white font-third">Welcome to B-Circles</h1>
                   <div className="flex space-x-4 justify-center py-4">
                     <Link href={`/contact-us`}
-                  title='Contact Us' className="bg-[#eb671b] text-[15px] border border-solid border-gray-500 px-10 p-2 text-white text-light hover:text-gray-300 focus:outline-none hover:bg-transparent uppercase rounded">
+                  title='Contact Us' className="font-bold bg-[#eb671b] text-[15px] border border-solid border-gray-500 px-10 p-2 text-white text-light hover:text-gray-300 focus:outline-none hover:bg-transparent uppercase rounded">
                       Contact
                     </Link>
                     <Link href={`/#about`}
-                  title="About Us" className="bg-[#eb671b] text-[15px] border border-solid border-gray-500 p-2 px-10 text-white hover:text-gray-300 hover:bg-transparent focus:outline-none uppercase rounded">
+                  title="About Us" className="font-bold bg-[#eb671b] text-[15px] border border-solid border-gray-500 p-2 px-10 text-white hover:text-gray-300 hover:bg-transparent focus:outline-none uppercase rounded">
                       About
                     </Link>
                   </div>
