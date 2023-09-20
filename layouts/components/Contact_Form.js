@@ -41,7 +41,7 @@ const Contact_Form = (props) => {
     setFormStatusClass("bg-orange-400");
 
     try {
-      const response = await fetch("https://nodemailer-sd5s.onrender.com/sendEmail", {
+      const response = await fetch("/api/sendEmail", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
