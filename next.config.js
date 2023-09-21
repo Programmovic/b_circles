@@ -6,6 +6,9 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  images: {
+    unoptimized: true,
+  },
   trailingSlash: true,
   // assetPrefix: isProd ? 'https://cdn.b-circles.co' : undefined,
   // i18n,.
