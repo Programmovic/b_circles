@@ -3,9 +3,25 @@ import BIRDS from 'vanta/dist/vanta.birds.min'
 import { motion } from 'framer-motion';
 import { markdownify } from "@lib/utils/textConverter";
 import Link from 'next/link';
+import gsap from 'gsap';
 
 function Hero({ banner }) {
+  const textRef = useRef(null);
+  useEffect(() => {
+    const animation = gsap.from(textRef.current, {
+      opacity: 0,
+      y: 30,
+      duration: 2,
+      ease: 'power3.easeOut',
+    });
 
+    // Optional: You can add additional animations or callbacks here
+
+    // Don't forget to clean up the animation on unmount
+    return () => {
+      animation.kill(); // Kill the animation to prevent memory leaks
+    };
+  }, []);
 
   return (
 
