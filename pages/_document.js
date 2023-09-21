@@ -1,6 +1,7 @@
 import config from "@config/config.json";
 import { Head, Html, Main, NextScript } from "next/document";
 import Script from "next/script";
+import { Analytics } from '@vercel/analytics/react';
 
 
 
@@ -46,6 +47,7 @@ const Document = () => {
         <Main />
         {/* <TwSizeIndicator /> */}
         <NextScript />
+        <Analytics />
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-MK8ZCMWN"
