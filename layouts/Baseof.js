@@ -143,12 +143,12 @@ const Base = ({
 
       {/* Scroll to top button */}
       {showScrollButton && (
-        <button className="scroll-to-top" onClick={scrollToTop}>
+        <button className="scroll-to-top" onClick={scrollToTop} title="Back to top">
           <FaArrowUp />
         </button>
       )}
       
-      <button className="floating-contact-button shadow-lg" onClick={toggleContactForm}>
+      <button className="floating-contact-button shadow-lg" onClick={toggleContactForm} title="Contact Us">
         
        {!showContactForm ? <FaFacebookMessenger/> : <FaWindowClose/>}
       </button>
