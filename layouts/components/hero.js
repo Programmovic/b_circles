@@ -86,7 +86,7 @@ function Hero({ banner }) {
               >
                 <div className="font-third font-bold text-white mb-2">
                   <h1 className="m-0 text-[15px] uppercase text-white font-third">Welcome to B-Circles</h1>
-                  <div className="flex space-x-4 justify-center py-4">
+                  <div className="flex space-x-4 justify-center py-4 action_btns">
                     <Link href={`/contact-us`}
                       title='Contact Us' className="font-bold bg-[#eb671b] text-[15px] border border-solid border-gray-500 px-10 p-2 text-white text-light hover:text-gray-300 focus:outline-none hover:bg-transparent uppercase rounded">
                       Contact
