@@ -11,8 +11,9 @@ banner:
 feature: 
   title: Our Services
   features:
-  - name: "Social media "
+  - name: "Social media"
     icon: "/images/social.webp"
+    content: "Your audience and customers exist somewhere in this world. Our mission is to help you reach them through a strong and professional team specialized in market research, competitor analysis, creating creative and effective content, launching advertising campaigns, analyzing data, dashboards, and more. We turn regular browsers into customers who are confident in what you offer."
   - name: "Web development"
     icon: "/images/web-dev.webp"
   - name: "Graphic design"

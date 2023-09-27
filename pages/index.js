@@ -94,29 +94,23 @@ const Home = ({ frontmatter }) => {
                   duration={100}
                   offset={-50} // Adjust this offset to your preference
                   key={`feature-${i}`}
+                  className="cursor-pointer"
                 >
-                  <motion.div
-                    className="feature-card cursor-pointer rounded-xl p-5 pb-8 text-center"
-
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: i * 0.1 }}
-                    data-aos="fade-up"
-                  >
-                    {item?.icon && (
-                      <Image
-                        className="mx-auto"
-                        src={item.icon}
-                        width={70}
-                        height={70}
-                        alt={item.name}
-                      />
-                    )}
-                    <div className="mt-4">
-                      {markdownify(item.name, "h3", "h5 dark:text-white uppercase font-third")}
-                      <p className="mt-3 dark:text-dark">{item?.content}</p>
+                  <div className="glassBox">
+                    <div className="glassBox__imgBox">
+                      {item?.icon && (
+                        <Image
+                          className="mx-auto"
+                          src={item.icon}
+                          width={70}
+                          height={70}
+                          alt={item.name}
+                        />
+                      )}
+                      {markdownify(item.name, "h3", "glassBox__title dark:text-white uppercase font-third")}
                     </div>
-                  </motion.div>
+                    <div className="glassBox__content">{item?.content && item.content.split(' ').slice(0, 10).join(' ')}.. <span className="font-bold">Tap to see more</span></div>
+                  </div>
                 </ScrollLink>
               ))}
             </div>
