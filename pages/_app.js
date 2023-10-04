@@ -6,10 +6,14 @@ import TagManager from "react-gtm-module";
 import "styles/style.scss";
 import 'styles/animated_background.scss'
 import { ThemeProvider } from "next-themes";
+import { SessionProvider } from "next-auth/react"
 
 
 
-const App = ({ Component, pageProps }) => {
+const App = ({
+  Component,
+  pageProps: { session, ...pageProps },
+}) => {
   // default theme setup
 
   // import google font css
@@ -45,7 +49,7 @@ const App = ({ Component, pageProps }) => {
           href="https://fonts.gstatic.com"
           crossOrigin="true"
         />
-        <link rel="canonical" href="https://b-circles.co/"/>
+        <link rel="canonical" href="https://b-circles.co/" />
         <style
           dangerouslySetInnerHTML={{
             __html: `${fontcss}`,
@@ -58,9 +62,11 @@ const App = ({ Component, pageProps }) => {
         />
 
       </Head>
+      <SessionProvider session={session}>
       <ThemeProvider attribute="class" defaultTheme="system" enableSystem >
         <Component {...pageProps} />
       </ThemeProvider>
+      </SessionProvider>
     </>
   );
 };

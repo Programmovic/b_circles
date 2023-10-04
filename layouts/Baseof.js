@@ -17,6 +17,7 @@ const Base = ({
   noindex,
   canonical,
   children,
+  keywords
 }) => {
   const { meta_image, meta_author, meta_description } = config.metadata;
   const { base_url } = config.site;
@@ -71,7 +72,7 @@ const Base = ({
 
         {/* noindex robots */}
         {noindex && <meta name="robots" content="noindex,nofollow" />}
-
+        <meta name="keywords" content={plainify(keywords ? keywords : "")}/>
         {/* meta-description */}
         <meta
           name="description"

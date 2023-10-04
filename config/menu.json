@@ -10,6 +10,10 @@
       "url": "/contact-us"
     },
     {
+      "name": "Blogs",
+      "url": "/blogs"
+    },
+    {
       "name": "FAQ",
       "url": "/faqs"
     }

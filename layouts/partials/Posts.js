@@ -6,6 +6,7 @@ import Image from "next/image";
 const Posts = ({ posts }) => {
   const { blog_folder, summary_length } = config.settings;
   return (
+    
     <div className="section row pb-0">
       <div className="col-12 pb-12 lg:pb-24">
         <div className="row items-center">

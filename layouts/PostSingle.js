@@ -6,15 +6,15 @@ import Image from "next/image";
 import config from "@config/config.json";
 
 const PostSingle = ({ frontmatter, content, mdxContent }) => {
-  let { description, title, image } = frontmatter;
+  let { description, title, image, keywords } = frontmatter;
   description = description ? description : content.slice(0, 120);
 
   return (
-    <Base title={`${config.site.title} | ${title}`} description={description}>
+    <Base title={`${config.site.title} | ${title}`} description={description} keywords={keywords}>
       <section className="section">
         <div className="container">
           <div className="row">
-            <article className="col-12 mx-auto text-center md:col-8">
+            <article className="col-12 mx-auto text-center">
               {image && (
                 <Image
                   src={image}
@@ -23,12 +23,12 @@ const PostSingle = ({ frontmatter, content, mdxContent }) => {
                   alt={title}
                   priority={true}
                   layout="responsive"
-                  className="rounded-lg"
+                  className="rounded-lg mb-6"
                 />
               )}
-              {markdownify(title, "h1", "h2 mb-6 mt-6 text-left")}
+              {/* {markdownify(title, "h1", "h2 mb-6 mt-6 text-left")} */}
 
-              <div className="content mb-16 text-left">
+              <div className="content mb-16 text-left dark:text-white">
                 <MDXRemote {...mdxContent} components={shortcodes} />
               </div>
             </article>
