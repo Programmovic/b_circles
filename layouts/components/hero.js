@@ -86,17 +86,20 @@ function Hero({ banner }) {
               >
                 <div className="font-third font-bold text-white mb-2">
                   <h1 className="m-0 text-[15px] uppercase text-white font-third">Welcome to B-Circles</h1>
-                  <div className="flex space-x-4 justify-center py-4 action_btns">
-                    <Link href={`/contact-us`}
-                      title='get free consultation' className="font-bold bg-[#eb671b] text-[15px] border border-solid border-gray-500 px-10 p-2 text-white text-light hover:text-gray-300 focus:outline-none hover:bg-transparent uppercase rounded">
-                      get a free consultation
-                    </Link>
-                    <Link href={`/#about`}
-                      title="About Us" className="font-bold bg-[#eb671b] text-[15px] border border-solid border-gray-500 p-2 px-10 text-white hover:text-gray-300 hover:bg-transparent focus:outline-none uppercase rounded">
-                      About
-                    </Link>
+                  <div className="flex space-x-4 justify-center py-4 action_btns flex-col-reverse sm:flex-row"> {/* Added flex-col for mobile view */}
+                    <div>
+                      <Link href={`/contact-us`} title='get free consultation' className="font-bold bg-[#eb671b] text-[15px] border border-solid border-gray-500 px-5 p-2 text-white text-light hover:text-gray-300 focus:outline-none hover:bg-transparent uppercase rounded">
+                        get a free consultation
+                      </Link>
+                    </div>
+                    <div className="mb-3 sm:mb-0">
+                      <Link href={`/#about`} title="About Us" className="font-bold bg-[#eb671b] text-[15px] border border-solid border-gray-500 p-2 px-10 text-white hover:text-gray-300 hover:bg-transparent focus:outline-none uppercase rounded">
+                        About
+                      </Link>
+                    </div>
                   </div>
                 </div>
+
 
                 <div className='flex justify-center'>
                   <h1 className="text-[2em] pt-2 w-fit border-t border-solid border-gray-500 font-third font-bold text-white m-0 uppercase">{banner?.title}</h1>
