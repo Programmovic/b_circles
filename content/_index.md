@@ -35,7 +35,7 @@ services:
       - "/images/social media.webp"
     button:
       enable: true
-      label: Check it out
+      label: Learn More
       link: /contact-us
 
   - title: "Web Development"
@@ -44,7 +44,7 @@ services:
       - "/images/web development.webp"
     button:
       enable: true
-      label: Check it out
+      label: Learn More
       link: /contact-us
   
   - title: "Graphic Design"
@@ -53,7 +53,7 @@ services:
       - "/images/graphic dsn.webp"
     button:
       enable: true
-      label: Check it out
+      label: Learn More
       link: /contact-us
 
   - title: "Content Creation"
@@ -62,7 +62,7 @@ services:
       - "/images/content creation.webp"
     button:
       enable: true
-      label: Check it out
+      label: Learn More
       link: /contact-us
   - title: "Consulting"
     content: "You cannot achieve sustained success until you understand where you stand and what you can do with your available capabilities. Therefore, we develop your strategy, identify your areas of strength, weakness, and opportunities, and then chart the path for you to reach your goals."
@@ -70,7 +70,7 @@ services:
       - "/images/consulting-bg.webp"
     button:
       enable: true
-      label: Check it out
+      label: Learn More
       link: /contact-us
   - title: "Strategic Partnerships"
     content: "At B Circles, we provide your company or organization with the power it needs through partnerships with other companies. We deliver and provide you with all the necessary resources to achieve your goals more effectively. We establish clear agreements through documented contracts with all the terms of the agreement. Furthermore, we can manage it for you through a dedicated team."
@@ -78,7 +78,7 @@ services:
       - "/images/strategic partnership.webp"
     button:
       enable: true
-      label: Check it out
+      label: Learn More
       link: /contact-us
   - title: "Sales"
     content: "Having a professional seller who can sell anything is essential. Such a seller is always distinguished by using different and more innovative strategies than the rest. Our team works using the latest strategies and plans to build a customer base that has confidence in your products and services, resulting in increased profits for the company."
@@ -86,7 +86,7 @@ services:
       - "/images/saless.webp"
     button:
       enable: true
-      label: Check it out
+      label: Learn More
       link: /contact-us
 
 # workflow

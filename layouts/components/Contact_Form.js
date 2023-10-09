@@ -12,11 +12,10 @@ const Contact_Form = (props) => {
     event.preventDefault();
     const nameInput = event.target.elements.name.value;
     const emailInput = event.target.elements.email.value;
-    const subjectInput = event.target.elements.subject.value;
     const messageInput = event.target.elements.message.value;
     const honeypotInput = event.target.elements.honeypot.value;
     // Input validations
-    if (!nameInput.trim() || !emailInput.trim() || !subjectInput.trim() || !messageInput.trim() || honeypotInput !== '') {
+    if (!nameInput.trim() || !emailInput.trim() || !messageInput.trim() || honeypotInput !== '') {
       setFormStatus("Please fill in all the required fields.");
       setFormStatusClass("bg-red-400");
       return;
@@ -143,30 +142,13 @@ const Contact_Form = (props) => {
                 <div className="mb-4">
                   <label
                     className="text-gray-700 dark:text-white"
-                    htmlFor="subject"
-                  >
-                    Subject
-                  </label>
-                  <input
-                    type="text"
-                    className="block w-full rounded rounded-lg border-none px-4 py-2 dark:bg-[#192221a1]"
-                    name="subject"
-                    id="subject"
-                    placeholder="Subject"
-                  />
-                </div>
-              </div>
-              <div className="w-full px-4">
-                <div className="mb-4">
-                  <label
-                    className="text-gray-700 dark:text-white"
                     htmlFor="message"
                   >
                     Message
                   </label>
                   <textarea
                     name="message"
-                    className="block w-full rounded rounded-lg border-none px-4 py-2 dark:bg-[#192221a1]"
+                    className="block w-full rounded-lg border-none px-4 py-2 dark:bg-[#192221a1]"
                     id="message"
                     cols={30}
                     rows={4}
@@ -181,8 +163,8 @@ const Contact_Form = (props) => {
                   <input
                     type="submit"
                     disabled={isSubmitting}
-                    defaultValue="Send Message"
-                    className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-600"
+                    value="Get A Free Quote Now"
+                    className="cursor-pointer rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-600"
                   />
                   <div className="submitting" />
                 </div>
