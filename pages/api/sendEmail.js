@@ -3,7 +3,7 @@ import nodemailer from "nodemailer";
 export default async function handler(req, res) {
     if (req.method === "POST") {
         try {
-            const { name, email, subject, message } = req.body;
+            const { name, email, message } = req.body;
 
             // Create a Nodemailer transporter for the initial email to your company
             const transporter = nodemailer.createTransport({
@@ -20,7 +20,7 @@ export default async function handler(req, res) {
             const initialEmailOptions = {
                 from: "contact@b-circles.co", // Your email address
                 to: "support@b-circles.co", // Recipient's email address (your company's support email)
-                subject: subject,
+                subject: "Inquiry",
                 // Use HTML content for the email body
                 html: `
         <html>
