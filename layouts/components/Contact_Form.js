@@ -48,7 +48,6 @@ const Contact_Form = (props) => {
         body: JSON.stringify({
           name: nameInput,
           email: emailInput,
-          subject: subjectInput,
           message: messageInput,
         }),
       });
