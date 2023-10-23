@@ -88,7 +88,7 @@ function Hero({ banner }) {
                   <h1 className="m-0 text-[15px] uppercase text-white font-third">B-Circles Agency</h1>
                   <div className="flex space-x-4 justify-center py-4 action_btns flex-col-reverse sm:flex-row"> {/* Added flex-col for mobile view */}
                     <div>
-                      <Link href={`/contact-us`} title='get free consultation' className="font-bold bg-[#eb671b] text-[15px] border border-solid border-gray-500 px-5 p-2 text-white text-light hover:text-gray-300 focus:outline-none hover:bg-transparent uppercase rounded">
+                      <Link href={`/free-consultation`} title='get free consultation' className="font-bold bg-[#eb671b] text-[15px] border border-solid border-gray-500 px-5 p-2 text-white text-light hover:text-gray-300 focus:outline-none hover:bg-transparent uppercase rounded">
                         get a free consultation
                       </Link>
                     </div>

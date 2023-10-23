@@ -102,7 +102,7 @@ const Header = () => {
                     <Link
                       href={menu.url}
                       onClick={() => setNavOpen(false)}
-                      className={`dark:text-white nav-link font-third block ${(isHomePage ? 'text-white' : 'text-dark')} ${router.asPath === menu.url ? "nav-link-active" : ""
+                      className={`dark:text-white nav-link font-third block ${(isHomePage && !isSticky ? 'text-white' : 'text-dark')} ${router.asPath === menu.url ? "nav-link-active" : ""
                         }`}
                       locale={locale}
                     >
