@@ -3,7 +3,7 @@ import { FaMarker, FaPaperPlane, FaGlobe } from "react-icons/fa";
 import { useState, useRef } from "react";
 import Contact_Form from "./components/Contact_Form";
 
-const Contact = (props) => {
+const Contact = ({data}) => {
   
   
 
@@ -65,7 +65,7 @@ const Contact = (props) => {
                 </div>
               </div>
             </div>
-            <Contact_Form/>
+            <Contact_Form data={data}/>
             
           </div>
         </div>

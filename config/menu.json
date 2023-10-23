@@ -4,6 +4,45 @@
       "name": "Home",
       "url": "/"
     },
+    {
+      "name": "Services",
+      "url": "",
+      "hasChildren": true,
+      "children": [
+        {
+          "name": "Social media",
+          "url": "/#Social-Media"
+        },
+        {
+          "name": "Web development",
+          "url": "/#Web-Development"
+        },
+        {
+          "name": "Graphic design",
+          "url": "/#Graphic-Design"
+        },
+        {
+          "name": "Consulting",
+          "url": "/#Consulting"
+        },
+        {
+          "name": "Content creation",
+          "url": "/#Content-creation"
+        },
+        {
+          "name": "Strategic partnerships",
+          "url": "/#Strategic-partnerships"
+        },
+        {
+          "name": "Sales",
+          "url": "/#Sales"
+        }
+      ]
+    },
+    {
+      "name": "About",
+      "url": "/#about"
+    },
 
     {
       "name": "Contact",

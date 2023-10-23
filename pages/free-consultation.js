@@ -4,20 +4,21 @@ import { getListPage } from "@lib/contentParser";
 import config from "@config/config.json";
 
 
-const ContactUs = ({ data }) => {
+const Free_Consultation = ({ data }) => {
   return (
-    <Base title={`${config.site.title} | Contact Us`}>
+    <Base title={`${config.site.title} | Free Consultation`}>
       <Contact data={data} />
     </Base>
   );
 };
 
 export const getStaticProps = async () => {
-  const contactUsData = await getListPage('content/Contact.md');
+  const Free_ConsultationData = await getListPage('content/consultation.md');
   return {
     props: {
-      data: contactUsData,
+      data: Free_ConsultationData,
     },
   };
 };
-export default ContactUs;
+
+export default Free_Consultation;

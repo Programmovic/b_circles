@@ -67,26 +67,28 @@ const Header = () => {
         {/* Menu */}
         <div
           id="nav-menu"
-          className={`order-3 md:order-1 ${navOpen ? "max-h-[1000px]" : "max-h-0"
+          className={`order-3  md:order-1 ${navOpen ? "max-h-[1000px]" : "max-h-0"
             } `}
         >
-          <ul className="navbar-nav block w-full md:flex md:w-auto lg:space-x-2">
+          <ul className={`navbar-nav block w-full md:flex md:w-auto lg:space-x-2 `}>
             {main.map((menu, i) => (
               <React.Fragment key={`menu-${i}`}>
                 {menu.hasChildren ? (
-                  <li className="nav-item nav-dropdown group relative">
-                    <span className="nav-link inline-flex items-center">
+                  <li className="nav-item nav-dropdown group">
+                    <span className={`dark:text-white ${(isHomePage && !isSticky ? 'text-white' : 'text-dark')} font-third nav-link inline-flex items-center`}>
                       {menu.name}
                       <svg className="h-4 w-4 fill-current" viewBox="0 0 20 20">
                         <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
                       </svg>
                     </span>
-                    <ul className="nav-dropdown-list hidden group-hover:block md:invisible md:absolute md:block md:opacity-0 md:group-hover:visible md:group-hover:opacity-100">
+                    <ul className={`backdrop-blur-lg ${isSticky && "dark:bg-[#141111d9] shadow-md"} rounded-lg  nav-dropdown-list hidden group-hover:block md:invisible md:absolute md:block md:opacity-0 md:group-hover:visible md:group-hover:opacity-100`}>
                       {menu.children.map((child, i) => (
                         <li className="nav-dropdown-item" key={`children-${i}`}>
                           <Link
                             href={child.url}
-                            className="nav-dropdown-link block"
+                            className={`dark:text-white nav-link font-third block ${(isHomePage && !isSticky ? 'text-white' : 'text-dark')} ${router.asPath === menu.url ? "nav-link-active" : ""
+                          }`}
+                          onClick={() => setNavOpen(false)}
                           >
                             {child.name}
                           </Link>
@@ -100,7 +102,7 @@ const Header = () => {
                     <Link
                       href={menu.url}
                       onClick={() => setNavOpen(false)}
-                      className={`dark:text-white nav-link font-third block ${(isHomePage && !isSticky ? 'text-white' : 'text-dark')} ${router.asPath === menu.url ? "nav-link-active" : ""
+                      className={`dark:text-white nav-link font-third block ${(isHomePage ? 'text-white' : 'text-dark')} ${router.asPath === menu.url ? "nav-link-active" : ""
                         }`}
                       locale={locale}
                     >

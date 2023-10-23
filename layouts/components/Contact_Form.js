@@ -82,7 +82,7 @@ const Contact_Form = (props) => {
       <div className="c_inputs w-full md:w-2/3 md:pr-4">
         <div className="p-8">
           <h3 className="mb-4 text-2xl font-bold dark:text-white">
-            Contact Us
+            {props.data?.frontmatter.title ? props.data.frontmatter.title : "Contact Us" }
           </h3>
           <div
             id="form-message-status"
@@ -162,7 +162,7 @@ const Contact_Form = (props) => {
                   <input
                     type="submit"
                     disabled={isSubmitting}
-                    value="Get A Free Quote Now"
+                    value={props.data?.frontmatter.button ? props.data.frontmatter.button : "Contact" }
                     className="cursor-pointer rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-600"
                   />
                   <div className="submitting" />

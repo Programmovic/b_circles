@@ -17,7 +17,8 @@ const Base = ({
   noindex,
   canonical,
   children,
-  keywords
+  keywords,
+  data
 }) => {
   const { meta_image, meta_author, meta_description } = config.metadata;
   const { base_url } = config.site;
@@ -134,7 +135,7 @@ const Base = ({
         {children}
         {showContactForm && (
           <div className="container floating-contact-us">
-            <Contact_Form onClose={toggleContactForm} className="w-3/4 fixed top-1/2 left-1/2 transform -translate-x-1/2  -translate-y-1/2 rounded-10 z-50 shadow-lg" />
+            <Contact_Form data={data} onClose={toggleContactForm} className="w-3/4 fixed top-1/2 left-1/2 transform -translate-x-1/2  -translate-y-1/2 rounded-10 z-50 shadow-lg" />
             </div>
 
 

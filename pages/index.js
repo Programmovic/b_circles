@@ -16,8 +16,9 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useRouter } from "next/router";
 import { Link as ScrollLink } from 'react-scroll';
+import Contact_Form from "@layouts/components/Contact_Form";
 
-const Home = ({ frontmatter }) => {
+const Home = ({ frontmatter, freeQuote }) => {
   const { banner, feature, services, workflow, call_to_action } = frontmatter;
   const { title } = config.site;
   useEffect(() => {
@@ -187,7 +188,12 @@ const Home = ({ frontmatter }) => {
             </>
           );
         })}
+        <section className="section pb-0 ">
+          <div className="container">
+            <Contact_Form data={freeQuote} />
+          </div>
 
+        </section>
         {/* workflow */}
         <section className="section pb-0 ">
           <div className="mb-8 text-center">
@@ -216,9 +222,11 @@ const Home = ({ frontmatter }) => {
 export const getStaticProps = async () => {
   const homePage = await getListPage(`public/locales/en-US/_index.md`);
   const { frontmatter } = homePage;
+  const freeQuote = await getListPage(`content/consultation.md`);
   return {
     props: {
       frontmatter,
+      freeQuote
       // ...(await serverSideTranslations(locale, ['common', 'footer'])),
     },
   };

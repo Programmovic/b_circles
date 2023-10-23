@@ -85,7 +85,7 @@ function Hero({ banner }) {
                 transition={{ duration: 0.6 }}
               >
                 <div className="font-third font-bold text-white mb-2">
-                  <h1 className="m-0 text-[15px] uppercase text-white font-third">Welcome to B-Circles</h1>
+                  <h1 className="m-0 text-[15px] uppercase text-white font-third">B-Circles Agency</h1>
                   <div className="flex space-x-4 justify-center py-4 action_btns flex-col-reverse sm:flex-row"> {/* Added flex-col for mobile view */}
                     <div>
                       <Link href={`/contact-us`} title='get free consultation' className="font-bold bg-[#eb671b] text-[15px] border border-solid border-gray-500 px-5 p-2 text-white text-light hover:text-gray-300 focus:outline-none hover:bg-transparent uppercase rounded">
@@ -93,8 +93,8 @@ function Hero({ banner }) {
                       </Link>
                     </div>
                     <div className="mb-3 sm:mb-0">
-                      <Link href={`/#about`} title="About Us" className="font-bold bg-[#eb671b] text-[15px] border border-solid border-gray-500 p-2 px-10 text-white hover:text-gray-300 hover:bg-transparent focus:outline-none uppercase rounded">
-                        About
+                      <Link href={`/contact-us`} title="Contact" className="font-bold bg-[#eb671b] text-[15px] border border-solid border-gray-500 p-2 px-10 text-white hover:text-gray-300 hover:bg-transparent focus:outline-none uppercase rounded">
+                        Contact
                       </Link>
                     </div>
                   </div>
