@@ -13,7 +13,7 @@ const ContactUs = ({ data }) => {
 };
 
 export const getStaticProps = async () => {
-  const contactUsData = await getListPage('content/Contact.md');
+  const contactUsData = await getListPage('content/contact.md');
   return {
     props: {
       data: contactUsData,
