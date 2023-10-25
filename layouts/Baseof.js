@@ -57,7 +57,17 @@ const Base = ({
   const toggleContactForm = () => {
     setShowContactForm(!showContactForm);
   };
+  const [showSocialLinks, setShowSocialLinks] = useState(false);
 
+  const socialLinks = [
+    { name: "Facebook", url: "https://www.facebook.com/yourpage" },
+    { name: "Twitter", url: "https://twitter.com/yourpage" },
+    // Add more social links as needed
+  ];
+
+  const toggleSocialLinks = () => {
+    setShowSocialLinks(!showSocialLinks);
+  };
   return (
     <>
       <Head>
@@ -73,7 +83,7 @@ const Base = ({
 
         {/* noindex robots */}
         {noindex && <meta name="robots" content="noindex,nofollow" />}
-        <meta name="keywords" content={plainify(keywords ? keywords : "")}/>
+        <meta name="keywords" content={plainify(keywords ? keywords : "")} />
         {/* meta-description */}
         <meta
           name="description"
@@ -132,14 +142,17 @@ const Base = ({
       <Header />
       {/* main site */}
       <main>
-        {children}
-        {showContactForm && (
-          <div className="container floating-contact-us">
-            <Contact_Form data={data} onClose={toggleContactForm} className="w-3/4 fixed top-1/2 left-1/2 transform -translate-x-1/2  -translate-y-1/2 rounded-10 z-50 shadow-lg" />
+        <>
+          {children}
+          {showContactForm && (
+            <div className="container floating-contact-us">
+              <Contact_Form data={data} onClose={toggleContactForm} className="w-3/4 fixed top-1/2 left-1/2 transform -translate-x-1/2  -translate-y-1/2 rounded-10 z-50 shadow-lg" />
             </div>
 
 
-        )}
+          )}
+
+        </>
       </main>
       <Footer />
 
@@ -149,12 +162,13 @@ const Base = ({
           <FaArrowUp />
         </button>
       )}
-      
+
       <button className="floating-contact-button shadow-lg" onClick={toggleContactForm} title="Contact Us">
-        
-       {!showContactForm ? <FaFacebookMessenger/> : <FaWindowClose/>}
+
+        {!showContactForm ? <FaFacebookMessenger /> : <FaWindowClose />}
       </button>
 
+      
 
 
       {/* Styles for the scroll to top button */}
@@ -185,7 +199,24 @@ const Base = ({
           cursor: pointer;
           z-index: 999;
         }
-        
+        .menu{
+          position: relative;
+          width: 280px;
+          height: 280px;
+          background: #fff;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #333;
+          font-size: 2rem;
+         cursor: pointer;
+         transition: 1.25s;
+         z-index: 5
+        }
+        .menu.active .toggle{
+          transform: rotate(360deg)
+        }
       `}</style>
     </>
   );
