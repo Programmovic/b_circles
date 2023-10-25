@@ -23,7 +23,7 @@ const Home = ({ frontmatter, freeQuote }) => {
   const { title } = config.site;
   useEffect(() => {
     AOS.init({
-      duration: 500, // Animation duration in milliseconds
+      duration: 100, // Animation duration in milliseconds
     });
   }, []);
   const { locale } = useRouter()
@@ -148,7 +148,7 @@ const Home = ({ frontmatter, freeQuote }) => {
                         {/* Slides */}
                         {service?.images.map((slide, index) => (
                           <SwiperSlide key={index}
-                            data-aos="fade-out">
+                            >
                             <Image src={slide} alt={service?.title} width={600} height={500} className="rounded-lg" />
                           </SwiperSlide>
                         ))}
@@ -160,16 +160,15 @@ const Home = ({ frontmatter, freeQuote }) => {
                       className={`service-content mt-5 md:mt-0 ${!isOdd && "md:order-1"
                         }`}
                     >
-                      <h2 className="font-third font-bold leading-[40px] dark:text-white uppercase" data-aos="fade-in">
+                      <h2 className="font-third font-bold leading-[40px] dark:text-white uppercase">
                         {service?.title}
                       </h2>
-                      <p className="mb-2 mt-4" data-aos="fade-out">{service?.content}</p>
+                      <p className="mb-2 mt-4">{service?.content}</p>
                       {service.button.enable && (
                         <Link
                           href={service?.button.link}
                           className="cta-link inline-flex cursor-pointer items-center text-primary"
                           title={service?.button.label}
-                          data-aos="zoom-in"
                         >
                           {service?.button.label}
                           <Image

@@ -81,12 +81,12 @@ const Header = () => {
                         <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
                       </svg>
                     </span>
-                    <ul className={`backdrop-blur-lg ${isSticky && "dark:bg-[#141111d9] shadow-md"} rounded-lg  nav-dropdown-list hidden group-hover:block md:invisible md:absolute md:block md:opacity-0 md:group-hover:visible md:group-hover:opacity-100`}>
+                    <ul className={`backdrop-blur-lg dark:bg-[black] shadow-md ${!isSticky && "text-dark"} rounded-lg  nav-dropdown-list hidden group-hover:block md:invisible md:absolute md:block md:opacity-0 md:group-hover:visible md:group-hover:opacity-100 bg-theme-light`}>
                       {menu.children.map((child, i) => (
                         <li className="nav-dropdown-item" key={`children-${i}`}>
                           <Link
                             href={child.url}
-                            className={`dark:text-white nav-link font-third block ${(isHomePage && !isSticky ? 'text-white' : 'text-dark')} ${router.asPath === menu.url ? "nav-link-active" : ""
+                            className={`dark:text-white nav-link font-third block  ${router.asPath === menu.url ? "nav-link-active" : ""
                           }`}
                           onClick={() => setNavOpen(false)}
                           >
