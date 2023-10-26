@@ -61,7 +61,7 @@ const Posts = ({ posts }) => {
           <h2 className="h3 mb-2 mt-4">
             <Link
               href={`/${blog_folder}/${post.slug}`}
-              className="block hover:text-primary"
+              className="block hover:text-primary dark:text-white"
             >
               {post.frontmatter.title}
             </Link>
