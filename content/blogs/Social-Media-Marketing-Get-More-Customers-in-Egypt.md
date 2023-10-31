@@ -63,7 +63,7 @@ Once you have created your social media marketing strategy, you need to execute 
 - Monitor your content performance using tools such as Facebook Insights, Twitter Analytics, or Instagram Insights, to see how your audience is reacting and engaging with your content.
 - Modify your content strategy in light of the results and user feedback. Try out various content types, posting times, frequencies, or platforms to see what works best for your company.
 
-<img src='/images/creating valuable content4.png' class='rounded-lg w-full' alt='Tips for Running Social Media Marketing Campaigns' />
+<img src='/images/Creating Valuable Content4.png' class='rounded-lg w-full' alt='Tips for Running Social Media Marketing Campaigns' />
 
 
 ## How to Assess the Success of Your Social Media Marketing?

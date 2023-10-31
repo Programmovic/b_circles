@@ -37,7 +37,7 @@ const Header = () => {
       <nav className="navbar container">
         {/* logo */}
         <div className="order-0">
-          <Logo src={logo} className={(isHomePage && !isSticky ? 'text-white' : 'text-dark')} />
+          <Logo src={logo} className={(isHomePage && !isSticky ? 'dark:text-white' : 'text-dark')} />
 
         </div>
 
@@ -75,7 +75,7 @@ const Header = () => {
               <React.Fragment key={`menu-${i}`}>
                 {menu.hasChildren ? (
                   <li className="nav-item nav-dropdown group">
-                    <span className={`dark:text-white ${(isHomePage && !isSticky ? 'text-white' : 'text-dark')} font-third nav-link inline-flex items-center`}>
+                    <span className={`dark:text-white ${(isHomePage && !isSticky ? '' : 'text-dark')} font-third nav-link inline-flex items-center`}>
                       {menu.name}
                       <svg className="h-4 w-4 fill-current" viewBox="0 0 20 20">
                         <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
@@ -102,7 +102,7 @@ const Header = () => {
                     <Link
                       href={menu.url}
                       onClick={() => setNavOpen(false)}
-                      className={`dark:text-white nav-link font-third block ${(isHomePage && !isSticky ? 'text-white' : 'text-dark')} ${router.asPath === menu.url ? "nav-link-active" : ""
+                      className={`dark:text-white nav-link font-third block ${(isHomePage && !isSticky ? '' : 'text-dark')} ${router.asPath === menu.url ? "nav-link-active" : ""
                         }`}
                       locale={locale}
                     >
