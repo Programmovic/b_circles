@@ -10,7 +10,7 @@ import "swiper/swiper.min.css";
 import { getListPage } from "../lib/contentParser";
 import { motion, useScroll } from "framer-motion";
 import Image from "next/image";
-import about_bg from "../public/images/about us.webp";
+import about_bg from "../public/images/top-view-join-hands-team-asian-people-foreigners.jpg";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -36,7 +36,7 @@ const Home = ({ frontmatter, freeQuote }) => {
 
         <Hero banner={banner} />
         <section
-          className={`section relative bg-theme-light dark:bg-[#231f20] overflow-hidden`}
+          className={`section relative overflow-hidden`}
           id="about"
 
         >
