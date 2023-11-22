@@ -6,6 +6,7 @@ import { parseMDX } from "@lib/utils/mdxParser";
 import { markdownify } from "@lib/utils/textConverter";
 import Posts from "@partials/Posts";
 const { blog_folder } = config.settings;
+import PageHeader from "@layouts/partials/PageHeader";
 
 // blog pagination
 const BlogPagination = ({ postIndex, posts, currentPage, pagination }) => {
@@ -17,10 +18,10 @@ const BlogPagination = ({ postIndex, posts, currentPage, pagination }) => {
   const { title } = frontmatter;
 
   return (
-    <Base title={title}>
+    <Base title={`${config.site.title} | ${title}`}>
       <section className="section">
         <div className="container">
-          {markdownify(title, "h1", "h1 text-center font-third text-[56px] dark:text-white")}
+          <PageHeader title={title} image={'/images/notepad-laptop-concept-min.jpg'}/>
           <Posts posts={currentPosts} />
           <Pagination
             section={blog_folder}
