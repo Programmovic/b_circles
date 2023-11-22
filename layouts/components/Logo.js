@@ -9,7 +9,7 @@ const Logo = ({ src, className }) => {
 
   return (
     <Link
-      href={base_url}
+      href={'/'}
       className="navbar-brand flex py-1"
       style={{
         height: logo_height.replace("px", "") + "px",
