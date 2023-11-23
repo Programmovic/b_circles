@@ -13,7 +13,7 @@ const Faq = ({data}) => {
       
       <div className="container">
         <PageHeader title={title} image='/images/businessman-hand-hold-interface-question-marks-sign_218381-8871.webp'/>
-        <div className="grid  -mt-6">
+        <div className="grid">
           {faqs.map((faq, index) => (
             <div key={index} className="col-12 mt-6">
               <div className="p-12  shadow">
