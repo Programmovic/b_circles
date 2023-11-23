@@ -14,7 +14,7 @@ feature:
   - name: "Social media"
     icon: "/images/social.webp"
     content: "Your audience and customers exist somewhere in this world. Our mission is to help you reach them through a strong and professional team specialized in market research, competitor analysis, creating creative and effective content, launching advertising campaigns, analyzing data, dashboards, and more. We turn regular browsers into customers who are confident in what you offer."
-  - name: "Web development"
+  - name: "Software development"
     icon: "/images/web-dev.webp"
   - name: "Graphic design"
     icon: "/images/graphic-dsn.webp"
@@ -38,7 +38,7 @@ services:
       label: Check it out
       link: /contact
 
-  - title: "Web development"
+  - title: "Software development"
     content: "B circles believes in constant development in the era of artificial intelligence and technological development. Through user experience and continuous analysis, development comes in a way that suits the work. Therefore, we are always with you. We design websites that are user-friendly and visually attractive, E-commerce shops, landing page, not This is just we create and develop websites and web applications. We also help you with Chabot's social media customize bots, LLMs employing like chatgpt, bard etc."
     images: 
       - "/images/web development.jpeg"

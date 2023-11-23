@@ -14,7 +14,7 @@ feature:
   - name: "Social Media"
     icon: "/images/social.webp"
     content: "Your audience and customers exist somewhere in this world. Our mission is to help you reach them through a strong and professional team specialized in market research, competitor analysis, creating creative and effective content, launching advertising campaigns, analyzing data, dashboards, and more. We turn regular browsers into customers who are confident in what you offer."
-  - name: "Web Development"
+  - name: "Software Development"
     icon: "/images/web-dev.webp"
     content: "B Circles believes in constant development in the era of artificial intelligence and technological advancement. Through user experience and continuous analysis, development comes in a way that suits the work. Therefore, we are always with you. We design websites that are user-friendly and visually attractive, e-commerce shops, landing pages, and more. We not only create and develop websites and web applications but also help you with chatbots on social media, customized bots, LLMs employing tools like ChatGPT and BARD, etc."
   - name: "Graphic Design"
@@ -44,7 +44,7 @@ services:
       label: Learn More
       link: /contact-us
 
-  - title: "Web Development"
+  - title: "Software Development"
     content: "B Circles believes in constant development in the era of artificial intelligence and technological advancement. Through user experience and continuous analysis, development comes in a way that suits the work. Therefore, we are always with you. We design websites that are user-friendly and visually attractive, e-commerce shops, landing pages, and more. We not only create and develop websites and web applications but also help you with chatbots on social media, customized bots, LLMs employing tools like ChatGPT and BARD, etc."
     images: 
       - "/images/web development.webp"

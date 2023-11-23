@@ -1,6 +1,7 @@
 import { markdownify } from "@lib/utils/textConverter";
 import Base from "./Baseof";
 import config from "@config/config.json";
+import PageHeader from "@layouts/partials/PageHeader";
 
 const Faq = ({data}) => {
   const { frontmatter } = data;
@@ -11,7 +12,7 @@ const Faq = ({data}) => {
     <section className="section">
       
       <div className="container">
-        {markdownify(title, "h1", "text-center font-normal dark:text-white")}
+        <PageHeader title={title}/>
         <div className="grid  -mt-6">
           {faqs.map((faq, index) => (
             <div key={index} className="col-12 mt-6">
