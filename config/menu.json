@@ -45,16 +45,17 @@
     },
 
     {
-      "name": "Contact",
-      "url": "/contact-us"
-    },
-    {
       "name": "Blogs",
       "url": "/blogs"
     },
     {
       "name": "FAQ",
       "url": "/faqs"
+    },
+
+    {
+      "name": "Contact",
+      "url": "/contact-us"
     }
   ],
   "footer": [
