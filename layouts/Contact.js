@@ -22,9 +22,12 @@ const Contact = ({data}) => {
                 </div>
                 <div className="text-center">
                   <p className="mt-2">
-                    <span className="font-bold">Address:</span> 6th of October
+                    <span className="font-bold">Address:</span>{" "}
+                    <a href="https://maps.app.goo.gl/khv4hM2GFpfDu12m9" target="_blank">
+                    6th of October
                     City, Al Mehwar Al Markazi, Golden mall, 1st floor, office
                     #9
+                    </a> 
                   </p>
                 </div>
               </div>
