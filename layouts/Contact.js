@@ -16,7 +16,7 @@ const Contact = ({data}) => {
             <div className="contact-details  mb-5 flex justify-center">
               <div className="contact-details-div w-1/4">
                 <div className="flex items-center justify-center">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-teal-400">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#4652a4]">
                     <FaMarker className="text-white" />
                   </div>
                 </div>
@@ -30,7 +30,7 @@ const Contact = ({data}) => {
               </div>
               <div className="contact-details-div w-1/4">
                 <div className="flex items-center justify-center">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-teal-400">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#4652a4]">
                     <FaPaperPlane className="text-white" />
                   </div>
                 </div>
@@ -51,7 +51,7 @@ const Contact = ({data}) => {
               </div>
               <div className="contact-details-div w-1/4">
                 <div className="flex items-center justify-center">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-teal-400">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#4652a4]">
                     <FaGlobe className="text-white" />
                   </div>
                 </div>
