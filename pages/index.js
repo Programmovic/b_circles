@@ -17,9 +17,10 @@ import "aos/dist/aos.css";
 import { useRouter } from "next/router";
 import { Link as ScrollLink } from 'react-scroll';
 import Contact_Form from "@layouts/components/Contact_Form";
+import Companies from "@layouts/components/companies_slider";
 
 const Home = ({ frontmatter, freeQuote }) => {
-  const { banner, feature, services, workflow, call_to_action } = frontmatter;
+  const { banner, feature, services, workflow, call_to_action, companies } = frontmatter;
   const { title } = config.site;
   useEffect(() => {
     AOS.init({
@@ -30,11 +31,12 @@ const Home = ({ frontmatter, freeQuote }) => {
   return (
     <>
 
-      <Base title={`B-circles | Digital Marketing Agency - Business Solutions`}>
+      <Base title={`B-Circles | Digital Marketing Agency - Business Solutions`}>
 
         {/* Banner */}
 
         <Hero banner={banner} />
+        {/* <Companies companies={companies} /> */}
         <section
           className={`section relative overflow-hidden`}
           id="about"
@@ -66,6 +68,20 @@ const Home = ({ frontmatter, freeQuote }) => {
                 <p className="mb-2 mt-4">
                   We at B Circles provide digital solutions and consulting services that guarantee increased income for businesses of all kinds. We offer customized strategies and goals tailored to each client&apos;s unique needs. Our expertise extends beyond the digital marketing and web development domains; we also provide effective on-ground solutions through comprehensive consulting, strategic partnerships, and sales services. These services elevate your business to an advanced and more prosperous stage, making us unique in our offering, all under the slogan &quot;all under one roof.&quot;
                 </p>
+                <Link
+                  href={'/about'}
+                  className="cta-link inline-flex cursor-pointer items-center text-primary"
+                  title={'about'}
+                >
+                  {'See More'}
+                  <Image
+                    className="ml-1"
+                    src="/images/arrow-right.svg"
+                    width={18}
+                    height={14}
+                    alt="arrow"
+                  />
+                </Link>
               </div>
             </div>
           </div>
@@ -148,7 +164,7 @@ const Home = ({ frontmatter, freeQuote }) => {
                         {/* Slides */}
                         {service?.images.map((slide, index) => (
                           <SwiperSlide key={index}
-                            >
+                          >
                             <Image src={slide} alt={service?.title} width={600} height={500} className="rounded-lg" />
                           </SwiperSlide>
                         ))}

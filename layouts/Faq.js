@@ -6,7 +6,7 @@ import PageHeader from "@layouts/partials/PageHeader";
 const Faq = ({data}) => {
   const { frontmatter } = data;
   const { title, faqs } = frontmatter;
-
+console.log(data)
   return (
     
     <section className="section">

@@ -27,6 +27,14 @@ feature:
   - name: "Sales"
     icon: "/images/sales.webp"
 
+companies:
+  - name: "مكتب نوال البادي للمحاماة"
+    icon: "/images/social.webp"
+    link: "https://www.alnooradvo.com/"
+  - name: "Home Vision"
+    icon: "/images/web-dev.webp"
+    link: "https://biovision-group.com/home-vision/"
+
 # services
 services:
   - title: "Social Media"

@@ -33,6 +33,18 @@ feature:
     icon: "/images/sales.webp"
     content: "Having a professional seller who can sell anything is essential. Such a seller is always distinguished by using different and more innovative strategies than the rest. Our team works using the latest strategies and plans to build a customer base that has confidence in your products and services, resulting in increased profits for the company."
 
+companies:
+  - name: "مكتب نوال البادي للمحاماة"
+    icon: "/images/n_elbady.png"
+    link: "https://www.alnooradvo.com/"
+  - name: "Home Vision"
+    icon: "/images/home_vision.png"
+    link: "https://biovision-group.com/home-vision/"
+  - name: "Abu Ali"
+    icon: "/images/abu_ali.png"
+    link: "https://www.facebook.com/AboAliElectronics?mibextid=9R9pXO
+"
+
 # services
 services:
   - title: "Social Media"

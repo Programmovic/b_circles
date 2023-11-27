@@ -28,11 +28,12 @@
     "react-dom": "18.2.0",
     "react-gtm-module": "^2.0.11",
     "react-icons": "^4.10.1",
+    "react-id-swiper": "^4.0.0",
     "react-lite-youtube-embed": "^2.3.52",
     "react-scroll": "^1.8.9",
     "rehype-slug": "^5.1.0",
     "remark-gfm": "^3.0.1",
-    "swiper": "^8.4.5",
+    "swiper": "^8.4.7",
     "vanta": "^0.5.24"
   },
   "devDependencies": {
