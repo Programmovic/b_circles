@@ -91,7 +91,7 @@ const Portfolio = ({ items, isHome = true }) => {
 
             {/* "See More" Box */}
             {isHome && remainingItems > 0 && (
-              <Link href="/portfolio">
+              <Link href="/our-work">
                 <div className="portfolio-item relative overflow-hidden rounded-md cursor-pointer">
                   <Image
                     src={'/images/see-more-background.jpg'}
