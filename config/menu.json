@@ -43,7 +43,10 @@
       "name": "About",
       "url": "/#about"
     },
-
+    {
+      "name": "Portfolio",
+      "url": "/portfolio"
+    },
     {
       "name": "Blogs",
       "url": "/blogs"

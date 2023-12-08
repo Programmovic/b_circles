@@ -9,9 +9,9 @@ const Companies = ({ companies }) => {
     <section className="bg-theme-light dark:bg-[#231f20]">
       <div className="container">
         <div className="py-8 lg:py-16 mx-auto">
-          <h1 className="mb-8 lg:mb-16 font-extrabold tracking-tight leading-tight text-center text-gray-900 dark:text-white md:text-4xl font-third">
+          {/* <h1 className="mb-8 lg:mb-16 font-extrabold tracking-tight leading-tight text-center text-gray-900 dark:text-white md:text-4xl font-third">
             Our Clients
-          </h1>
+          </h1> */}
           <Swiper
             pagination={false}
             loop={false}

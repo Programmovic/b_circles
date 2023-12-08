@@ -18,8 +18,9 @@ import { useRouter } from "next/router";
 import { Link as ScrollLink } from 'react-scroll';
 import Contact_Form from "@layouts/components/Contact_Form";
 import Companies from "@layouts/components/companies_slider";
+import Portfolio from "@layouts/components/portfolio";
 
-const Home = ({ frontmatter, freeQuote }) => {
+const Home = ({ frontmatter, freeQuote, portfolio }) => {
   const { banner, feature, services, workflow, call_to_action, companies } = frontmatter;
   const { title } = config.site;
   useEffect(() => {
@@ -37,6 +38,7 @@ const Home = ({ frontmatter, freeQuote }) => {
 
         <Hero banner={banner} />
         {/* <Companies companies={companies} /> */}
+        
         <section
           className={`section relative overflow-hidden`}
           id="about"
@@ -86,6 +88,7 @@ const Home = ({ frontmatter, freeQuote }) => {
             </div>
           </div>
         </section>
+        <Portfolio items={portfolio.frontmatter.portfolio} />
         <motion.section
           className="section bg-light dark:bg-[#231f20] pt-0"
           initial={{ opacity: 0, y: 50 }}
@@ -238,10 +241,12 @@ export const getStaticProps = async () => {
   const homePage = await getListPage(`public/locales/en-US/_index.md`);
   const { frontmatter } = homePage;
   const freeQuote = await getListPage(`content/consultation.md`);
+  const portfolio = await getListPage(`content/portfolio.md`);
   return {
     props: {
       frontmatter,
-      freeQuote
+      freeQuote,
+      portfolio
       // ...(await serverSideTranslations(locale, ['common', 'footer'])),
     },
   };

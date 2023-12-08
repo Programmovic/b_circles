@@ -1,0 +1,21 @@
+---
+portfolio:
+  - name: "Dr.Shelia Mohamed Staff Training"
+    icon: "/images/portfolio/Dr.Shelia Mohamed Staff Training.jpg"
+    category: "hr - business connection & partnerships"
+  - name: "Egyptian Universities & Cancham"
+    icon: "/images/portfolio/Egyptian Universities & Cancham.jpg"
+    category: "hr - business connection & partnerships"
+  - name: "Egyptian Universities & Kimit"
+    icon: "/images/portfolio/Egyptian Universities & Kimit.jpg"
+    category: "hr - business connection & partnerships"
+  - name: "Hall way Institute & Cancham"
+    icon: "/images/portfolio/Hall way Institute & Cancham.png"
+    category: "hr - business connection & partnerships"
+  - name: "hr"
+    icon: "/images/portfolio/hr.jpg"
+    category: "hr - business connection & partnerships"
+  - name: "Summer Camp with Digital Hub"
+    icon: "/images/portfolio/Summer Camp with Digital Hub.jpg"
+    category: "hr - business connection & partnerships"
+---

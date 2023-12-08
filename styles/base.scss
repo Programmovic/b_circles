@@ -70,3 +70,64 @@ h6,
 code {
   @apply before:hidden after:hidden;
 }
+
+
+
+
+
+
+
+
+/* Add this CSS in your styles file or component */
+.portfolio-item {
+  position: relative;
+  height: 300px; /* Set your desired fixed height */
+}
+
+.portfolio-item .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark overlay color */
+  opacity: 0;
+  display: flex;
+  align-items: flex-end;
+  transition: opacity 0.3s;
+}
+
+.portfolio-item:hover .overlay {
+  opacity: 1;
+}
+
+.overlay-content {
+  padding: 16px;
+}
+
+.name {
+  color: #fff;
+  font-size: 18px;
+  margin: 0;
+  transform: translateY(100%);
+  transition: transform 0.3s;
+}
+
+.portfolio-item:hover .name {
+  transform: translateY(0);
+}
+
+/* Add this CSS in your styles file or component */
+.selected-category {
+  border-color: #3182ce; /* Set your desired color for the selected category */
+  background-color: #4299e1; /* Set your desired background color for the selected category */
+  color: #fff; /* Set your desired text color for the selected category */
+}
+
+.selected-category:hover {
+  background-color: #2b6cb0; /* Set your desired background color for the selected category on hover */
+  border-color: #2c5282; /* Set your desired border color for the selected category on hover */
+}
+
+
+
