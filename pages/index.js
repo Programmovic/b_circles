@@ -71,7 +71,7 @@ const Home = ({ frontmatter, freeQuote, portfolio }) => {
                   We at B Circles provide digital solutions and consulting services that guarantee increased income for businesses of all kinds. We offer customized strategies and goals tailored to each client&apos;s unique needs. Our expertise extends beyond the digital marketing and web development domains; we also provide effective on-ground solutions through comprehensive consulting, strategic partnerships, and sales services. These services elevate your business to an advanced and more prosperous stage, making us unique in our offering, all under the slogan &quot;all under one roof.&quot;
                 </p>
                 <Link
-                  href={'/about'}
+                  href={'/about-us'}
                   className="cta-link inline-flex cursor-pointer items-center text-primary"
                   title={'about'}
                 >
