@@ -1,3 +1,139 @@
+// ## Default
+$hero-color: #FFF;
+$hero-width: 100vw;
+$hero-bg-mix: rgba(#29042f, 0.4);
+
+
+.hero {
+	display: grid;
+	position: relative;
+	grid-template-columns: $hero-width;
+	place-items: center;
+	overflow: hidden;
+	animation: clip-hero-anim 1.25s cubic-bezier(0.29, 0.8, 0.8, 0.98);
+	will-change: clip-path;
+
+	&__bg,
+	&__cnt {
+		align-self: center;
+		grid-column: 1 / 2;
+		grid-row: 1 / 2;
+	}
+
+	&__overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1; // Adjust the z-index to make sure it's above the background content
+	}
+
+	// Images
+	&__bg {
+		display: grid;
+		position: relative;
+		z-index: 0;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr;
+		place-items: center;
+		animation: fade-in 0.75s linear;
+		will-change: opacity;
+
+		// Smoothing background gradient
+		@if $hero-bg-mix {
+			&::before {
+				content: "";
+				display: block;
+				position: absolute;
+				z-index: 5;
+				top: -10%;
+				right: -10%;
+				bottom: -10%;
+				left: -10%;
+				background: $hero-bg-mix;
+				background-blend-mode: screen;
+			}
+		}
+
+		& picture {
+			display: flex;
+			width: $hero-width;
+			animation: scaling-hero-anim 4s 0.25s cubic-bezier(0, 0.71, 0.4, 0.97) forwards;
+			will-change: transform;
+		}
+
+		& img {
+			display: block;
+			object-fit: cover;
+			object-position: 77% 50%;
+			height: auto;
+			width: 100%;
+		}
+	}
+
+	&__cnt {
+		display: grid;
+		position: relative;
+		place-items: center;
+		z-index: 10;
+		color: $hero-color;
+		font-size: 2.5vw;
+		text-transform: uppercase;
+		opacity: 0;
+		animation: fade-in 0.75s 1.5s linear forwards;
+
+		& svg {
+			height: 12vw;
+
+			& path {
+				fill: #FFF;
+			}
+		}
+
+		& h1 {
+			margin-bottom: 0;
+		}
+	}
+}
+
+// ## Animation
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes scaling-hero-anim {
+	from {
+		transform: scale(1.25);
+	}
+
+	to {
+		transform: scale(1.1);
+	}
+}
+
+@keyframes clip-hero-anim {
+	from {
+		clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+	}
+
+	to {
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+	}
+}
+
+
+
+
+
+
+
 .circles li {
 	position: absolute;
 	display: block;
@@ -170,101 +306,7 @@
 	right: -50%;
 }
 
-$body-color: blue;
-$poppins: 'Poppins', sans-serif;
 
-.hero {
-	position: relative;
-	display: flex;
-	align-items: center;
-	justify-content: left;
-	font-family: $poppins;
-	height: 100vh;
-	width: 100vw;
-	overflow: hidden;
-	background-image: url("../public/images/bg2.webp");
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-
-	&:before {
-		content: '';
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-
-		opacity: 0.82;
-		backdrop-filter: blur(16px);
-		@apply bg-[#e2e2e2] dark:bg-[#000]
-	}
-
-	.overlay {
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		overflow: hidden;
-
-		.content {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			height: 100vh;
-			width: 100%; // Adjusted width to 100%
-			max-width: 80vw; // Added max-width to limit the width
-			margin: auto;
-			transform-origin: left;
-			animation: reveal 2s ease-in-out forwards;
-			overflow: hidden;
-
-			h1 {
-				line-height: 0.9;
-				margin-bottom: 0px;
-			}
-		}
-
-		// &:before {
-		//   content: '';
-		//   position: absolute;
-		//   top: 0;
-		//   left: 0;
-		//   width: 100%;
-		//   height: 100%;
-		//   background: #325aa5;
-		//   z-index: 3;
-		//   animation: reveal 1s reverse forwards;
-		//   animation-delay: .5s;
-		// overflow: hidden;
-		// }
-
-		// &:after {
-		//   content: '';
-		//   position: absolute;
-		//   top: 0;
-		//   left: 0;
-		//   width: 100%;
-		//   height: 100%;
-		//   background: #eb671b;
-		//   z-index: 2;
-		//   animation: reveal 1.5s reverse forwards;
-		//   animation-delay: .7s;
-		//   transform-origin: left;
-		// overflow: hidden;
-		// }
-	}
-}
-
-// @keyframes reveal {
-//   0% {
-//     transform: scaleX(0);
-//   }
-
-//   100% {
-//     transform: scaleX(1);
-//   }
-// }
 .animated-logo {
 	animation: bounce 1s infinite; // Adjust animation duration and other properties as needed
 }
