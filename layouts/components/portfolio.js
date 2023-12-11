@@ -3,6 +3,7 @@ import Image from 'next/image';
 import FsLightbox from 'fslightbox-react';
 import PageHeader from '@layouts/partials/PageHeader';
 import Link from 'next/link';
+import { FaEye } from 'react-icons/fa';
 
 const Portfolio = ({ items, isHome = true }) => {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -31,7 +32,7 @@ const Portfolio = ({ items, isHome = true }) => {
   const numItemsToShow = isHome ? 3 : filteredItems.length;
   const remainingItems = filteredItems.length - numItemsToShow;
   return (
-    <section className="bg-theme-light dark:bg-[#231f20] section">
+    <section className={`${isHome && "bg-theme-light dark:bg-[#231f20]"} section`}>
       <div className="container">
         {/* Conditionally render PageHeader based on isHome prop */}
         {isHome ? null : (
@@ -47,19 +48,20 @@ const Portfolio = ({ items, isHome = true }) => {
               <button
                 onClick={() => handleCategoryChange('all')}
                 type="button"
-                className="uppercase text-blue-700 hover:text-white border border-blue-600 bg-white hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:bg-gray-900 dark:focus:ring-blue-800"
+                className={`${selectedCategory === "all" && 'bg-blue-700 text-white dark:text-white dark:bg-blue-500'
+                  } uppercase text-blue-700 hover:text-white border border-blue-600 bg-white focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-xl text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:border-blue-500 dark:text-blue-500 dark:bg-gray-900 dark:focus:ring-blue-800`}
               >
-                All
+                All ({items.length})
               </button>
               {categories.map((category, index) => (
                 <button
                   key={index}
                   onClick={() => handleCategoryChange(category)}
                   type="button"
-                  className={`${selectedCategory === category && 'ring-blue-800'
-                    } uppercase text-blue-700 hover:text-white border border-blue-600 bg-white hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:bg-gray-900 dark:focus:ring-blue-800`}
+                  className={`${selectedCategory === category && 'bg-blue-700 text-white dark:text-white dark:bg-blue-500'
+                    } uppercase text-blue-700 hover:text-white border border-blue-600 bg-white hover:bg-blue-700 focus:ring-4 focus:outline-none rounded-xl text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:border-blue-500 dark:text-blue-500  dark:bg-gray-900 dark:focus:ring-blue-800`}
                 >
-                  {category}
+                  {category} ({items.filter((item) => item.category === category).length})
                 </button>
               ))}
             </div>
@@ -71,7 +73,6 @@ const Portfolio = ({ items, isHome = true }) => {
               <div
                 key={i}
                 className="portfolio-item relative overflow-hidden rounded-md cursor-pointer"
-                onClick={() => handleItemClick(i)}
               >
                 <Image
                   src={item.icon}
@@ -81,11 +82,35 @@ const Portfolio = ({ items, isHome = true }) => {
                   className="object-cover w-full h-full transition-opacity duration-300"
                 />
                 <div className="overlay transition-opacity duration-300">
-                  <div className="overlay-content">
-                    <p className="name uppercase">{item.name}</p>
-                    <p className="name text-sm text-muted">{item.category}</p>
+                  <div className="overlay-content flex flex-col justify-center w-full">
+                    {/* First div at the top */}
+                    <div className={`flex flex-row mb-4 ${item.link ? "justify-between" : "justify-center"}`}>
+                      <button
+                        onClick={() => handleItemClick(i)}
+                        className="view-button uppercase rounded-lg text-white bg-blue-700 px-3 py-1 mt-2"
+                      >
+                        View Image
+                      </button>
+                      {item.link &&
+                        <Link
+                          href={item.link}
+                          className="view-button uppercase rounded-lg text-white bg-blue-700 p-3 mt-2"
+                          target='_blank'
+                          title={`View ${item.name}`}
+                        >
+                          <FaEye />
+                        </Link>
+                      }
+
+                    </div>
+                    {/* Second div at the bottom */}
+                    <div className="mt-auto text-center">
+                      <p className="name uppercase">{item.name}</p>
+                      <p className="name text-sm text-muted capitalize">{item.category}</p>
+                    </div>
                   </div>
                 </div>
+
               </div>
             ))}
 
@@ -101,10 +126,10 @@ const Portfolio = ({ items, isHome = true }) => {
                     className="object-cover w-full h-full transition-opacity duration-300"
                   />
                   <div className="overlay transition-opacity duration-300">
-                  <div className="overlay-content">
-                    <p className="name uppercase text-white">See More</p>
-                    <p className="name text-sm text-muted text-white">{remainingItems}+ Items</p>
-                  </div>
+                    <div className="overlay-content">
+                      <p className="name uppercase text-white">See More</p>
+                      <p className="name text-sm text-muted text-white">{remainingItems}+ Items</p>
+                    </div>
                   </div>
                 </div>
               </Link>
