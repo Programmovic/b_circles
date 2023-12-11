@@ -44,6 +44,7 @@ function Hero({ banner }) {
   return (
 
     <section className='relative'>
+      
       <ul className='circles'>
         <li className="circle" />
         <li className="circle" />
@@ -64,6 +65,7 @@ function Hero({ banner }) {
         </div>
         <div className="hero__overlay bg-[#ffffff54] dark:bg-[#0000008f]"></div>
         <div className="hero__cnt">
+        <div className="container">
           <motion.div
             className="lg:col-12 hero-img"
             initial={{ opacity: 0, y: -20 }}
@@ -87,7 +89,7 @@ function Hero({ banner }) {
           >
             <div className="font-third font-bold text-white mb-2">
               <h1 className="m-0 text-[15px] uppercase text-dark dark:text-white font-third">B-Circles Agency</h1>
-              <div className='py-4 flex justify-between'>
+              <div className='py-4 flex justify-between __actions'>
                 <Link
                   className="inline-block rounded-full border-2 border-neutral-900 px-[30px] pt-[14px] pb-[12px] text-sm font-medium uppercase leading-normal text-neutral-900 font-bold transition duration-150 ease-in-out hover:border-neutral-100 bg-[#4552a4ab] hover:bg-neutral-500 hover:bg-opacity-10 hover:text-neutral-100 focus:border-neutral-100 focus:text-neutral-100 focus:outline-none focus:ring-0 active:border-neutral-200 active:text-neutral-200 dark:border-neutral-100 dark:text-neutral-100"
                   data-te-ripple-init
@@ -115,7 +117,7 @@ function Hero({ banner }) {
 
 
             <div className='flex justify-center'>
-              <h1 className="text-[1em] pt-2 w-fit border-t border-solid border-gray-500 font-third font-bold text-dark dark:text-white m-0 uppercase">{banner?.title}</h1>
+              <h1 className="text-[1em] pt-2 w-fit border-t border-solid border-gray-500 font-third font-bold text-dark dark:text-white m-0 uppercase __title">{banner?.title}</h1>
             </div>
             {banner?.button.enable && (
               <motion.a
@@ -131,7 +133,9 @@ function Hero({ banner }) {
               </motion.a>
             )}
           </motion.div>
+          </div>
         </div>
+      
       </div>
 
 

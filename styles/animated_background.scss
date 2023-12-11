@@ -301,6 +301,15 @@ $hero-bg-mix: rgba(#29042f, 0.4);
 	.animated-svg {
 		top: -45%;
 	}
+	.hero .__actions{
+		flex-direction: column;
+	}
+	.hero .__actions a{
+		margin: 10px;
+	}
+	.hero .__title{
+		font-size: 2em;
+	}
 }
 
 .animated-svg svg {
