@@ -30,7 +30,7 @@ const PageHeader = ({ title, image }) => {
         className="relative text-center px-8 py-20  rounded-2xl"
         style={{ zIndex: 3 }} // Highest z-index for the text
       >
-        {title && <h1 className="font-third text-white uppercase">{title}</h1>}
+        {title && <h3 className="font-third text-white uppercase">{title}</h3>}
       </div>
     </section>
   );

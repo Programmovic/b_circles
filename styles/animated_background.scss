@@ -4,7 +4,9 @@ $hero-height: 100vh; // Set height to auto
 $hero-width: 100vw;
 $hero-bg-mix: rgba(#29042f, 0.4);
 
-
+.hero_section{
+	max-height: $hero-height;
+}
 .hero {
 	display: grid;
 	position: relative;

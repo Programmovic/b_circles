@@ -43,7 +43,7 @@ function Hero({ banner }) {
   };
   return (
 
-    <section className='relative'>
+    <section className='relative hero_section overflow-hidden'>
       
       <ul className='circles'>
         <li className="circle" />
@@ -88,10 +88,10 @@ function Hero({ banner }) {
             transition={{ duration: 0.6 }}
           >
             <div className="font-third font-bold text-white mb-2">
-              <h1 className="m-0 text-[15px] uppercase text-dark dark:text-white font-third">B-Circles Agency</h1>
+              <h1 className="m-0 text-[20px] uppercase text-dark dark:text-white font-third">B-Circles Agency</h1>
               <div className='py-4 flex justify-between __actions'>
                 <Link
-                  className="inline-block rounded-full border-2 border-neutral-900 px-[30px] pt-[14px] pb-[12px] text-sm font-medium uppercase leading-normal text-neutral-900 font-bold transition duration-150 ease-in-out hover:border-neutral-100 bg-[#4552a4ab] hover:bg-neutral-500 hover:bg-opacity-10 hover:text-neutral-100 focus:border-neutral-100 focus:text-neutral-100 focus:outline-none focus:ring-0 active:border-neutral-200 active:text-neutral-200 dark:border-neutral-100 dark:text-neutral-100"
+                  className="inline-block rounded-full border-2  border-neutral-900 px-[30px] pt-[14px] pb-[12px] text-sm uppercase leading-normal text-neutral-900 font-bold transition duration-150 ease-in-out hover:border-neutral-100 bg-[#4552a4ab] hover:bg-neutral-500 hover:bg-opacity-10 hover:text-neutral-100 focus:border-neutral-100 focus:text-neutral-100 focus:outline-none focus:ring-0 active:border-neutral-200 active:text-neutral-200 dark:border-neutral-100 dark:text-neutral-100"
                   data-te-ripple-init
                   data-te-ripple-color="light"
                   title="get free consultation"
@@ -101,7 +101,7 @@ function Hero({ banner }) {
                   get a free consultation
                 </Link>
                 <Link
-                  className="inline-block rounded-full px-12 pt-[14px] pb-[12px] text-sm font-medium uppercase leading-normal text-neutral-900 font-bold transition duration-150 ease-in-out bg-[#e0692396] hover:bg-neutral-500 hover:bg-opacity-50 hover:text-neutral-200 focus:text-neutral-200 focus:outline-none focus:ring-0 active:text-neutral-300 dark:text-neutral-100"
+                  className="inline-block rounded-full px-12 pt-[14px] pb-[12px] text-sm uppercase leading-normal text-neutral-900 font-bold transition duration-150 ease-in-out bg-[#e0692396] hover:bg-neutral-500 hover:bg-opacity-50 hover:text-neutral-200 focus:text-neutral-200 focus:outline-none focus:ring-0 active:text-neutral-300 dark:text-neutral-100"
                   data-te-ripple-init
                   data-te-ripple-color="light"
                   href={`/contact-us`}
@@ -117,7 +117,7 @@ function Hero({ banner }) {
 
 
             <div className='flex justify-center'>
-              <h1 className="text-[1em] pt-2 w-fit border-t border-solid border-gray-500 font-third font-bold text-dark dark:text-white m-0 uppercase __title">{banner?.title}</h1>
+              <h1 className="text-[1em] pt-2 w-fit border-t border-solid dark:border-gray-500 border-black font-third font-bold text-dark dark:text-white m-0 uppercase __title">{banner?.title}</h1>
             </div>
             {banner?.button.enable && (
               <motion.a

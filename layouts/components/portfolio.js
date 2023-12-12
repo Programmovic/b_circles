@@ -31,14 +31,15 @@ const Portfolio = ({ items, isHome = true }) => {
       : items.filter((item) => item.category === selectedCategory);
   const numItemsToShow = isHome ? 3 : filteredItems.length;
   const remainingItems = filteredItems.length - numItemsToShow;
+
   return (
     <section className={`${isHome && "bg-theme-light dark:bg-[#231f20]"} section`}>
       <div className="container">
         {/* Conditionally render PageHeader based on isHome prop */}
         {isHome ? null : (
           <PageHeader
-            title="Our Work"
-            image="/images/businessman-hand-hold-interface-question-marks-sign_218381-8871.webp"
+            title={`Our Work${selectedCategory !== "all" ? ` "${selectedCategory}"` : ""}`}
+            image="/images/business-concept-with-team-close-up.jpg"
           />
         )}
 
@@ -48,8 +49,8 @@ const Portfolio = ({ items, isHome = true }) => {
               <button
                 onClick={() => handleCategoryChange('all')}
                 type="button"
-                className={`${selectedCategory === "all" && 'bg-blue-700 text-white dark:text-white dark:bg-blue-500'
-                  } uppercase text-blue-700 hover:text-white border border-blue-600 bg-white focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-xl text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:border-blue-500 dark:text-blue-500 dark:bg-gray-900 dark:focus:ring-blue-800`}
+                className={`uppercase border-b-4 px-5 py-2.5 text-center me-3 mb-3 font-bold transition-all duration-300 
+      ${selectedCategory === "all" ? 'text-[#e06923] border-[#e06923]' : 'text-blue-700 border-transparent'}`}
               >
                 All ({items.length})
               </button>
@@ -58,8 +59,8 @@ const Portfolio = ({ items, isHome = true }) => {
                   key={index}
                   onClick={() => handleCategoryChange(category)}
                   type="button"
-                  className={`${selectedCategory === category && 'bg-blue-700 text-white dark:text-white dark:bg-blue-500'
-                    } uppercase text-blue-700 hover:text-white border border-blue-600 bg-white hover:bg-blue-700 focus:ring-4 focus:outline-none rounded-xl text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:border-blue-500 dark:text-blue-500  dark:bg-gray-900 dark:focus:ring-blue-800`}
+                  className={`uppercase border-b-4 px-5 py-2.5 text-center me-3 mb-3 font-bold transition-all duration-300 
+        ${selectedCategory === category ? ' text-[#e06923] border-[#e06923]' : 'text-blue-700 border-transparent'}`}
                 >
                   {category} ({items.filter((item) => item.category === category).length})
                 </button>
@@ -79,7 +80,7 @@ const Portfolio = ({ items, isHome = true }) => {
                   alt={item.name}
                   width={300}
                   height={200}
-                  className="object-cover w-full h-full transition-opacity duration-300"
+                  className="object-cover w-full h-full transition-opacity duration-300 hover:blur-lg"
                 />
                 <div className="overlay transition-opacity duration-300">
                   <div className="overlay-content flex flex-col justify-center w-full">
@@ -101,7 +102,6 @@ const Portfolio = ({ items, isHome = true }) => {
                           <FaEye />
                         </Link>
                       }
-
                     </div>
                     {/* Second div at the bottom */}
                     <div className="mt-auto text-center">
@@ -127,7 +127,7 @@ const Portfolio = ({ items, isHome = true }) => {
                   />
                   <div className="overlay transition-opacity duration-300">
                     <div className="overlay-content">
-                      <p className="name uppercase text-white">See More</p>
+                      <p className="name uppercase text-white">See More in {selectedCategory}</p>
                       <p className="name text-sm text-muted text-white">{remainingItems}+ Items</p>
                     </div>
                   </div>
@@ -142,7 +142,6 @@ const Portfolio = ({ items, isHome = true }) => {
             toggler={lightboxController.toggler}
             sources={filteredItems.map((item) => item.icon)}
             slide={lightboxController.slide}
-            onClose={() => setLightboxController({ toggler: false })}
           />
         </div>
       </div>
