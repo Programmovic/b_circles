@@ -15,7 +15,7 @@ const ServiceSingle = ({ frontmatter, content, mdxContent, slug }) => {
     <Base title={`${config.site.title} | ${title}`} description={description} keywords={keywords} image={image}>
       <section className="section">
         <div className="container">
-          <PageHeader title={title} image='/images/businessman-hand-hold-interface-question-marks-sign_218381-8871.webp' />
+          <PageHeader title={title} image={image} />
           <div className="row mt-6">
             <article className="col-12 mx-auto text-center">
 
