@@ -66,9 +66,10 @@ services:
       link: /contact-us
   
   - title: "Graphic Design"
-    content: "At B Circles, we are not just people behind the devices that produce designs. We are artists who practice our work with love and creativity. We understand and master all the details to produce what suits every project. We deliver your idea to the highest levels to convey the message to customers. We design images, logos, videos, and web pages with full flexibility."
+    content: "At B-circles, our graphic design services transcend conventional boundaries. We merge artistry with precision, infusing each project with passion and creativity. From conceptualizing vibrant images to designing captivating logos, videos, and web pages, we breathe life into your brand's vision. With meticulous attention to detail, we elevate your ideas to resonate profoundly with your audience."
     images:
       - "/images/graphic dsn.webp"
+    link: "/services/Graphic Design"
     button:
       enable: true
       label: Learn More

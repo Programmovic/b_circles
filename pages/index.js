@@ -185,7 +185,7 @@ const Home = ({ frontmatter, freeQuote, portfolio }) => {
                       <p className="mb-2 mt-4">{service?.content}</p>
                       {service.button.enable && (
                         <Link
-                          href={service?.button.link}
+                          href={service?.link ? service?.link : service?.button.link}
                           className="cta-link inline-flex cursor-pointer items-center text-primary"
                           title={service?.button.label}
                         >
