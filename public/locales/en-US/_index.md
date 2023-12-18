@@ -60,6 +60,7 @@ services:
     content: "B Circles believes in constant development in the era of artificial intelligence and technological advancement. Through user experience and continuous analysis, development comes in a way that suits the work. Therefore, we are always with you. We design websites that are user-friendly and visually attractive, e-commerce shops, landing pages, and more. We not only create and develop websites and web applications but also help you with chatbots on social media, customized bots, LLMs employing tools like ChatGPT and BARD, etc."
     images: 
       - "/images/web development.webp"
+    link: "/services/Software Development"
     button:
       enable: true
       label: Learn More

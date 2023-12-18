@@ -11,7 +11,7 @@ import FAQ_ITEM from "./components/FaqItem";
 import Portfolio from "./components/portfolio";
 
 const ServiceSingle = ({ frontmatter, content, mdxContent, slug, portfolio }) => {
-  let { description, title, bgImage, keywords, faqs } = frontmatter;
+  let { description, title, bgImage, keywords, faqs, cta_text } = frontmatter;
   description = description ? description : content.slice(0, 120);
 
   return (
@@ -31,7 +31,7 @@ const ServiceSingle = ({ frontmatter, content, mdxContent, slug, portfolio }) =>
             <div className="flex flex-wrap items-center -mx-4">
               <div className="w-full px-4 lg:w-3/4">
                 <h2 className="mb-6 text-3xl font-bold leading-tight text-white sm:mb-8 sm:text-[40px]/[48px] lg:mb-0">
-                  <span className="xs:block">Request For {slug} Service</span>
+                  <span className="xs:block">{cta_text ? cta_text : (`Request For ${slug} Service`)}</span>
                 </h2>
               </div>
               <div className="w-full px-4 lg:w-1/4">
