@@ -2,7 +2,7 @@
 title: "Strategic Partnerships"
 description: "At B-Circles, our strategic partnerships empower your company or organization to thrive. We specialize in creating powerful collaborations that leverage collective strengths, resources, and expertise. By cultivating strategic alliances with industry-leading entities, we equip you with the essential tools needed to surpass your objectives efficiently. Our meticulous approach ensures transparent agreements fortified by comprehensive documentation, backed by dedicated teams committed to managing these partnerships seamlessly."
 keywords: "social media marketing, online marketing, social media strategy, customer engagement, brand awareness, digital marketing"
-bgImage: "'/images/web development.webp'"
+bgImage: "'/images/strategic partnership.webp'"
 date: 2023-10-04T05:00:00Z
 draft: false
 cta_text: Explore how B-Circles can propel your business forward through strategic partnerships.
@@ -37,7 +37,7 @@ faqs:
     </div>
   </div>
   <div class="md:w-1/2 md:mt-0 mb-5">
-    <img src="/images/web development.webp" alt="Creative Design" class="object-fit w-full h-full rounded-xl shadow-md"></img>
+    <img src="/images/strategic partnership.webp" alt="Creative Design" class="object-fit w-full h-full rounded-xl shadow-md"></img>
   </div>
 </div>
 
