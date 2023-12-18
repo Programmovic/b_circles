@@ -5,8 +5,8 @@ import PageHeader from '@layouts/partials/PageHeader';
 import Link from 'next/link';
 import { FaEye } from 'react-icons/fa';
 
-const Portfolio = ({ items, isHome = true }) => {
-  const [selectedCategory, setSelectedCategory] = useState('all');
+const Portfolio = ({ items, isHome = true, service = "all" }) => {
+  const [selectedCategory, setSelectedCategory] = useState(service);
   const [lightboxController, setLightboxController] = useState({
     toggler: false,
     slide: 0,

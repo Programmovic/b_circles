@@ -70,7 +70,6 @@ services:
     images:
       - "/images/graphic dsn.webp"
     link: "/services/Graphic Design"
-    bgImage: "/images/graphic-dsn.webp"
     button:
       enable: true
       label: Learn More

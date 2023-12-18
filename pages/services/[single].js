@@ -2,10 +2,11 @@ import config from "@config/config.json";
 import ServiceSingle from "@layouts/ServiceSingle";
 import { getSinglePage } from "@lib/contentParser";
 import { parseMDX } from "@lib/utils/mdxParser";
+import { getListPage } from "@lib/contentParser";
 const { blog_folder } = config.settings;
 
 // post single layout
-const Service = ({ post, authors, mdxContent, slug }) => {
+const Service = ({ post, authors, mdxContent, slug, portfolio }) => {
   const { frontmatter, content } = post[0];
 
   return (
@@ -15,6 +16,7 @@ const Service = ({ post, authors, mdxContent, slug }) => {
       mdxContent={mdxContent}
       authors={authors}
       slug={slug}
+      portfolio={portfolio}
     />
   );
 };
@@ -40,12 +42,14 @@ export const getStaticProps = async ({ params }) => {
   const posts = getSinglePage(`content/services`);
   const post = posts.filter((p) => p.slug == single);
   const mdxContent = await parseMDX(post[0].content);
+  const portfolio = await getListPage(`content/portfolio.md`);
 
   return {
     props: {
       post: post,
       mdxContent: mdxContent,
       slug: single,
+      portfolio
     },
   };
 };
