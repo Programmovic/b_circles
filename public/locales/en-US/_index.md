@@ -57,7 +57,7 @@ services:
       link: /contact-us
 
   - title: "Software Development"
-    content: "B Circles believes in constant development in the era of artificial intelligence and technological advancement. Through user experience and continuous analysis, development comes in a way that suits the work. Therefore, we are always with you. We design websites that are user-friendly and visually attractive, e-commerce shops, landing pages, and more. We not only create and develop websites and web applications but also help you with chatbots on social media, customized bots, LLMs employing tools like ChatGPT and BARD, etc."
+    content: "At B-circles, our software development services transcend the ordinary. We are dedicated to leveraging the latest advancements in artificial intelligence and technology to empower your business. Through meticulous analysis and a user-centric approach, we create bespoke solutions tailored to your unique requirements. Our expertise spans creating user-friendly websites, visually captivating e-commerce platforms, dynamic landing pages, and more. Beyond web development, we specialize in deploying innovative chatbots across social media platforms and crafting customized bots using cutting-edge tools like ChatGPT and BARD. Experience innovation and seamless digital solutions with B-circles."
     images: 
       - "/images/web development.webp"
     link: "/services/Software Development"
@@ -93,9 +93,10 @@ services:
       label: Learn More
       link: /contact-us
   - title: "Strategic Partnerships"
-    content: "At B Circles, we provide your company or organization with the power it needs through partnerships with other companies. We deliver and provide you with all the necessary resources to achieve your goals more effectively. We establish clear agreements through documented contracts with all the terms of the agreement. Furthermore, we can manage it for you through a dedicated team."
+    content: "At B-Circles, our strategic partnerships empower your company or organization to thrive. We specialize in creating powerful collaborations that leverage collective strengths, resources, and expertise. By cultivating strategic alliances with industry-leading entities, we equip you with the essential tools needed to surpass your objectives efficiently. Our meticulous approach ensures transparent agreements fortified by comprehensive documentation, backed by dedicated teams committed to managing these partnerships seamlessly."
     images:
       - "/images/strategic partnership.webp"
+    link: "/services/Strategic Partnership"
     button:
       enable: true
       label: Learn More

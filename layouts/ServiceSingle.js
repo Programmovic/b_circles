@@ -11,7 +11,7 @@ import FAQ_ITEM from "./components/FaqItem";
 import Portfolio from "./components/portfolio";
 
 const ServiceSingle = ({ frontmatter, content, mdxContent, slug, portfolio }) => {
-  let { description, title, bgImage, keywords, faqs, cta_text } = frontmatter;
+  let { description, title, bgImage, keywords, faqs, cta_text, cta_btn } = frontmatter;
   description = description ? description : content.slice(0, 120);
 
   return (
@@ -38,9 +38,9 @@ const ServiceSingle = ({ frontmatter, content, mdxContent, slug, portfolio }) =>
                 <div className="flex flex-wrap lg:justify-end">
                   <Link
                     href="/contact-us"
-                    className="inline-flex py-3 my-1 mr-4 text-base font-bold transition bg-white rounded-md hover:bg-shadow-1 text-primary px-7"
+                    className="inline-flex text-center py-3 my-1 mr-4 text-base font-bold transition bg-white rounded-md hover:bg-shadow-1 text-primary px-7"
                   >
-                    Contact Us Now
+                    {cta_btn ? cta_btn : "Contact Us Now"}
                   </Link>
                 </div>
               </div>

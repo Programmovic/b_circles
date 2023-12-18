@@ -16,7 +16,7 @@ const FAQ_ITEM = ({ faqData }) => {
         {faqData?.faqQuestions?.map((faq, index) => (
           <div
             key={index}
-            className="border-b rounded-2xl p-2 transition duration-300 ease-in-out hover:bg-gray-100 dark:hover:bg-gray-800"
+            className="border-b rounded-2xl p-2 px-5 transition duration-300 ease-in-out hover:bg-gray-100 dark:hover:bg-gray-800"
           >
             <div
               className="flex justify-between items-center cursor-pointer"

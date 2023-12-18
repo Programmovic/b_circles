@@ -608,19 +608,22 @@ $drawer-open-transition: all cubic-bezier(0.92, -0.15, 0.21, 0.86) 0.25s;
 
 .tw-card-container {
 	perspective: 1000px;
+	overflow: hidden;
+	
+	border-radius: 15px;
   }
-
+  
   .tw-card {
 	height: 400px;
 	transform-style: preserve-3d;
 	transition: transform 0.5s;
 	cursor: pointer;
   }
-
+  
   .tw-card:hover {
-	transform: rotateY(180deg);
+	transform: translateY(-100%);
   }
-
+  
   .tw-card-face {
 	position: absolute;
 	width: 100%;
@@ -631,17 +634,17 @@ $drawer-open-transition: all cubic-bezier(0.92, -0.15, 0.21, 0.86) 0.25s;
 	justify-content: center;
 	text-align: center;
 	padding: 20px;
-	border-radius: 15px;
   }
-
+  
   .tw-front {
-	transform: rotateY(0deg);
+	transform: translateY(0);
 	background-color: #e0e7e6;
 	color: #000;
   }
-
+  
   .tw-back {
-	transform: rotateY(180deg);
+	transform: translateY(100%);
 	background-color: #3d3738;
 	color: #fff;
   }
+  
