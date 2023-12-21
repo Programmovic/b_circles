@@ -638,13 +638,11 @@ $drawer-open-transition: all cubic-bezier(0.92, -0.15, 0.21, 0.86) 0.25s;
   
   .tw-front {
 	transform: translateY(0);
-	background-color: #e0e7e6;
 	color: #000;
   }
   
   .tw-back {
 	transform: translateY(100%);
-	background-color: #3d3738;
-	color: #fff;
+	@apply text-dark dark:text-white
   }
   
