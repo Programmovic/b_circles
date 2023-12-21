@@ -142,11 +142,11 @@ code {
   /* Set your desired border color for the selected category on hover */
 }
 
+/* Common styles for both large and small screens */
 .section_title {
   position: relative;
   padding: 0;
   margin: 0;
-  font-weight: 300;
   -webkit-transition: all 0.4s ease 0s;
   -o-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s;
@@ -159,23 +159,21 @@ code {
 
 .section_title em {
   font-style: normal;
-  font-weight: 600;
 }
 
 /* Style 7
    ----------------------------- */
 .seven h1 {
   text-align: center;
-  font-weight: 300;
   letter-spacing: 1px;
   text-transform: uppercase;
-
+  max-width: 100%; 
   display: grid;
   grid-template-columns: 1fr max-content 1fr;
   grid-template-rows: 27px 0;
   grid-gap: 20px;
   align-items: center;
-  @apply text-dark dark:text-white
+  @apply text-dark dark:text-white font-bold
 }
 
 .seven h1:after,
@@ -188,3 +186,206 @@ code {
   background-color: #f8f8f8;
 }
 
+/* Responsive styles for small screens (e.g., mobile devices) */
+@media (max-width: 767px) {
+  .seven h1 {
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    @apply text-xl
+  }
+
+}
+
+/* Responsive styles for larger screens (e.g., tablets and desktops) */
+@media (min-width: 768px) {
+  .seven h1 {
+    text-align: center;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    grid-template-rows: 27px 0;
+    grid-gap: 20px;
+    align-items: center;
+  }
+
+  .seven h1:before,
+  .seven h1:after {
+    content: "";
+    display: block;
+    border-bottom: 1px solid #c50000;
+    border-top: 1px solid #c50000;
+    height: 5px;
+    background-color: #f8f8f8;
+  }
+}
+
+/* Your existing text color styles for light and dark themes */
+.seven h1 {
+  @apply text-dark dark:text-white;
+}
+
+
+
+
+$facebook:#3B5998;
+$twitter:#1DA1F2;
+$youtube:#FF0000;
+$googlePlus:#DB4437;
+
+.menu{
+  text-align: center;
+  position: relative;
+  margin: auto;
+  transform-style: preserve-3d;
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  li{
+    transform-style: preserve-3d;
+    position: relative;
+    margin:40px;
+    display: inline-block;
+    transform: rotateX(-20deg) rotateY(45deg);
+    animation: move 2s ease infinite;
+    
+    a{
+      height: 100px;
+      width: 100px;
+      display: inline-block;
+      line-height: 120px;
+      color:#fff;
+      text-decoration: none;
+      position: relative;
+      display: flex;
+      border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+      &::before{
+        content:"";
+        position: absolute;
+        height: 100%;
+        width:100%;
+        left: -100%;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        transform-origin: right;
+        transform: rotateY(-90deg);
+        transform-style: preserve-3d;
+        border-radius: 10px;
+      }
+      &::after{
+        content:"";
+        position: absolute;
+        height: 100%;
+        width:100%;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        transform: rotateX(-90deg);
+        transform-origin: top;
+      }
+      svg{
+        font-size: 3rem;
+        text-shadow: 
+        0px 0px 2px rgba(0,0,0,0.5),
+        1px 1px 2px rgba(0,0,0,0.5),
+        2px 2px 2px rgba(0,0,0,0.5);
+      }
+    }
+    &::after{
+      content:"";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -20px;
+      margin: auto;
+      height: 100%;
+      width:100%;
+      display: inline-block;
+      background-color: rgba(0,0,0,0.2);
+      transform-origin: bottom;
+      transform: rotateX(90deg) translateY(0px);
+      z-index:-1;
+      animation: shadowAnimation 2s ease infinite;
+      border-radius: 10px;
+    }
+  }
+  @for $i from 1 through 4{
+    li:nth-child(#{$i})
+    {
+      animation-delay: #{$i*0.2}s;
+      &::after{
+        animation-delay: #{$i*0.2}s;
+      }
+    }
+  }
+}
+
+.facebook{
+  background-color: $facebook;
+  &::before{
+    background-color: darken($facebook,20%);
+  }
+  &::after{
+    background-color: darken($facebook,30%);
+  }
+}
+
+.twitter{
+  background-color: $twitter;
+  &::before{
+    background-color:darken($twitter,20%);
+  }
+  &::after{
+    background-color: darken($twitter,30%);
+  }
+}
+
+.googlePlus{
+  background-color: $googlePlus;
+  &::before{
+    background-color:darken($googlePlus,20%);
+  }
+  &::after{
+    background-color: darken($googlePlus,30%);
+  }
+}
+
+
+.youtube{
+  background-color: $youtube;
+  &::before{
+    background-color: darken($youtube,20%);
+  }
+  &::after{
+    background-color: darken($youtube,30%);
+  }
+}
+
+@keyframes move{
+  0%,100%{
+    transform:rotateX(-20deg) rotateY(45deg) translateY(-10px);
+  }
+  50%{
+    transform:rotateX(-20deg) rotateY(45deg) translateY(10px);
+  }
+}
+
+@keyframes shadowAnimation{
+  0%,100%{
+   bottom: -40px;
+   opacity: 0.2;
+  }
+  50%{
+    bottom: -10px;
+    opacity: 1;
+  }
+}

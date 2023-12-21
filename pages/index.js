@@ -93,7 +93,7 @@ const Home = ({ frontmatter, freeQuote, portfolio }) => {
         </section>
         <Portfolio items={portfolio.frontmatter.portfolio} />
         <motion.section
-          className="section bg-light dark:bg-[#231f20] pt-0 pb-0"
+          className="section bg-light pb-0"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
@@ -146,74 +146,66 @@ const Home = ({ frontmatter, freeQuote, portfolio }) => {
         {/* services */}
         {services?.map((service, index) => {
           const isOdd = index % 2 > 0;
+          const titleWords = service?.title.split(' ');
+          const fontSizeClass = titleWords && titleWords.length > 1 ? 'text-4xl' : '';
+
           return (
-            <>
-              <section
-                key={`service-${index}`}
-                className={`${index !== 0 && "section"} ${!isOdd && "bg-theme-light dark:bg-[#231f20]"
-                  }`}
-                id={service?.title.replace(' ', '-')}
-              >
-
-                <div className="container">
-                  <div className="items-center gap-8 md:grid md:grid-cols-2">
-                    {/* Carousel */}
-                    <div className={`service-carousel ${!isOdd && "md:order-2"}`}>
-                      <Swiper
-                        modules={[Autoplay, Pagination]}
-                        pagination={
-                          service?.images.length > 1 ? { clickable: true } : false
-                        }
-                        autoplay={{
-                          delay: 5000,
-                          disableOnInteraction: false,
-                        }}
-                        init={service?.images > 1 ? false : true}
-                      >
-                        {/* Slides */}
-                        {service?.images.map((slide, index) => (
-                          <SwiperSlide key={index}
-                          >
-                            <Image src={slide} alt={service?.title} width={600} height={500} className="rounded-lg" />
-                          </SwiperSlide>
-                        ))}
-                      </Swiper>
-                    </div>
-
-                    {/* Content */}
-                    <div
-                      className={`service-content mt-5 md:mt-0 ${!isOdd && "md:order-1"
-                        }`}
+            <section
+              key={`service-${index}`}
+              className={`section ${!isOdd && "bg-theme-light dark:bg-[#231f20]"}`}
+              id={service?.title.replace(' ', '-')}
+            >
+              <div className="container">
+                <div className="items-center gap-8 md:grid md:grid-cols-2">
+                  {/* Carousel */}
+                  <div className={`service-carousel ${!isOdd && "md:order-2"}`}>
+                    <Swiper
+                      modules={[Autoplay, Pagination]}
+                      pagination={service?.images.length > 1 ? { clickable: true } : false}
+                      autoplay={{ delay: 5000, disableOnInteraction: false }}
+                      init={service?.images > 1 ? false : true}
                     >
-                      
-                      <div className="seven">
-                        <h1 className="section_title">{service?.title}</h1>
-                      </div>
-                      <p className="mb-2 mt-4">{service?.content}</p>
-                      {service.button.enable && (
-                        <Link
-                          href={service?.link ? service?.link : service?.button.link}
-                          className="cta-link inline-flex cursor-pointer items-center text-primary"
-                          title={service?.button.label}
-                        >
-                          {service?.button.label}
-                          <Image
-                            className="ml-1"
-                            src="/images/arrow-right.svg"
-                            width={18}
-                            height={14}
-                            alt="arrow"
-                          />
-                        </Link>
-                      )}
+                      {/* Slides */}
+                      {service?.images.map((slide, index) => (
+                        <SwiperSlide key={index}>
+                          <Image src={slide} alt={service?.title} width={600} height={500} className="rounded-lg" />
+                        </SwiperSlide>
+                      ))}
+                    </Swiper>
+                  </div>
+
+                  {/* Content */}
+                  <div
+                    className={`service-content mt-5 md:mt-0 ${!isOdd && "md:order-1"}`}
+                  >
+                    <div className="seven">
+                      <h1 className={`section_title ${fontSizeClass}`}>{service?.title}</h1>
                     </div>
+                    <p className="mb-2 mt-4">{service?.content}</p>
+                    {service.button.enable && (
+                      <Link
+                        href={service?.link ? service?.link : service?.button.link}
+                        className="cta-link inline-flex cursor-pointer items-center text-primary"
+                        title={service?.button.label}
+                      >
+                        {service?.button.label}
+                        <Image
+                          className="ml-1"
+                          src="/images/arrow-right.svg"
+                          width={18}
+                          height={14}
+                          alt="arrow"
+                        />
+                      </Link>
+                    )}
                   </div>
                 </div>
-              </section>
-            </>
+              </div>
+            </section>
           );
         })}
-        <section className="section pb-0 ">
+
+        <section className="section">
           <div className="container">
             <Contact_Form data={freeQuote} />
           </div>
@@ -222,11 +214,15 @@ const Home = ({ frontmatter, freeQuote, portfolio }) => {
         {/* workflow */}
         <section className="section pb-0 ">
           <div className="mb-8 text-center">
-            {markdownify(
-              workflow?.title,
-              "h2",
-              "mx-auto max-w-[400px] font-bold leading-[44px] dark:text-white"
-            )}
+            <div className="container">
+            <div className="seven">
+              {markdownify(
+                workflow?.title,
+                "h1",
+                "section_title text-3xl"
+              )}
+            </div>
+            </div>
             {markdownify(workflow?.description, "p", "mt-3")}
           </div>
           <Image

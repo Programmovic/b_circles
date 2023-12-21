@@ -81,9 +81,10 @@ const Contact_Form = (props) => {
     <div className={`dark:bg-[#141111] flex flex-col md:flex-row rounded bg-theme-light ${props.className}`}>
       <div className="c_inputs w-full md:w-2/3 md:pr-4">
         <div className="p-8">
-          <h3 className="mb-4 text-2xl font-bold dark:text-white">
-            {props.data?.frontmatter.title ? props.data.frontmatter.title : "Contact Us"}
-          </h3>
+          
+          <div className="seven">
+              <h1 className={`section_title text-3xl`}>{props.data?.frontmatter.title ? props.data.frontmatter.title : "Contact Us"}</h1>
+            </div>
           <div
             id="form-message-status"
             className={`mb-4 rounded-lg p-3 text-white ${formStatusClass}`}
@@ -102,72 +103,55 @@ const Contact_Form = (props) => {
             className="contactForm"
             ref={form}
           >
-            <div className="-mx-4 flex flex-wrap">
-              <div className="w-full px-4">
-                <div className="mb-4">
-                  <label
-                    className="text-gray-700 dark:text-white"
-                    htmlFor="name"
-                  >
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    className="block w-full rounded-lg border-none px-4 py-2 dark:bg-[#192221a1]"
-                    name="name"
-                    id="name"
-                    placeholder="Name"
-                  />
-                </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label className="text-gray-700 dark:text-white" htmlFor="name">
+                  Full Name
+                </label>
+                <input
+                  type="text"
+                  className="block w-full rounded-lg border-none px-4 py-2 dark:bg-[#192221a1] focus:outline-none focus:ring focus:border-blue-300"
+                  name="name"
+                  id="name"
+                  placeholder="Your Full Name"
+                />
               </div>
-              <div className="w-full px-4">
-                <div className="mb-4">
-                  <label
-                    className="text-gray-700 dark:text-white"
-                    htmlFor="email"
-                  >
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    className="block w-full rounded-lg border-none px-4 py-2 dark:bg-[#192221a1]"
-                    name="email"
-                    id="email"
-                    placeholder="Email"
-                  />
-                </div>
+              <div>
+                <label className="text-gray-700 dark:text-white" htmlFor="email">
+                  Email Address
+                </label>
+                <input
+                  type="email"
+                  className="block w-full rounded-lg border-none px-4 py-2 dark:bg-[#192221a1] focus:outline-none focus:ring focus:border-blue-300"
+                  name="email"
+                  id="email"
+                  placeholder="Your Email Address"
+                />
               </div>
-              <div className="w-full px-4">
-                <div className="mb-4">
-                  <label
-                    className="text-gray-700 dark:text-white"
-                    htmlFor="message"
-                  >
-                    Message
-                  </label>
-                  <textarea
-                    name="message"
-                    className="block w-full rounded-lg border-none px-4 py-2 dark:bg-[#192221a1]"
-                    id="message"
-                    cols={30}
-                    rows={4}
-                    placeholder="Message"
-                    defaultValue={""}
-                  />
-                </div>
-              </div>
-              <input type="text" name="honeypot" style={{ display: 'none' }} />
-              <div className="w-full px-4">
-                <div className="mb-4">
-                  <input
-                    type="submit"
-                    disabled={isSubmitting}
-                    value={props.data?.frontmatter.button ? props.data.frontmatter.button : "Contact"}
-                    className="cursor-pointer rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-600"
-                  />
-                  <div className="submitting" />
-                </div>
-              </div>
+            </div>
+            <div className="mt-4">
+              <label className="text-gray-700 dark:text-white" htmlFor="message">
+                Message
+              </label>
+              <textarea
+                name="message"
+                className="block w-full rounded-lg border-none px-4 py-2 dark:bg-[#192221a1] focus:outline-none focus:ring focus:border-blue-300"
+                id="message"
+                cols={30}
+                rows={4}
+                placeholder="Your Message"
+                defaultValue={""}
+              />
+            </div>
+            <input type="text" name="honeypot" style={{ display: 'none' }} />
+            <div className="mt-4">
+              <input
+                type="submit"
+                disabled={isSubmitting}
+                value={props.data?.frontmatter.button ? props.data.frontmatter.button : "Contact"}
+                className="cursor-pointer rounded bg-blue-500 px-6 py-3 font-bold text-white hover:bg-blue-600"
+              />
+              <div className="submitting" />
             </div>
           </form>
         </div>
