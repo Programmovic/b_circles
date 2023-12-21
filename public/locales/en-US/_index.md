@@ -20,9 +20,9 @@ feature:
   - name: "Graphic Design"
     icon: "/images/graphic-dsn.webp"
     content: "At B Circles, we are not just people behind the devices that produce designs. We are artists who practice our work with love and creativity. We understand and master all the details to produce what suits every project. We deliver your idea to the highest levels to convey the message to customers. We design images, logos, videos, and web pages with full flexibility."
-  - name: "Content Creation"
-    icon: "/images/content-creation.webp"
-    content: "You cannot achieve continued success without knowing where you stand and what you can do with your available capabilities. Therefore, we develop your strategy, identify areas of strength, weakness, and existing opportunities, and then chart the path for you to reach your goals."
+  - name: "SEO"
+    icon: "/images/search-engine-optimization.png"
+    content: "Supercharge your online presence with data-driven SEO strategies. Attract leads, climb rankings, and achieve lasting results."
   - name: "Consulting"
     icon: "/images/consulting.webp"
     content: "You cannot achieve sustained success until you understand where you stand and what you can do with your available capabilities. Therefore, we develop your strategy, identify your areas of strength, weakness, and opportunities, and then chart the path for you to reach your goals."
@@ -65,7 +65,15 @@ services:
       enable: true
       label: Learn More
       link: /contact-us
-  
+  - title: "SEO"
+    content: "Unleash the power of SEO to elevate your online visibility and drive organic traffic. Our comprehensive SEO solutions are designed to propel your business towards greater success in the digital landscape."
+    images: 
+      - "/images/32010.jpg"
+    link: "/services/SEO"
+    button:
+      enable: true
+      label: Learn More
+      link: /contact-us
   - title: "Graphic Design"
     content: "At B-circles, our graphic design services transcend conventional boundaries. We merge artistry with precision, infusing each project with passion and creativity. From conceptualizing vibrant images to designing captivating logos, videos, and web pages, we breathe life into your brand's vision. With meticulous attention to detail, we elevate your ideas to resonate profoundly with your audience."
     images:
@@ -76,18 +84,12 @@ services:
       label: Learn More
       link: /contact-us
 
-  - title: "Content Creation"
-    content: "You cannot achieve continued success without knowing where you stand and what you can do with your available capabilities. Therefore, we develop your strategy, identify areas of strength, weakness, and existing opportunities, and then chart the path for you to reach your goals."
-    images:
-      - "/images/content creation.webp"
-    button:
-      enable: true
-      label: Learn More
-      link: /contact-us
+  
   - title: "Consulting"
     content: "You cannot achieve sustained success until you understand where you stand and what you can do with your available capabilities. Therefore, we develop your strategy, identify your areas of strength, weakness, and opportunities, and then chart the path for you to reach your goals."
     images:
       - "/images/consulting-bg.webp"
+    link: "/services/Consulting"
     button:
       enable: true
       label: Learn More
