@@ -12,13 +12,13 @@ feature:
   title: Our Services
   features:
   - name: "Social Media"
-    icon: "/images/social.webp"
+    icon: "/images/social-media.png"
     content: "Your audience and customers exist somewhere in this world. Our mission is to help you reach them through a strong and professional team specialized in market research, competitor analysis, creating creative and effective content, launching advertising campaigns, analyzing data, dashboards, and more. We turn regular browsers into customers who are confident in what you offer."
   - name: "Software Development"
-    icon: "/images/web-dev.webp"
+    icon: "/images/app-development.png"
     content: "B Circles believes in constant development in the era of artificial intelligence and technological advancement. Through user experience and continuous analysis, development comes in a way that suits the work. Therefore, we are always with you. We design websites that are user-friendly and visually attractive, e-commerce shops, landing pages, and more. We not only create and develop websites and web applications but also help you with chatbots on social media, customized bots, LLMs employing tools like ChatGPT and BARD, etc."
   - name: "Graphic Design"
-    icon: "/images/graphic-dsn.webp"
+    icon: "/images/illustration.png"
     content: "At B Circles, we are not just people behind the devices that produce designs. We are artists who practice our work with love and creativity. We understand and master all the details to produce what suits every project. We deliver your idea to the highest levels to convey the message to customers. We design images, logos, videos, and web pages with full flexibility."
   - name: "SEO"
     icon: "/images/search-engine-optimization.png"
