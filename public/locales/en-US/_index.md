@@ -30,7 +30,7 @@ feature:
     icon: "/images/handshake.png"
     content: "At B Circles, we provide your company or organization with the power it needs through partnerships with other companies. We deliver and provide you with all the necessary resources to achieve your goals more effectively. We establish clear agreements through documented contracts with all the terms of the agreement. Furthermore, we can manage it for you through a dedicated team."
   - name: "Sales"
-    icon: "/images/sales.webp"
+    icon: "/images/sales.png"
     content: "Having a professional seller who can sell anything is essential. Such a seller is always distinguished by using different and more innovative strategies than the rest. Our team works using the latest strategies and plans to build a customer base that has confidence in your products and services, resulting in increased profits for the company."
 
 companies:
