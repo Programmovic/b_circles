@@ -38,7 +38,7 @@ const Home = ({ frontmatter, freeQuote, portfolio }) => {
 
         <Hero banner={banner} />
         {/* <Companies companies={companies} /> */}
-        
+
         <section
           className={`section relative overflow-hidden`}
           id="about"
@@ -64,9 +64,12 @@ const Home = ({ frontmatter, freeQuote, portfolio }) => {
                 className={`service-content mt-5 md:order-1 md:mt-0
                     `}
               >
-                <h2 className="font-bold font-third leading-[40px] dark:text-white uppercase">
-                  About Us
+                <h2 class="font-bold font-third text-3xl leading-[40px] dark:text-white uppercase relative">
+                  <span class="text-primary">About</span> Us
+                  <div class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-primary via-secondary to-accent"></div>
                 </h2>
+
+
                 <p className="mb-2 mt-4">
                   We at B Circles provide digital solutions and consulting services that guarantee increased income for businesses of all kinds. We offer customized strategies and goals tailored to each client&apos;s unique needs. Our expertise extends beyond the digital marketing and web development domains; we also provide effective on-ground solutions through comprehensive consulting, strategic partnerships, and sales services. These services elevate your business to an advanced and more prosperous stage, making us unique in our offering, all under the slogan &quot;all under one roof.&quot;
                 </p>
@@ -90,21 +93,24 @@ const Home = ({ frontmatter, freeQuote, portfolio }) => {
         </section>
         <Portfolio items={portfolio.frontmatter.portfolio} />
         <motion.section
-          className="section bg-light dark:bg-[#231f20] pt-0"
+          className="section bg-light dark:bg-[#231f20] pt-0 pb-0"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           id="services"
           data-aos="fade-up"
         >
-          <div className="text-center  bg-[#eb671b] py-5 " data-aos="flip-down">
-            <h2 className="font-third text-white uppercase">
-              {markdownify(feature?.title)}
-            </h2>
+          {/* <div className="text-center bg-[#eb671b] py-5" data-aos="flip-down">
+  <h2 className="font-third text-3xl md:text-4xl lg:text-5xl text-white uppercase tracking-wide leading-[40px] mb-6 relative">
+    {markdownify(feature?.title)}
+    <span className="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-primary via-secondary to-accent"></span>
+  </h2>
+</div> */}
 
-          </div>
           <div className="container">
-
+            <div className="seven">
+              <h1 className="section_title">{markdownify(feature?.title)}</h1>
+            </div>
             <div className="mt-8 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3" data-aos="zoom-in">
               {feature?.features.map((item, i) => (
                 <ScrollLink
@@ -144,7 +150,7 @@ const Home = ({ frontmatter, freeQuote, portfolio }) => {
             <>
               <section
                 key={`service-${index}`}
-                className={`section ${!isOdd && "bg-theme-light dark:bg-[#231f20]"
+                className={`${index !== 0 && "section"} ${!isOdd && "bg-theme-light dark:bg-[#231f20]"
                   }`}
                 id={service?.title.replace(' ', '-')}
               >
@@ -179,9 +185,10 @@ const Home = ({ frontmatter, freeQuote, portfolio }) => {
                       className={`service-content mt-5 md:mt-0 ${!isOdd && "md:order-1"
                         }`}
                     >
-                      <h2 className="font-third font-bold leading-[40px] dark:text-white uppercase">
-                        {service?.title}
-                      </h2>
+                      
+                      <div className="seven">
+                        <h1 className="section_title">{service?.title}</h1>
+                      </div>
                       <p className="mb-2 mt-4">{service?.content}</p>
                       {service.button.enable && (
                         <Link

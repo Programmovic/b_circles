@@ -35,6 +35,7 @@ const Portfolio = ({ items, isHome = true, service = "all" }) => {
   return (
     <section className={`${isHome && "bg-theme-light dark:bg-[#231f20]"} section`}>
       <div className="container">
+
         {/* Conditionally render PageHeader based on isHome prop */}
         {isHome ? null : (
           <PageHeader
@@ -42,7 +43,10 @@ const Portfolio = ({ items, isHome = true, service = "all" }) => {
             image="/images/business-concept-with-team-close-up.jpg"
           />
         )}
-
+        {isHome &&
+          <div className="seven">
+            <h1 className="section_title">Our Work</h1>
+          </div>}
         <div className="mx-auto">
           <div className="mb-8 flex justify-center">
             <div className="flex items-center justify-center py-4 md:py-8 flex-wrap">
