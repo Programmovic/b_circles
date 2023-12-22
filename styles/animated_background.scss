@@ -645,4 +645,31 @@ $drawer-open-transition: all cubic-bezier(0.92, -0.15, 0.21, 0.86) 0.25s;
 	transform: translateY(100%);
 	@apply text-dark dark:text-white
   }
-  
+
+/* Arrow Indicators */
+.tw-card::before,
+.tw-card::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+/* Upward Arrow */
+.tw-card::before {
+  border-width: 0 10px 15px 10px;
+  border-color: transparent transparent #fff transparent;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Downward Arrow */
+.tw-card::after {
+  border-width: 15px 10px 0 10px;
+  border-color: #ffffff81 transparent transparent transparent;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+}
