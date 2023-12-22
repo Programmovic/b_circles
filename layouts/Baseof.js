@@ -258,7 +258,7 @@ const Base = ({
           position: fixed;
           bottom: 20px;
           left: 20px;
-          background-color: #ff5722; /* Change the color as needed */
+          background-color: #ff572296; /* Change the color as needed */
           color: #fff;
           border: none;
           border-radius: 50%;
