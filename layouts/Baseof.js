@@ -94,6 +94,29 @@ const Base = ({
       return () => clearTimeout(messageTimeout);
     }
   }, []);
+
+  const [showChristmasModal, setShowChristmasModal] = useState(false);
+
+  // Function to close the Christmas modal
+  const closeChristmasModal = () => {
+    setShowChristmasModal(false);
+  };
+
+  // Check if it's Christmas (you can customize the date accordingly)
+  const isChristmas = () => {
+    const today = new Date();
+    const christmasDate = new Date(today.getFullYear(), 11, 25); // Christmas is on December 25th
+
+    return today.getMonth() === christmasDate.getMonth() && today.getDate() === christmasDate.getDate();
+  };
+
+  useEffect(() => {
+    // Check if it's Christmas and the Christmas modal hasn't been shown
+    if (isChristmas() && !localStorage.getItem("hasShownChristmasModal")) {
+      setShowChristmasModal(true);
+      localStorage.setItem("hasShownChristmasModal", "true");
+    }
+  }, []);
   return (
     <>
       <Head>
@@ -188,11 +211,20 @@ const Base = ({
           <FaArrowUp />
         </button>
       )}
-      <div className="container">
-      <div className={`message-box-floating bg-primary w-80 animate-bounce ${showMessage ? 'visible' : 'hidden'}`}>
-        <p className="text-white  ">Welcome to our website! If you have any questions or need assistance, feel free to contact us.</p>
-        <button className="text-white text-center font-bold uppercase w-full" onClick={closeMessage}>Ok, thank you</button>
+      {false && (
+        <div className="christmas-modal">
+        <div className="overlay" />
+        <div className="content">
+          <p>🎄 Merry Christmas! 🎅 Wishing you joy and happiness this festive season. 🌟</p>
+          <button onClick={closeChristmasModal}>Close</button>
+        </div>
       </div>
+      )}
+      <div className="container">
+        <div className={`message-box-floating bg-primary w-80 animate-bounce ${showMessage ? 'visible' : 'hidden'}`}>
+          <p className="text-white  ">Welcome to our website! If you have any questions or need assistance, feel free to contact us.</p>
+          <button className="text-white text-center font-bold uppercase w-full" onClick={closeMessage}>Ok, thank you</button>
+        </div>
       </div>
       <button className="floating-contact-button shadow-lg animate-pulse" onClick={toggleContactForm} title="Contact Us">
 
@@ -204,6 +236,54 @@ const Base = ({
 
       {/* Styles for the scroll to top button */}
       <style jsx>{`
+      .christmas-modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: url('https://static.pexels.com/photos/4803/winter-door-decoration-christmas-large.jpg');
+        background-size: cover;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+      
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw; /* Use 100vw instead of 100% for full viewport width */
+        height: 100vh; /* Use 100vh instead of 100% for full viewport height */
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+      }
+      
+      .snowfall {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        background: url('/images/snowflake.png');
+        animation: snowfall 10s linear infinite;
+        z-index: 2;
+      }
+      
+      .content {
+        text-align: center;
+        color: #fff;
+        z-index: 3;
+      }
+      @keyframes snowfall {
+        0% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(100vh);
+        }
+      }
       .message-box-floating {
         position: fixed;
         bottom: 100px;
