@@ -1,7 +1,7 @@
 import { markdownify } from "@lib/utils/textConverter";
 import Link from "next/link";
 import Image from "next/image";
-import { FaPhone, FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaPhone, FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 import social from '@config/social.json';
 
 function Cta({ cta }) {
@@ -21,6 +21,8 @@ function Cta({ cta }) {
                   <ul className="menu">
                     <li><Link href="https://www.facebook.com/bcirclesagency" className="facebook"><FaFacebook /></Link></li>
                     <li><Link href="https://twitter.com/bcirclesagency" className="twitter"><FaTwitter /></Link></li>
+                    <li><Link href="https://www.instagram.com/bcirclesagency/" className="instagram"><FaInstagram /></Link></li>
+                    <li><Link href="https://www.instagram.com/bcirclesagency/" className="linkedin"><FaLinkedin /></Link></li>
                   </ul>
                 </div>
               </>

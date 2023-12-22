@@ -185,8 +185,9 @@ code {
 .seven h1:before {
   content: " ";
   display: block;
-  border-bottom: 1px solid #c50000;
-  border-top: 1px solid #c50000;
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  @apply border-primary;
   height: 5px;
   background-color: #f8f8f8;
 }
@@ -221,8 +222,9 @@ code {
   .seven h1:after {
     content: "";
     display: block;
-    border-bottom: 1px solid #c50000;
-    border-top: 1px solid #c50000;
+    border-bottom: 1px solid;
+    border-top: 1px solid;
+    @apply border-primary;
     height: 5px;
     background-color: #f8f8f8;
   }
@@ -246,8 +248,8 @@ code {
 
 $facebook:#3B5998;
 $twitter:#1DA1F2;
-$youtube:#FF0000;
-$googlePlus:#DB4437;
+$linkedin:#0077b5;
+$instagram:#E1306C;
 
 .menu{
   text-align: center;
@@ -363,24 +365,24 @@ $googlePlus:#DB4437;
   }
 }
 
-.googlePlus{
-  background-color: $googlePlus;
+.instagram{
+  background-color: $instagram;
   &::before{
-    background-color:darken($googlePlus,20%);
+    background-color:darken($instagram,20%);
   }
   &::after{
-    background-color: darken($googlePlus,30%);
+    background-color: darken($instagram,30%);
   }
 }
 
 
-.youtube{
-  background-color: $youtube;
+.linkedin{
+  background-color: $linkedin;
   &::before{
-    background-color: darken($youtube,20%);
+    background-color: darken($linkedin,20%);
   }
   &::after{
-    background-color: darken($youtube,30%);
+    background-color: darken($linkedin,30%);
   }
 }
 
