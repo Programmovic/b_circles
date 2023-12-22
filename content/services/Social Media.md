@@ -55,7 +55,7 @@ faqs:
     </div>
   </div>
   <div class="md:w-1/2 md:mt-0 mb-5">
-    <img src="/images/32010.jpg" alt="Creative Design" class="object-fit w-full rounded-xl shadow-md"></img>
+    <img src="/images/hands-holding-smartphone-social-media-concept.jpg" alt="Creative Design" class="object-fit w-full rounded-xl shadow-md"></img>
   </div>
 </div>
 <section class="section pb-0">
