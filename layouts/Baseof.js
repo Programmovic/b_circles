@@ -82,12 +82,17 @@ const Base = ({
     setShowMessage(false);
   };
   useEffect(() => {
-    const messageTimeout = setTimeout(() => {
-      setShowMessage(true);
-      // playMessageSound(); // Play the sound
-    }, 3000); // Set a timeout of 3 seconds
+    const hasShownMessage = localStorage.getItem("hasShownMessage");
 
-    return () => clearTimeout(messageTimeout); // Clean up the timeout on component unmount
+    if (!hasShownMessage) {
+      const messageTimeout = setTimeout(() => {
+        setShowMessage(true);
+        localStorage.setItem("hasShownMessage", "true");
+        // playMessageSound(); // Play the sound
+      }, 3000);
+
+      return () => clearTimeout(messageTimeout);
+    }
   }, []);
   return (
     <>
