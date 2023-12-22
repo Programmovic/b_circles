@@ -362,50 +362,50 @@ $instagram: #E1306C;
 .facebook {
   background-color: $facebook;
 
-  &::before {
-    background-color: darken($facebook, 20%);
-  }
+  // &::before {
+  //   background-color: darken($facebook, 20%);
+  // }
 
-  &::after {
-    background-color: darken($facebook, 30%);
-  }
+  // &::after {
+  //   background-color: darken($facebook, 30%);
+  // }
 }
 
 .twitter {
   background-color: $twitter;
 
-  &::before {
-    background-color: darken($twitter, 20%);
-  }
+  // &::before {
+  //   background-color: darken($twitter, 20%);
+  // }
 
-  &::after {
-    background-color: darken($twitter, 30%);
-  }
+  // &::after {
+  //   background-color: darken($twitter, 30%);
+  // }
 }
 
 .instagram {
   background-color: $instagram;
 
-  &::before {
-    background-color: darken($instagram, 20%);
-  }
+  // &::before {
+  //   background-color: darken($instagram, 20%);
+  // }
 
-  &::after {
-    background-color: darken($instagram, 30%);
-  }
+  // &::after {
+  //   background-color: darken($instagram, 30%);
+  // }
 }
 
 
 .linkedin {
   background-color: $linkedin;
 
-  &::before {
-    background-color: darken($linkedin, 20%);
-  }
+  // &::before {
+  //   background-color: darken($linkedin, 20%);
+  // }
 
-  &::after {
-    background-color: darken($linkedin, 30%);
-  }
+  // &::after {
+  //   background-color: darken($linkedin, 30%);
+  // }
 }
 
 @keyframes move {
