@@ -238,6 +238,7 @@ code {
   width: 42px;
   margin-bottom: 1.25rem;
 }
+
 /* Your existing text color styles for light and dark themes */
 .seven h1, .ten h1 {
   @apply text-dark dark:text-white;

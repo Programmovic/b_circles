@@ -93,7 +93,7 @@ const Home = ({ frontmatter, freeQuote, portfolio }) => {
         </section>
         <Portfolio items={portfolio.frontmatter.portfolio} />
         <motion.section
-          className="section bg-light pb-0"
+          className="section bg-light"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
@@ -111,7 +111,7 @@ const Home = ({ frontmatter, freeQuote, portfolio }) => {
             <div className="seven">
               <h1 className="section_title">{markdownify(feature?.title)}</h1>
             </div>
-            <div className="mt-8 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3" data-aos="zoom-in">
+            <div className="mt-8 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-4" data-aos="zoom-in">
               {feature?.features.map((item, i) => (
                 <ScrollLink
                   to={item.name.replace(' ', '-')}
@@ -133,7 +133,10 @@ const Home = ({ frontmatter, freeQuote, portfolio }) => {
                           alt={item.name}
                         />
                       )}
-                      {markdownify(item.name, "h3", "glassBox__title dark:text-white uppercase font-third")}
+                      <div className="ten">
+                      {markdownify(item.name, "h1", "glassBox__title dark:text-white uppercase font-third")}
+                    </div>
+                      
                     </div>
                     <div className="glassBox__content">{item?.content && item.content.split(' ').slice(0, 10).join(' ')}.. <span className="font-bold">Tap to see more</span></div>
                   </div>
