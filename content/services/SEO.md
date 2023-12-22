@@ -1,4 +1,5 @@
 ---
+overlay: ".9"
 title: "Conquer the digital landscape with B-Circles: Your SEO Powerhouse."
 description: "Unleash the power of SEO to elevate your online visibility and drive organic traffic. Our comprehensive SEO solutions are designed to propel your business towards greater success in the digital landscape."
 keywords: "social media marketing, online marketing, social media strategy, customer engagement, brand awareness, digital marketing"

@@ -1,5 +1,5 @@
 
-const PageHeader = ({ title, image }) => {
+const PageHeader = ({ title, image, overlay = ".48" }) => {
   const headerStyle = {
     backgroundImage: image ? `url(${image})` : 'none',
     backgroundSize: "cover",
@@ -20,7 +20,7 @@ const PageHeader = ({ title, image }) => {
       <div
         className="dark-overlay absolute top-0 left-0 w-full h-full  rounded-2xl"
         style={{
-          backgroundColor: "rgb(70 82 164 / 48%)", // Adjust opacity as needed
+          backgroundColor: `rgb(70 82 164 / ${overlay})`, // Adjust opacity as needed
           zIndex: 2, // Higher z-index for the overlay
         }}
       ></div>

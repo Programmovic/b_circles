@@ -10,7 +10,7 @@ const { title } = config.site;
 
 const About = ({ data, mdxContent, freeQuote }) => {
     return (
-        <Base title={`${title} | Frequently Asked Questions`}>
+        <Base title={`${title} | About Us`}>
 
             <section className="section">
                 <div className="container">
