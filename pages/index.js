@@ -215,11 +215,11 @@ const Home = ({ frontmatter, freeQuote, portfolio }) => {
         <section className="section pb-0 ">
           <div className="mb-8 text-center">
             <div className="container">
-            <div className="seven">
+            <div className="ten">
               {markdownify(
                 workflow?.title,
                 "h1",
-                "section_title text-3xl"
+                "section_title text-3xl text-start"
               )}
             </div>
             </div>

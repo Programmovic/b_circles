@@ -1,3 +1,10 @@
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
 /* Define the styles for the scrollbar track (the background) */
 ::-webkit-scrollbar {
   width: 12px;
@@ -161,8 +168,7 @@ code {
   font-style: normal;
 }
 
-/* Style 7
-   ----------------------------- */
+/* Style 7 ----------------------------- */
 .seven h1 {
   text-align: center;
   letter-spacing: 1px;
@@ -173,9 +179,8 @@ code {
   grid-template-rows: 27px 0;
   grid-gap: 20px;
   align-items: center;
-  @apply text-dark dark:text-white font-bold
+  @apply text-dark dark:text-white font-bold;
 }
-
 .seven h1:after,
 .seven h1:before {
   content: " ";
@@ -192,9 +197,8 @@ code {
     text-align: center;
     letter-spacing: 1px;
     text-transform: uppercase;
-    @apply text-xl
+    font-size: 1.5rem; /* Adjust the font size for small screens */
   }
-
 }
 
 /* Responsive styles for larger screens (e.g., tablets and desktops) */
@@ -204,12 +208,14 @@ code {
     font-weight: 300;
     letter-spacing: 1px;
     text-transform: uppercase;
+    font-size: 2rem; /* Adjust the font size for larger screens */
     display: grid;
     grid-template-columns: 1fr max-content 1fr;
     grid-template-rows: 27px 0;
     grid-gap: 20px;
     align-items: center;
   }
+
 
   .seven h1:before,
   .seven h1:after {
@@ -221,9 +227,17 @@ code {
     background-color: #f8f8f8;
   }
 }
-
+.ten h1:before {
+  @apply bg-primary;
+  border-radius: 0.25rem;
+  content: '';
+  display: block;
+  height: 0.25rem;
+  width: 42px;
+  margin-bottom: 1.25rem;
+}
 /* Your existing text color styles for light and dark themes */
-.seven h1 {
+.seven h1, .ten h1 {
   @apply text-dark dark:text-white;
 }
 
