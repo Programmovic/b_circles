@@ -268,6 +268,7 @@ $instagram:#E1306C;
     display: inline-block;
     transform: rotateX(-20deg) rotateY(45deg);
     animation: move 2s ease infinite;
+    z-index: -1;
     
     a{
       height: 100px;
