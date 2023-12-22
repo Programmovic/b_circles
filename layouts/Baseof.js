@@ -37,10 +37,19 @@ const Base = ({
 
     // Attach the scroll event listener
     window.addEventListener("scroll", handleScroll);
+    const handleClickOutsideMessage = (event) => {
+      // Close the message box if clicked outside of it
+      if (event.target.closest('.message-box-floating') === null) {
+        setShowMessage(false);
+      }
+    };
+
+    window.addEventListener("click", handleClickOutsideMessage);
 
     // Clean up the event listener on component unmount
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("click", handleClickOutsideMessage);
     };
   }, []);
 
@@ -68,6 +77,18 @@ const Base = ({
   const toggleSocialLinks = () => {
     setShowSocialLinks(!showSocialLinks);
   };
+  const [showMessage, setShowMessage] = useState(false);
+  const closeMessage = () => {
+    setShowMessage(false);
+  };
+  useEffect(() => {
+    const messageTimeout = setTimeout(() => {
+      setShowMessage(true);
+      // playMessageSound(); // Play the sound
+    }, 3000); // Set a timeout of 3 seconds
+
+    return () => clearTimeout(messageTimeout); // Clean up the timeout on component unmount
+  }, []);
   return (
     <>
       <Head>
@@ -162,17 +183,59 @@ const Base = ({
           <FaArrowUp />
         </button>
       )}
+      <div className="container">
+      <div className={`message-box-floating bg-primary w-80 animate-bounce ${showMessage ? 'visible' : 'hidden'}`}>
+        <p className="text-white  ">Welcome to our website! If you have any questions or need assistance, feel free to contact us.</p>
+        <button className="text-white text-center font-bold uppercase w-full" onClick={closeMessage}>Ok, thank you</button>
+      </div>
+      </div>
+      <button className="floating-contact-button shadow-lg animate-pulse" onClick={toggleContactForm} title="Contact Us">
 
-      <button className="floating-contact-button shadow-lg" onClick={toggleContactForm} title="Contact Us">
-
-        {!showContactForm ? <FaFacebookMessenger /> : <FaWindowClose />}
+        {!showContactForm ? <img src={`/images/operator.png`} className=" w-[50px] h-[50px] rounded-full" alt="Info" /> : <img src={`/images/rejected.png`} className="w-[50px] h-[50px]" alt="Info" />}
       </button>
 
-      
+
 
 
       {/* Styles for the scroll to top button */}
       <style jsx>{`
+      .message-box-floating {
+        position: fixed;
+        bottom: 100px;
+        left: 20px;
+        
+        color: #333;
+        border-radius: 10px;
+        padding: 15px;
+        font-size: 14px;
+        cursor: pointer;
+        opacity: 0;
+        transform: translateX(100%);
+        transition: opacity 0.3s, transform 0.3s;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        max-width: 250px;
+        z-index: 1
+      }
+
+      .message-box-floating.visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .message-box-floating p {
+        margin: 0;
+      }
+
+      .message-box-floating button {
+        background-color: #25d366;
+        border: none;
+        padding: 5px 10px;
+        margin-top: 10px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+
         .scroll-to-top {
           position: fixed;
           bottom: 20px;
