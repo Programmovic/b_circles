@@ -73,25 +73,25 @@ function Hero({ banner }) {
               transition={{ duration: 0.6 }}
             >
               <div className='relative'>
-              <motion.img
-                className="mx-auto mb-5 pointer-events-none select-none"
-                src={banner?.image}
-                width={200}
-                height={200}
-                alt="banner image"
-                priority
-              />
-              <img
-  className="mx-auto mb-5 christmas-hat absolute"
-  src="/images/hat.png"
-  alt="Christmas hat"
-  style={{
-    transform: 'translate(-50%, -50%) scaleX(-1) rotate(18deg)',
-    top: 'calc(50% - 97px)', // Adjust the top position as needed
-    left: 'calc(50% + 89px)', // Adjust the left position as needed
-    width: '100px',
-  }}
-/>
+                <motion.img
+                  className="mx-auto mb-5 pointer-events-none select-none"
+                  src={banner?.image}
+                  width={200}
+                  height={200}
+                  alt="banner image"
+                  priority
+                />
+                <img
+                  className="mx-auto mb-5 christmas-hat absolute"
+                  src="/images/hat.png"
+                  alt="Christmas hat"
+                  style={{
+                    transform: 'translate(-50%, -50%) scaleX(-1) rotate(18deg)',
+                    top: 'calc(50% - 97px)', // Adjust the top position as needed
+                    left: 'calc(50% + 89px)', // Adjust the left position as needed
+                    width: '100px',
+                  }}
+                />
 
               </div>
             </motion.div>
