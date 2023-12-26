@@ -11,27 +11,27 @@
       "children": [
         {
           "name": "Social media",
-          "url": "/#Social-Media"
+          "url": "/services/Social-Media"
         },
         {
           "name": "Software development",
-          "url": "/#Software-Development"
+          "url": "/services/Software-Development"
         },
         {
           "name": "Graphic design",
-          "url": "/#Graphic-Design"
+          "url": "/services/Graphic-Design"
         },
         {
           "name": "Consulting",
-          "url": "/#Consulting"
+          "url": "/services/Consulting"
         },
         {
           "name": "SEO",
-          "url": "/#SEO"
+          "url": "/services/SEO"
         },
         {
           "name": "Strategic partnerships",
-          "url": "/#Strategic-Partnerships"
+          "url": "/services/Strategic-Partnerships"
         },
         {
           "name": "Sales",
@@ -105,19 +105,19 @@
       "menu": [
         {
           "text": "Social media",
-          "url": "/#Social-Media"
+          "url": "/services/Social-Media"
         },
         {
           "text": "Software development",
-          "url": "/#Software-Development"
+          "url": "/services/Software-Development"
         },
         {
           "text": "Graphic design",
-          "url": "/#Graphic-Design"
+          "url": "/services/Graphic-Design"
         },
         {
           "text": "Consulting",
-          "url": "/#Consulting"
+          "url": "/services/Consulting"
         }
       ]
     }
