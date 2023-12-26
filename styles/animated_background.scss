@@ -4,9 +4,10 @@ $hero-height: 100vh; // Set height to auto
 $hero-width: 100vw;
 $hero-bg-mix: rgba(#29042f, 0.4);
 
-.hero_section{
+.hero_section {
 	max-height: $hero-height;
 }
+
 .hero {
 	display: grid;
 	position: relative;
@@ -303,13 +304,16 @@ $hero-bg-mix: rgba(#29042f, 0.4);
 	.animated-svg {
 		top: -45%;
 	}
-	.hero .__actions{
+
+	.hero .__actions {
 		flex-direction: column;
 	}
-	.hero .__actions a{
+
+	.hero .__actions a {
 		margin: 10px;
 	}
-	.hero .__title{
+
+	.hero .__title {
 		font-size: 2em;
 	}
 }
@@ -609,22 +613,22 @@ $drawer-open-transition: all cubic-bezier(0.92, -0.15, 0.21, 0.86) 0.25s;
 .tw-card-container {
 	perspective: 1000px;
 	overflow: hidden;
-	
+
 	border-radius: 15px;
-  }
-  
-  .tw-card {
+}
+
+.tw-card {
 	height: 400px;
 	transform-style: preserve-3d;
 	transition: transform 0.5s;
 	cursor: pointer;
-  }
-  
-  .tw-card:hover {
+}
+
+.tw-card:hover {
 	transform: translateY(-100%);
-  }
-  
-  .tw-card-face {
+}
+
+.tw-card-face {
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -634,42 +638,52 @@ $drawer-open-transition: all cubic-bezier(0.92, -0.15, 0.21, 0.86) 0.25s;
 	justify-content: center;
 	text-align: center;
 	padding: 20px;
-  }
-  
-  .tw-front {
+}
+
+.tw-front {
 	transform: translateY(0);
 	color: #000;
-  }
-  
-  .tw-back {
+}
+
+.tw-back {
 	transform: translateY(100%);
 	@apply text-dark dark:text-white
-  }
+}
 
 /* Arrow Indicators */
 .tw-card::before,
 .tw-card::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-style: solid;
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-style: solid;
 }
 
 /* Upward Arrow */
 .tw-card::before {
-  border-width: 0 10px 15px 10px;
-  border-color: transparent transparent #fff transparent;
-  top: 30px;
-  left: 50%;
-  transform: translateX(-50%);
+	border-width: 0 10px 15px 10px;
+	border-color: transparent transparent #fff transparent;
+	top: 30px;
+	left: 50%;
+	transform: translateX(-50%);
 }
 
 /* Downward Arrow */
 .tw-card::after {
-  border-width: 15px 10px 0 10px;
-  border-color: #ffffff81 transparent transparent transparent;
-  bottom: 60px;
-  left: 50%;
-  transform: translateX(-50%);
+	border-width: 15px 10px 0 10px;
+	border-color: #ffffff81 transparent transparent transparent;
+	bottom: 60px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+/* styles.css */
+
+.christmas-hat {
+	position: absolute;
+	transform: translate(-50%, -50%) scaleX(-1) rotate(18deg);
+	top: calc(50% - 93px);
+	right: calc(50% + -11px);
+	width: 100px;
 }

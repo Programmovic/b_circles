@@ -85,12 +85,6 @@ function Hero({ banner }) {
                   className="mx-auto mb-5 christmas-hat absolute"
                   src="/images/hat.png"
                   alt="Christmas hat"
-                  style={{
-                    transform: 'translate(-50%, -50%) scaleX(-1) rotate(18deg)',
-                    top: 'calc(50% - 97px)', // Adjust the top position as needed
-                    left: 'calc(50% + 89px)', // Adjust the left position as needed
-                    width: '100px',
-                  }}
                 />
 
               </div>
