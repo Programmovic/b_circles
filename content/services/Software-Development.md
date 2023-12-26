@@ -1,4 +1,5 @@
 ---
+overlay: ".9"
 title: "Software Development Services"
 description: "At B-circles, our software development services transcend the ordinary. We are dedicated to leveraging the latest advancements in artificial intelligence and technology to empower your business. Through meticulous analysis and a user-centric approach, we create bespoke solutions tailored to your unique requirements. Our expertise spans creating user-friendly websites, visually captivating e-commerce platforms, dynamic landing pages, and more. Beyond web development, we specialize in deploying innovative chatbots across social media platforms and crafting customized bots using cutting-edge tools like ChatGPT and BARD. Experience innovation and seamless digital solutions with B-circles."
 keywords: "social media marketing, online marketing, social media strategy, customer engagement, brand awareness, digital marketing"
