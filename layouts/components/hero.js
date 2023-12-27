@@ -1,12 +1,13 @@
-import React, { useState, useEffect, useRef } from 'react'
-import BIRDS from 'vanta/dist/vanta.birds.min'
-import { motion, AnimatePresence } from 'framer-motion';
-import { markdownify } from "@lib/utils/textConverter";
+import React, { useState, useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 import gsap from 'gsap';
 
 function Hero({ banner }) {
   const textRef = useRef(null);
+  const hatRef = useRef(null);
+  const [showHat, setShowHat] = useState(true);
+
   useEffect(() => {
     const animation = gsap.from(textRef.current, {
       opacity: 0,
@@ -15,45 +16,46 @@ function Hero({ banner }) {
       ease: 'power3.easeOut',
     });
 
-    // Optional: You can add additional animations or callbacks here
-
-    // Don't forget to clean up the animation on unmount
     return () => {
-      animation.kill(); // Kill the animation to prevent memory leaks
+      animation.kill();
     };
   }, []);
-  const [hovered, setHovered] = useState(false);
 
-  const handleMouseEnter = () => {
-    setHovered(true);
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const threshold = 10; // Adjust the threshold as needed
 
-  const handleMouseLeave = () => {
-    setHovered(false);
-  };
+      if (scrollY > threshold && showHat) {
+        gsap.to(hatRef.current, { opacity: 0, y: -30, duration: 0.5 });
+        setShowHat(false);
+      } else if (scrollY <= threshold && !showHat) {
+        gsap.to(hatRef.current, { opacity: 1, y: 0, duration: 0.5 });
+        setShowHat(true);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [showHat]);
 
   const textVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0 },
   };
 
-  const imageVariants = {
-    hidden: { opacity: 0, y: -20 },
-    visible: { opacity: 1, y: 0 },
-  };
   return (
-
     <section className='relative hero_section overflow-hidden'>
-
       <ul className='circles'>
         <li className="circle" />
         <li className="circle" />
         <li className="circle" />
         {/* <li className="circle" />
-         <li className="circle" />
-         <li className="circle" />
-         <li className="circle" />
-         <li className="circle" /> */}
+        <li className="circle" />
+        <li className="circle" /> */}
         <li className="circle" />
         <li className="circle" />
       </ul>
@@ -81,12 +83,12 @@ function Hero({ banner }) {
                   alt="banner image"
                   priority
                 />
-                <img
-                  className="mx-auto mb-5 christmas-hat absolute"
+                <motion.img
+                  ref={hatRef}
+                  className="mx-auto mb-5 christmas-hat absolute pointer-events-none select-none"
                   src="/images/hat.png"
                   alt="Christmas hat"
                 />
-
               </div>
             </motion.div>
             <motion.div
@@ -118,12 +120,8 @@ function Hero({ banner }) {
                   >
                     Contact
                   </Link>
-
                 </div>
               </div>
-
-
-
               <div className='flex justify-center'>
                 <h1 className="text-[1em] pt-2 w-fit border-t border-solid dark:border-gray-500 border-black font-third font-bold text-dark dark:text-white m-0 uppercase __title">{banner?.title}</h1>
               </div>
@@ -143,10 +141,7 @@ function Hero({ banner }) {
             </motion.div>
           </div>
         </div>
-
       </div>
-
-
     </section>
   );
 }

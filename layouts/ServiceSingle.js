@@ -111,7 +111,7 @@ const ServiceSingle = ({ frontmatter, content, mdxContent, slug, portfolio }) =>
             </div>
           </div>
           <FAQ_ITEM faqData={faqs} />
-          {/* <Portfolio items={portfolio.frontmatter.portfolio}/> */}
+          {/* <Portfolio items={portfolio.frontmatter.portfolio} classes={`bg-transparent`} isHome={false}/> */}
         </div>
       </section>
     </Base>

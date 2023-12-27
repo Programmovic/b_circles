@@ -5,7 +5,7 @@ import PageHeader from '@layouts/partials/PageHeader';
 import Link from 'next/link';
 import { FaEye } from 'react-icons/fa';
 
-const Portfolio = ({ items, isHome = true, service = "all" }) => {
+const Portfolio = ({ items, isHome = true, service = "all", classes }) => {
   const [selectedCategory, setSelectedCategory] = useState(service);
   const [lightboxController, setLightboxController] = useState({
     toggler: false,
@@ -33,7 +33,7 @@ const Portfolio = ({ items, isHome = true, service = "all" }) => {
   const remainingItems = filteredItems.length - numItemsToShow;
 
   return (
-    <section className={`${isHome && "bg-theme-light dark:bg-[#231f20]"} section`}>
+    <section className={`${classes} ${isHome && "bg-theme-light dark:bg-[#231f20]"} section `}>
       <div className="container">
 
         {/* Conditionally render PageHeader based on isHome prop */}
