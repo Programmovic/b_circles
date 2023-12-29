@@ -50,19 +50,49 @@ function Hero({ banner }) {
 
   return (
     <section className='relative hero_section overflow-hidden'>
-      
+
       <ul className='circles'>
-        <li className="circle" />
-        <li className="circle" />
-        <li className="circle" />
+        <li className="circle">
+          <img
+            className="absolute"
+            src="/images/santa-claus.png"
+            alt="Santa Claus icon"
+          />
+        </li>
+        <li className="circle">
+          <img
+            className="absolute"
+            src="/images/christmas-bell.png"
+            alt="Santa Claus icon"
+          />
+        </li>
+        <li className="circle">
+          <img
+            className="absolute"
+            src="/images/sleigh.png"
+            alt="Santa Claus icon"
+          />
+        </li>
         {/* <li className="circle" />
         <li className="circle" />
         <li className="circle" /> */}
-        <li className="circle" />
-        <li className="circle" />
+        <li className="circle">
+          <img
+            className="absolute"
+            src="/images/christmas-tree.png"
+            alt="Santa Claus icon"
+          />
+        </li>
+        <li className="circle">
+          <img
+            className="absolute"
+            src="/images/letter.png"
+            alt="Santa Claus icon"
+          />
+        </li>
       </ul>
       <div className="hero">
-        
+
         <div className="hero__bg">
           <picture>
             <img src="/images/bg2.webp" />
@@ -106,15 +136,15 @@ function Hero({ banner }) {
                 <h1 className="m-0 text-[20px] uppercase text-dark dark:text-white font-third">B-Circles Agency</h1>
                 <div className='py-4 flex justify-between __actions'>
                   <Link
-                      className="inline-block rounded-full border-2  border-neutral-900 px-[30px] pt-[14px] pb-[12px] text-sm uppercase leading-normal text-neutral-900 font-bold transition duration-150 ease-in-out hover:border-neutral-100 bg-[#4552a4ab] hover:bg-neutral-500 hover:bg-opacity-10 hover:text-neutral-100 focus:border-neutral-100 focus:text-neutral-100 focus:outline-none focus:ring-0 active:border-neutral-200 active:text-neutral-200 dark:border-neutral-100 dark:text-neutral-100"
-                      data-te-ripple-init
-                      data-te-ripple-color="light"
-                      title="get free consultation"
-                      href={`/free-consultation`}
-                      role="button"
-                    >
-                      get a free consultation
-                    </Link>
+                    className="inline-block rounded-full border-2  border-neutral-900 px-[30px] pt-[14px] pb-[12px] text-sm uppercase leading-normal text-neutral-900 font-bold transition duration-150 ease-in-out hover:border-neutral-100 bg-[#4552a4ab] hover:bg-neutral-500 hover:bg-opacity-10 hover:text-neutral-100 focus:border-neutral-100 focus:text-neutral-100 focus:outline-none focus:ring-0 active:border-neutral-200 active:text-neutral-200 dark:border-neutral-100 dark:text-neutral-100"
+                    data-te-ripple-init
+                    data-te-ripple-color="light"
+                    title="get free consultation"
+                    href={`/free-consultation`}
+                    role="button"
+                  >
+                    get a free consultation
+                  </Link>
                   <Link
                     className="inline-block rounded-full px-12 pt-[14px] pb-[12px] text-sm uppercase leading-normal text-neutral-900 font-bold transition duration-150 ease-in-out bg-[#e0692396] hover:bg-neutral-500 hover:bg-opacity-50 hover:text-neutral-200 focus:text-neutral-200 focus:outline-none focus:ring-0 active:text-neutral-300 dark:text-neutral-100"
                     data-te-ripple-init

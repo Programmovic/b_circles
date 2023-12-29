@@ -7,6 +7,8 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { FaArrowUp, FaFacebookMessenger, FaWindowClose } from 'react-icons/fa';
 import Contact_Form from "./components/Contact_Form";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 
 const Base = ({
@@ -81,19 +83,19 @@ const Base = ({
   const closeMessage = () => {
     setShowMessage(false);
   };
-  useEffect(() => {
-    const hasShownMessage = localStorage.getItem("hasShownMessage");
+  // useEffect(() => {
+  //   const hasShownMessage = localStorage.getItem("hasShownMessage");
 
-    if (!hasShownMessage) {
-      const messageTimeout = setTimeout(() => {
-        setShowMessage(true);
-        localStorage.setItem("hasShownMessage", "true");
-        // playMessageSound(); // Play the sound
-      }, 3000);
+  //   if (!hasShownMessage) {
+  //     const messageTimeout = setTimeout(() => {
+  //       setShowMessage(true);
+  //       localStorage.setItem("hasShownMessage", "true");
+  //       // playMessageSound(); // Play the sound
+  //     }, 3000);
 
-      return () => clearTimeout(messageTimeout);
-    }
-  }, []);
+  //     return () => clearTimeout(messageTimeout);
+  //   }
+  // }, []);
 
   const [showChristmasModal, setShowChristmasModal] = useState(false);
 
@@ -103,18 +105,27 @@ const Base = ({
   };
 
   // Check if it's Christmas (you can customize the date accordingly)
-  const isChristmas = () => {
-    const today = new Date();
-    const christmasDate = new Date(today.getFullYear(), 11, 25); // Christmas is on December 25th
-
-    return today.getMonth() === christmasDate.getMonth() && today.getDate() === christmasDate.getDate();
-  };
-
   useEffect(() => {
-    // Check if it's Christmas and the Christmas modal hasn't been shown
-    if (isChristmas() && !localStorage.getItem("hasShownChristmasModal")) {
-      setShowChristmasModal(true);
-      localStorage.setItem("hasShownChristmasModal", "true");
+    const isNewYear = () => {
+      const today = new Date();
+      return today.getMonth() === 0 && today.getDate() === 1;
+    };
+
+    if (true) {
+      toast(
+        <div>
+          <p>
+            Happy New Year! 🎉 <br></br>Wishing you a fantastic year filled with joy and success. 🌟
+          </p>
+        </div>,
+        {
+          autoClose: 8000,
+          hideProgressBar: false,
+          position: toast.POSITION.BOTTOM_CENTER,
+          bodyClassName: "new-year-toast"
+        }
+      );
+      // localStorage.setItem("hasShownNewYearToast", "true");
     }
   }, []);
   return (
@@ -232,7 +243,7 @@ const Base = ({
       </button>
 
 
-
+      <ToastContainer/>
 
       {/* Styles for the scroll to top button */}
       <style jsx>{`
@@ -364,6 +375,14 @@ const Base = ({
         }
         .menu.active .toggle{
           transform: rotate(360deg)
+        }
+        .new-year-toast {
+          background-color: darkblue;
+          color: #fff;
+          padding: 15px;
+          border-radius: 8px;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          text-align: center;
         }
       `}</style>
     </>

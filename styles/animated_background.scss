@@ -168,7 +168,7 @@ $hero-bg-mix: rgba(#29042f, 0.4);
 	width: 80px;
 	height: 80px;
 	animation-delay: 0s;
-	animation-duration: 20s;
+	animation-duration: 15s;
 	border-radius: 50%;
 	background-color: #eb671b;
 }
@@ -178,7 +178,7 @@ $hero-bg-mix: rgba(#29042f, 0.4);
 	width: 90px;
 	height: 90px;
 	animation-delay: 0s;
-	animation-duration: 25s;
+	animation-duration: 20s;
 	border-radius: 50%;
 }
 
@@ -187,7 +187,7 @@ $hero-bg-mix: rgba(#29042f, 0.4);
 	width: 70px;
 	height: 70px;
 	animation-delay: 0s;
-	animation-duration: 20s;
+	animation-duration: 15s;
 	border-radius: 50%;
 	background-color: #eb671b;
 }
@@ -197,7 +197,7 @@ $hero-bg-mix: rgba(#29042f, 0.4);
 	width: 60px;
 	height: 60px;
 	animation-delay: 0s;
-	animation-duration: 15s;
+	animation-duration: 10s;
 	border-radius: 50%;
 }
 
@@ -206,7 +206,7 @@ $hero-bg-mix: rgba(#29042f, 0.4);
 	width: 100px;
 	height: 100px;
 	animation-delay: 0s;
-	animation-duration: 20s;
+	animation-duration: 15s;
 	border-radius: 50%;
 	background-color: #eb671b;
 }
@@ -260,24 +260,24 @@ $hero-bg-mix: rgba(#29042f, 0.4);
 }
 
 @keyframes animate_horizontal {
-	25% {
-		transform: translateY(0) rotate(0deg);
-		opacity: 0;
-	}
+    25% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
 
-	50% {
-		transform: translateY(-60vh) rotate(360deg);
-		opacity: 1;
-	}
+    50% {
+        transform: translateY(-60vh) rotate(360deg);
+        opacity: 1;
+    }
 
-	75% {
-		opacity: 0;
-	}
+    75% {
+        opacity: 0;
+    }
 
-	100% {
-		transform: translateY(-120vh) rotate(720deg);
-		opacity: 0;
-	}
+    100% {
+        transform: translateY(-120vh) rotate(720deg);
+        opacity: 0;
+    }
 }
 
 @media only screen and (max-width: 600px) {
