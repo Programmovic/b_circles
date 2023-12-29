@@ -35,6 +35,7 @@
     "react-modal": "^3.16.1",
     "react-photoswipe-gallery": "^3.0.0",
     "react-scroll": "^1.8.9",
+    "react-snowfall": "^1.2.1",
     "rehype-slug": "^5.1.0",
     "remark-gfm": "^3.0.1",
     "swiper": "^8.4.7",
