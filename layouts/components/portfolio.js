@@ -85,6 +85,7 @@ const Portfolio = ({ items, isHome = true, service = "all", classes }) => {
                   width={300}
                   height={200}
                   className="object-cover w-full h-full transition-opacity duration-300 hover:blur-lg"
+                  loading='lazy'
                 />
                 <div className="overlay transition-opacity duration-300">
                   <div className="overlay-content flex flex-col justify-center w-full">
