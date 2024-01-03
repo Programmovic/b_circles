@@ -48,14 +48,14 @@ const Document = () => {
         {/* <TwSizeIndicator /> */}
         <NextScript />
         <Analytics />
-        <noscript>
+        {/* <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-MK8ZCMWN"
             height="0"
             width="0"
             style={{ display: "none", visibility: "hidden" }} // Use an object for style
           ></iframe>
-        </noscript>
+        </noscript> */}
         <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" async></script>
         <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.waves.min.js" async></script>
       </body>

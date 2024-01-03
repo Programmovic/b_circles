@@ -111,7 +111,7 @@ const Base = ({
       return today.getMonth() === 0 && today.getDate() === 1;
     };
 
-    if (true) {
+    if (isNewYear) {
       toast(
         <div>
           <p>
@@ -243,7 +243,7 @@ const Base = ({
       </button>
 
 
-      <ToastContainer/>
+      {/* <ToastContainer/> */}
 
       {/* Styles for the scroll to top button */}
       <style jsx>{`

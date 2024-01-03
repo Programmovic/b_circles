@@ -30,7 +30,7 @@ const PageHeader = ({ title, image, overlay = ".48" }) => {
         className="relative text-center px-8 py-20  rounded-2xl"
         style={{ zIndex: 3 }} // Highest z-index for the text
       >
-        {title && <h3 className="font-third text-white uppercase">{title}</h3>}
+        {title && <h3 className="font-third text-white uppercase animate-pulse">{title}</h3>}
       </div>
     </section>
   );

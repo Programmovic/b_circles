@@ -53,42 +53,42 @@ function Hero({ banner }) {
 
       <ul className='circles'>
         <li className="circle">
-          <img
+          {/* <img
             className="absolute"
             src="/images/santa-claus.png"
             alt="Santa Claus icon"
-          />
+          /> */}
         </li>
         <li className="circle">
-          <img
+          {/* <img
             className="absolute"
             src="/images/christmas-bell.png"
             alt="Santa Claus icon"
-          />
+          /> */}
         </li>
         <li className="circle">
-          <img
+          {/* <img
             className="absolute"
             src="/images/sleigh.png"
             alt="Santa Claus icon"
-          />
+          /> */}
         </li>
         {/* <li className="circle" />
         <li className="circle" />
         <li className="circle" /> */}
         <li className="circle">
-          <img
+          {/* <img
             className="absolute"
             src="/images/christmas-tree.png"
             alt="Santa Claus icon"
-          />
+          /> */}
         </li>
         <li className="circle">
-          <img
+          {/* <img
             className="absolute"
             src="/images/letter.png"
             alt="Santa Claus icon"
-          />
+          /> */}
         </li>
       </ul>
       <div className="hero">
@@ -97,7 +97,7 @@ function Hero({ banner }) {
           <picture>
             <img src="/images/bg2.webp" />
           </picture>
-          <Snowfall snowflakeCount={1000} snowflakeZIndex={2} />
+          {/* <Snowfall snowflakeCount={1000} snowflakeZIndex={2} /> */}
 
         </div>
         <div className="hero__overlay bg-[#ffffff54] dark:bg-[#0000008f]"></div>
@@ -118,12 +118,12 @@ function Hero({ banner }) {
                   alt="banner image"
                   priority
                 />
-                <motion.img
+                {/* <motion.img
                   ref={hatRef}
                   className="mx-auto mb-5 christmas-hat absolute pointer-events-none select-none"
                   src="/images/hat.png"
                   alt="Christmas hat"
-                />
+                /> */}
               </div>
             </motion.div>
             <motion.div
