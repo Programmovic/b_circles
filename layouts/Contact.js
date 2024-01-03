@@ -1,5 +1,5 @@
 import config from "@config/config.json";
-import { FaMarker, FaPaperPlane, FaGlobe } from "react-icons/fa";
+import { FaMarker, FaPaperPlane, FaGlobe, FaMapMarked, FaMapMarker } from "react-icons/fa";
 import { useState, useRef } from "react";
 import Contact_Form from "./components/Contact_Form";
 
@@ -17,7 +17,7 @@ const Contact = ({data}) => {
               <div className="contact-details-div w-1/4">
                 <div className="flex items-center justify-center">
                   <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#4652a4]">
-                    <FaMarker className="text-white" />
+                    <FaMapMarker className="text-white" />
                   </div>
                 </div>
                 <div className="text-center">
