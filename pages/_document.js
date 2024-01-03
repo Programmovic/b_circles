@@ -45,14 +45,13 @@ const Document = () => {
 
       </Head>
       <body className="dark:bg-[#1b1718] dark:text-white">
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-MK8ZCMWN"
-            height="0"
-            width="0"
-            style={{ display: 'none', visibility: 'hidden' }}
-          ></iframe>
-        </noscript>
+        <noscript
+          dangerouslySetInnerHTML={{
+            __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MK8ZCMWN" height="0" width="0" style="display: none; visibility: hidden;" />`,
+          }}
+        />
+
+
 
         <Main />
         {/* <TwSizeIndicator /> */}
