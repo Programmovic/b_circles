@@ -41,6 +41,7 @@ const Portfolio = ({ items, isHome = true, service = "all", classes }) => {
           <PageHeader
             title={`Our Work${selectedCategory !== "all" ? ` "${selectedCategory}"` : ""}`}
             image="/images/business-concept-with-team-close-up.jpg"
+            overlay=".8"
           />
         )}
         {isHome &&
@@ -54,7 +55,7 @@ const Portfolio = ({ items, isHome = true, service = "all", classes }) => {
                 onClick={() => handleCategoryChange('all')}
                 type="button"
                 className={`uppercase border-b-4 px-5 py-2.5 text-center me-3 mb-3 font-bold transition-all duration-300 
-      ${selectedCategory === "all" ? 'text-[#e06923] border-[#e06923]' : 'text-blue-700 border-transparent'}`}
+      ${selectedCategory === "all" ? 'text-[#e06923] border-[#e06923] animate-bounce' : 'text-blue-700 border-transparent'}`}
               >
                 All ({items.length})
               </button>
@@ -64,7 +65,7 @@ const Portfolio = ({ items, isHome = true, service = "all", classes }) => {
                   onClick={() => handleCategoryChange(category)}
                   type="button"
                   className={`uppercase border-b-4 px-5 py-2.5 text-center me-3 mb-3 font-bold transition-all duration-300 
-        ${selectedCategory === category ? ' text-[#e06923] border-[#e06923]' : 'text-blue-700 border-transparent'}`}
+        ${selectedCategory === category ? ' text-[#e06923] border-[#e06923]  animate-pulse' : 'text-blue-700 border-transparent'}`}
                 >
                   {category} ({items.filter((item) => item.category === category).length})
                 </button>
@@ -85,7 +86,6 @@ const Portfolio = ({ items, isHome = true, service = "all", classes }) => {
                   width={300}
                   height={200}
                   className="object-cover w-full h-full transition-opacity duration-300 hover:blur-lg"
-                  loading='lazy'
                 />
                 <div className="overlay transition-opacity duration-300">
                   <div className="overlay-content flex flex-col justify-center w-full">
