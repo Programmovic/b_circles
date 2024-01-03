@@ -14,7 +14,7 @@ const About = ({ data, mdxContent, freeQuote }) => {
 
             <section className="section">
                 <div className="container">
-                    <PageHeader title={data.frontmatter.title} image={data.frontmatter.image}/>
+                    <PageHeader title={data.frontmatter.title} image={data.frontmatter.image} overlay='.8'/>
                     <div className="content my-16 text-left dark:text-white">
                         <MDXRemote {...mdxContent} components={shortcodes} />
                     </div>
