@@ -5,7 +5,7 @@ import Footer from "@partials/Footer";
 import Header from "@partials/Header";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { FaArrowUp, FaFacebookMessenger, FaWindowClose } from 'react-icons/fa';
+import { FaArrowUp, FaFacebookMessenger, FaWindowClose, FaEye } from 'react-icons/fa';
 import Contact_Form from "./components/Contact_Form";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -128,6 +128,22 @@ const Base = ({
       // localStorage.setItem("hasShownNewYearToast", "true");
     }
   }, []);
+  const [visitCount, setVisitCount] = useState(0);
+  // Fetch the visit count from the API route
+  const fetchVisitCount = async () => {
+    try {
+      const response = await fetch('/api/track');
+      const data = await response.json();
+      setVisitCount(data.visits);
+    } catch (error) {
+      console.error('Error fetching visit count:', error);
+    }
+  };
+  useEffect(() => {
+
+
+    fetchVisitCount();
+  }, []);
   return (
     <>
       <Head>
@@ -214,8 +230,8 @@ const Base = ({
 
         </>
       </main>
-      <Footer />
-
+      <Footer visits={visitCount} />
+      <div className="hover:p-5 hover:pr-8 hover:text-md cursor-pointer text-sm fixed left-0 bottom-[50%] bg-[#e0e7e6] backdrop-blur-lg dark:bg-[#141111d9] p-2 rounded-tr-full rounded-br-full pr-4 flex justify-between items-center" title="Visits"><FaEye className="mr-2 mb-0"/> {visitCount}</div>
       {/* Scroll to top button */}
       {showScrollButton && (
         <button className="scroll-to-top" onClick={scrollToTop} title="Back to top">
@@ -224,12 +240,12 @@ const Base = ({
       )}
       {false && (
         <div className="christmas-modal">
-        <div className="overlay" />
-        <div className="content">
-          <p>🎄 Merry Christmas! 🎅 Wishing you joy and happiness this festive season. 🌟</p>
-          <button onClick={closeChristmasModal}>Close</button>
+          <div className="overlay" />
+          <div className="content">
+            <p>🎄 Merry Christmas! 🎅 Wishing you joy and happiness this festive season. 🌟</p>
+            <button onClick={closeChristmasModal}>Close</button>
+          </div>
         </div>
-      </div>
       )}
       <div className="container">
         <div className={`message-box-floating bg-primary w-80 animate-bounce ${showMessage ? 'visible' : 'hidden'}`}>

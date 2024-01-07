@@ -6,7 +6,8 @@ import { markdownify } from "@lib/utils/textConverter";
 import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
-const Footer = () => {
+import { FaEye } from "react-icons/fa";
+const Footer = ({ visits }) => {
   const { copyright, footer_content } = config.params;
   const { footer } = menu;
   const { theme, isDarkMode } = useTheme();
@@ -55,6 +56,7 @@ const Footer = () => {
         {/* copyright */}
         <div className="py-6">
           {markdownify(copyright, "p", "text-center font-bold")}
+          
         </div>
       </div>
     </footer>
