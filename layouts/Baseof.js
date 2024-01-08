@@ -129,7 +129,7 @@ const Base = ({
     }
   }, []);
   const [visitCount, setVisitCount] = useState(0);
-  // Fetch the visit count from the API route
+  const [loading, setLoading] = useState(true);
   const fetchVisitCount = async () => {
     try {
       const response = await fetch('/api/track');
@@ -137,6 +137,9 @@ const Base = ({
       setVisitCount(data.visits);
     } catch (error) {
       console.error('Error fetching visit count:', error);
+    } finally {
+      // Set loading to false when the fetch is complete
+      setLoading(false);
     }
   };
   useEffect(() => {
@@ -231,7 +234,11 @@ const Base = ({
         </>
       </main>
       <Footer visits={visitCount} />
-      <div className="hover:p-5 hover:pr-8 hover:text-md cursor-pointer text-sm fixed left-0 bottom-[50%] bg-[#e0e7e6] backdrop-blur-lg dark:bg-[#141111d9] p-2 rounded-tr-full rounded-br-full pr-4 flex justify-between items-center" title="Visits"><FaEye className="mr-2 mb-0"/> {visitCount}</div>
+      <div className="font-primary hover:p-8 hover:text-md cursor-pointer text-sm fixed bottom-0 left-1/2 transform -translate-x-1/2 bg-[#e0e7e6] backdrop-blur-lg dark:bg-[#141111d9] p-4 rounded-tr-xl rounded-tl-xl flex justify-between items-center z-10" title="Visits">
+        <FaEye className="mr-2 mb-0" />
+        {visitCount ? visitCount : <div className="loader animate-spin"></div>}
+      </div>
+
       {/* Scroll to top button */}
       {showScrollButton && (
         <button className="scroll-to-top" onClick={scrollToTop} title="Back to top">
@@ -399,6 +406,13 @@ const Base = ({
           border-radius: 8px;
           box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
           text-align: center;
+        }
+        .loader {
+          border: 6px solid #f3f3f3;
+          border-top: 6px solid #3498db;
+          border-radius: 50%;
+          width: 10px;
+          height: 10px;
         }
       `}</style>
     </>
