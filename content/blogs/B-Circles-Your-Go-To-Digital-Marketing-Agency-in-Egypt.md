@@ -2,7 +2,7 @@
 title: "B-Circles: Your Go-To Digital Marketing Agency in Egypt"
 description: "B-Circles: Your Go-To Digital Marketing Agency in Egypt."
 keywords: "social media marketing, online marketing, social media strategy, customer engagement, brand awareness, digital marketing"
-image: "/images/beautiful-collage-travel-concept.jpg"
+image: "/images/25025577_7038058.jpg"
 date: 2023-10-04T05:00:00Z
 draft: false
 ---
