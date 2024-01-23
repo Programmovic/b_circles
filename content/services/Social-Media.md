@@ -9,6 +9,7 @@ ensure you're getting the most out of your investment"
 keywords: "social media marketing, online marketing, social media strategy, customer engagement, brand awareness, digital marketing"
 bgImage: "'/images/hands-holding-smartphone-social-media-concept.jpg'"
 date: 2023-10-04T05:00:00Z
+canonical: "https://b-circles.co/services/Social-Media/"
 draft: false
 cta_text: Transform your social media strategy with B-Circles today. Let's create a tailored plan to elevate your brand and connect with your audience.
 cta_btn: Contact us now to get started!

@@ -4,6 +4,7 @@ description: "how to develop a successful social media marketing strategy for br
 keywords: "social media marketing, online marketing, social media strategy, customer engagement, brand awareness, digital marketing"
 image: "/images/Social Media Marketing Strategy1.png"
 date: 2023-10-04T05:00:00Z
+canonical: "https://b-circles.co/blogs/5-Steps-to-Create-a-Comprehensive-Digital-Marketing-Strategy-in-2023/"
 draft: false
 ---
 # 5 Steps to Create a Comprehensive Digital Marketing Strategy in 2023

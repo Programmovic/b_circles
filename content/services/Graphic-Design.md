@@ -4,6 +4,7 @@ description: "At B-circles, our graphic design services transcend conventional b
 keywords: "social media marketing, online marketing, social media strategy, customer engagement, brand awareness, digital marketing"
 bgImage: "'/images/graphic dsn.webp'"
 date: 2023-10-04T05:00:00Z
+canonical: "https://b-circles.co/services/Graphic-Design/"
 draft: false
 faqs:
   title: "Graphic Design Services FAQs"

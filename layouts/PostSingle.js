@@ -6,11 +6,11 @@ import Image from "next/image";
 import config from "@config/config.json";
 
 const PostSingle = ({ frontmatter, content, mdxContent }) => {
-  let { description, title, image, keywords } = frontmatter;
+  let { description, title, image, keywords, canonical } = frontmatter;
   description = description ? description : content.slice(0, 120);
 
   return (
-    <Base title={`${config.site.title} | ${title}`} description={description} keywords={keywords} image={image}>
+    <Base title={`${config.site.title} | ${title}`} description={description} keywords={keywords} image={image} canonical={canonical}>
       <section className="section">
         <div className="container">
           <div className="row">

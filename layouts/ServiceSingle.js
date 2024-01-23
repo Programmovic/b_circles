@@ -11,11 +11,11 @@ import FAQ_ITEM from "./components/FaqItem";
 import Portfolio from "./components/portfolio";
 
 const ServiceSingle = ({ frontmatter, content, mdxContent, slug, portfolio }) => {
-  let { description, title, bgImage, keywords, faqs, cta_text, cta_btn, overlay } = frontmatter;
+  let { description, title, bgImage, keywords, faqs, cta_text, cta_btn, overlay, canonical } = frontmatter;
   description = description ? description : content.slice(0, 120);
 
   return (
-    <Base title={`${config.site.title} | ${title}`} description={description} keywords={keywords} image={bgImage}>
+    <Base canonical={canonical} title={`${config.site.title} | ${title}`} description={description} keywords={keywords} image={bgImage}>
       <section className="section">
         <div className="container">
           <PageHeader title={slug.split("-").join(" ")} image={bgImage} overlay={overlay}/>

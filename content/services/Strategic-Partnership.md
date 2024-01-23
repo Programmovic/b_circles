@@ -4,6 +4,7 @@ description: "At B-Circles, our strategic partnerships empower your company or o
 keywords: "social media marketing, online marketing, social media strategy, customer engagement, brand awareness, digital marketing"
 bgImage: "'/images/strategic partnership.webp'"
 date: 2023-10-04T05:00:00Z
+canonical: "https://b-circles.co/services/Strategic-Partnership/"
 draft: false
 cta_text: Explore how B-Circles can propel your business forward through strategic partnerships.
 cta_btn: Explore Partnership Opportunities

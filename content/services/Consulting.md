@@ -3,6 +3,7 @@ title: "Strategic Consulting for Sustainable Growth"
 description: "At B-Circles, our consulting service pave the way for your sustainable success. We delve deep into understanding your current standing and capabilities to craft a tailored strategy. Identifying your strengths, weaknesses, and untapped opportunities, we meticulously chart a path that aligns with your goals. Empower your business with our strategic consulting expertise today."
 bgImage: "'/images/cropped-colleagues-generating-business-ideas.jpg'"
 date: 2023-10-04T05:00:00Z
+canonical: "https://b-circles.co/services/Consulting/"
 draft: false
 cta_text: Schedule a consultation today and discover how our expertise can empower your business.
 cta_btn: Book Your Consultation Now

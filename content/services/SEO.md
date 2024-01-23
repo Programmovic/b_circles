@@ -5,6 +5,7 @@ description: "Unleash the power of SEO to elevate your online visibility and dri
 keywords: "social media marketing, online marketing, social media strategy, customer engagement, brand awareness, digital marketing"
 bgImage: "'/images/32010.jpg'"
 date: 2023-10-04T05:00:00Z
+canonical: "https://b-circles.co/services/SEO/"
 draft: false
 cta_text: Explore our tailored SEO services and transform your online visibility today. Let's amplify your brand's reach and drive sustainable growth together.
 cta_btn: Get Started

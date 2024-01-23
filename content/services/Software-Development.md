@@ -5,6 +5,7 @@ description: "At B-circles, our software development services transcend the ordi
 keywords: "social media marketing, online marketing, social media strategy, customer engagement, brand awareness, digital marketing"
 bgImage: "'/images/web development.webp'"
 date: 2023-10-04T05:00:00Z
+canonical: "https://b-circles.co/services/Software-Development/"
 draft: false
 cta_text: Request a quote tailored to your specific requirements and get started on your project
 faqs:
