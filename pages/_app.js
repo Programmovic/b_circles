@@ -49,7 +49,6 @@ const App = ({
           href="https://fonts.gstatic.com"
           crossOrigin="true"
         />
-        <link rel="canonical" href="https://b-circles.co/" />
         <style
           dangerouslySetInnerHTML={{
             __html: `${fontcss}`,
