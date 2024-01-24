@@ -8,7 +8,7 @@ import markdown2
 
 app = Flask(__name__)
 
-def load_faq_data(file_path='../content/faq.md'):
+def load_faq_data(file_path='faq.md'):
     with open(file_path, 'r', encoding='utf-8') as file:
         content = file.read()
 
