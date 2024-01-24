@@ -9,6 +9,7 @@ import { FaArrowUp, FaFacebookMessenger, FaWindowClose, FaEye } from 'react-icon
 import Contact_Form from "./components/Contact_Form";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ChatInterface from "./components/chat";
 
 
 const Base = ({
@@ -264,7 +265,7 @@ const Base = ({
 
         {!showContactForm ? <img src={`/images/operator.png`} className=" w-[50px] h-[50px] rounded-full" alt="Info" /> : <img src={`/images/rejected.png`} className="w-[50px] h-[50px]" alt="Info" />}
       </button>
-
+{showContactForm && <ChatInterface/>}
 
       {/* <ToastContainer/> */}
 

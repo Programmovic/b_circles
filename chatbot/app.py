@@ -3,38 +3,44 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.naive_bayes import MultinomialNB
-import frontmatter
-import markdown2
 
 app = Flask(__name__)
 
-def load_faq_data(file_path='faq.md'):
-    with open(file_path, 'r', encoding='utf-8') as file:
-        content = file.read()
+faq_data = [
+    {
+        "title": "Who we are?",
+        "answer": "We are an innovative outsourcing company that offers a wide range of services to businesses, firms, and startups. With a strong emphasis on digital marketing, B-Circles acts as a strategic partner, assisting clients in achieving unparalleled success and market prominence. Our expert team in their respective fields can provide the most professional services for our clients."
+    },
+    {
+        "title": "What services does B-Circles provide?",
+        "answer": "- Digital Marketing.<br>- Web Development.<br>- Sales.<br>- Graphic Design.<br>- Business Partnership.<br>- Training and Workshops."
+    },
+    {
+        "title": "How can I reach the B-Circles team?",
+        "answer": "We are available 24/7. All you need to do is email us through our 'Contact Us' page, and we will reply in less than 24 hours."
+    },
+    {
+        "title": "Why should I choose B-Circles?",
+        "answer": "B-Circles provides experts in each field. We are a strategic partner, assisting clients in achieving unparalleled success and market prominence. We aim to be the driving force behind our clients' success, offering innovative ideas and a comprehensive range of services to propel businesses to new heights. We are flexible and readily available to meet our clients' needs."
+    },
+    {
+        "title": "How long does it take to get an initial plan for my project?",
+        "answer": "It takes a maximum of one week for us to provide you with the initial business plan and designs."
+    }
+]
 
-    # Parse Markdown content using frontmatter
-    faq_data = frontmatter.loads(content)
-
-    # Extract questions and answers
-    questions = [faq['title'] for faq in faq_data['faqs']]
-    answers = [faq['answer'] for faq in faq_data['faqs']]
-
-    return questions, answers
+# Extract questions and answers
+faq_questions = [faq['title'] for faq in faq_data]
+faq_answers = [faq['answer'] for faq in faq_data]
 
 # Preprocess Text
 def preprocess_text(text):
-    # Convert Markdown to plain text
-    plain_text = markdown2.markdown(text)
-
     # Tokenization and removal of stopwords
-    tokens = word_tokenize(plain_text)
+    tokens = word_tokenize(text)
     stop_words = set(stopwords.words('english'))
     tokens = [word.lower() for word in tokens if word.isalnum() and word.lower() not in stop_words]
 
     return tokens
-
-# Load FAQ data from the Markdown file
-faq_questions, faq_answers = load_faq_data()
 
 # Combine FAQ questions and answers into a single list for vectorization
 combined_texts = [' '.join(preprocess_text(q)) + ' ' + ' '.join(preprocess_text(a)) for q, a in zip(faq_questions, faq_answers)]
