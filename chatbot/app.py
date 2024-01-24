@@ -32,8 +32,8 @@ def load_faq_data():
         }
     ]
 
-    faq_questions = [faq['title'] for faq in faq_data['faqs']]
-    faq_answers = [faq['answer'] for faq in faq_data['faqs']]
+    faq_questions = [faq['title'] for faq in faq_data]
+    faq_answers = [faq['answer'] for faq in faq_data]
 
     return faq_questions, faq_answers
 
