@@ -227,6 +227,7 @@ const Base = ({
           {showContactForm && (
             <div className="container floating-contact-us">
               <Contact_Form data={data} onClose={toggleContactForm} className="w-3/4 fixed top-1/2 left-1/2 transform -translate-x-1/2  -translate-y-1/2 rounded-10 z-50 shadow-lg" />
+              <ChatInterface/>
             </div>
 
 
@@ -265,7 +266,6 @@ const Base = ({
 
         {!showContactForm ? <img src={`/images/operator.png`} className=" w-[50px] h-[50px] rounded-full" alt="Info" /> : <img src={`/images/rejected.png`} className="w-[50px] h-[50px]" alt="Info" />}
       </button>
-{showContactForm && <ChatInterface/>}
 
       {/* <ToastContainer/> */}
 
