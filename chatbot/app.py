@@ -5,8 +5,10 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.naive_bayes import MultinomialNB
 import frontmatter
 import markdown2
+from flask_cors import CORS  # Import the CORS module
 
 app = Flask(__name__)
+CORS(app)  # Enable CORS for all routes
 
 def load_faq_data():
     faq_data = [
@@ -86,6 +88,7 @@ def ask():
         data = request.get_json()
         user_question = data['question']
         answer = answer_question(user_question)
+        print(user_question)
         return jsonify({'answer': answer})
     except Exception as e:
         return jsonify({'error': str(e)}), 500

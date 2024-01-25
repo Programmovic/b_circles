@@ -266,6 +266,7 @@ const Base = ({
 
         {!showContactForm ? <img src={`/images/operator.png`} className=" w-[50px] h-[50px] rounded-full" alt="Info" /> : <img src={`/images/rejected.png`} className="w-[50px] h-[50px]" alt="Info" />}
       </button>
+      <ChatInterface/>
 
       {/* <ToastContainer/> */}
 
