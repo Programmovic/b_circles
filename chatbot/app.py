@@ -110,4 +110,6 @@ def ask():
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0')
+    from werkzeug.serving import run_simple
+    run_simple('0.0.0.0', 5000, app, use_reloader=True, use_debugger=True)
+

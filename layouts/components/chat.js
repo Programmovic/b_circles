@@ -73,17 +73,17 @@ const ChatInterface = () => {
               <div key={index} className="flex" ref={index === chatHistory.length - 1 ? lastMessageRef : null}>
                 <div className="w-full">
                   {message.user && (
-                    <div className="flex items-start  my-4">
+                    <div className="flex items-start">
                       <img
                         src="/images/user-profile.png"
                         alt="User"
                         className="w-8 h-8 rounded-full mr-2 bg-white"
                       />
-                      <p className="msg p-3 w-3/4 dark:bg-[#2a2323d9] text-white bg-blue-500 rounded">{message.user}</p>
+                      <p className="msg p-3 mb-3 w-3/4 dark:bg-[#2a2323d9] text-white bg-blue-500 rounded">{message.user}</p>
                     </div>
                   )}
                   {message.bot && (
-                    <div className="flex items-start my-4">
+                    <div className="flex items-start">
                       <p className="msg p-3 w-3/4 text-black dark:bg-[#2a2323d9] dark:text-white bg-gray-200 rounded">{message.bot}</p>
                       <img
                         src={logo}
