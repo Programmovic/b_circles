@@ -3,13 +3,14 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.naive_bayes import MultinomialNB
+import nltk
 import frontmatter
 import markdown2
 from flask_cors import CORS  # Import the CORS module
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
-
+nltk.download('punkt')
 def load_faq_data():
     faq_data = [
         {
