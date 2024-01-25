@@ -11,6 +11,8 @@ from flask_cors import CORS  # Import the CORS module
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 nltk.download('punkt')
+nltk.download('stopwords')
+
 def load_faq_data():
     faq_data = [
         {
