@@ -86,12 +86,25 @@ def answer_question(question):
 def ask():
     try:
         data = request.get_json()
-        user_question = data['question']
+        user_question = data.get('question', '').strip()
+
+        # Provide an initial message when the user starts the conversation
+        initial_message = "Welcome! How can I assist you today?"
+
+        # If the user's question is empty, return the initial message
+        if not user_question:
+            return jsonify({'answer': initial_message})
+
+        # Otherwise, answer the user's question
         answer = answer_question(user_question)
-        print(user_question)
+
+        # If the answer is the same as the initial message, consider it out of context
+        if answer.strip().lower() == initial_message.strip().lower():
+            return jsonify({'answer': "I'm sorry, I didn't understand that. How can I assist you?"})
+
         return jsonify({'answer': answer})
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False, host='0.0.0.0')
