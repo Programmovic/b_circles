@@ -236,10 +236,10 @@ const Base = ({
         </>
       </main>
       <Footer visits={visitCount} />
-      <div className="font-primary hover:p-8 hover:text-md cursor-pointer text-sm fixed bottom-0 left-1/2 transform -translate-x-1/2 bg-[#e0e7e6] backdrop-blur-lg dark:bg-[#141111d9] p-4 rounded-tr-xl rounded-tl-xl flex justify-between items-center z-10" title="Visits">
+      {/* <div className="font-primary hover:p-8 hover:text-md cursor-pointer text-sm fixed bottom-0 left-1/2 transform -translate-x-1/2 bg-[#e0e7e6] backdrop-blur-lg dark:bg-[#141111d9] p-4 rounded-tr-xl rounded-tl-xl flex justify-between items-center z-10" title="Visits">
         <FaEye className="mr-2 mb-0" />
         {visitCount ? visitCount : <div className="loader animate-spin"></div>}
-      </div>
+      </div> */}
 
       {/* Scroll to top button */}
       {showScrollButton && (
@@ -266,7 +266,7 @@ const Base = ({
 
         {!showContactForm ? <img src={`/images/operator.png`} className=" w-[50px] h-[50px] rounded-full" alt="Info" /> : <img src={`/images/rejected.png`} className="w-[50px] h-[50px]" alt="Info" />}
       </button>
-      {/* <ChatInterface/> */}
+      <ChatInterface/>
 
       {/* <ToastContainer/> */}
 

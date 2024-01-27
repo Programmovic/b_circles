@@ -1,115 +1,93 @@
-from flask import Flask, jsonify, request
-from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.naive_bayes import MultinomialNB
-import nltk
-import frontmatter
-import markdown2
-from flask_cors import CORS  # Import the CORS module
+from flask import Flask, request, jsonify
+from transformers import pipeline
+from flask_cors import CORS  # Import the CORS extension
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS for all routes
-nltk.download('punkt')
-nltk.download('stopwords')
+CORS(app)
 
-def load_faq_data():
-    faq_data = [
-        {
-            "title": "Who we are?",
-            "answer": "We are an innovative outsourcing company that offers a wide range of services to businesses, firms, and startups. With a strong emphasis on digital marketing, B-Circles acts as a strategic partner, assisting clients in achieving unparalleled success and market prominence. Our expert team in their respective fields can provide the most professional services for our clients."
-        },
-        {
-            "title": "What services does B-Circles provide?",
-            "answer": "- Digital Marketing.<br>- Web Development.<br>- Sales.<br>- Graphic Design.<br>- Business Partnership.<br>- Training and Workshops."
-        },
-        {
-            "title": "How can I reach the B-Circles team?",
-            "answer": "We are available 24/7. All you need to do is email us through our 'Contact Us' page, and we will reply in less than 24 hours."
-        },
-        {
-            "title": "Why should I choose B-Circles?",
-            "answer": "B-Circles provides experts in each field. We are a strategic partner, assisting clients in achieving unparalleled success and market prominence. We aim to be the driving force behind our clients' success, offering innovative ideas and a comprehensive range of services to propel businesses to new heights. We are flexible and readily available to meet our clients' needs."
-        },
-        {
-            "title": "How long does it take to get an initial plan for my project?",
-            "answer": "It takes a maximum of one week for us to provide you with the initial business plan and designs."
-        }
-    ]
+# Load the pre-trained model and tokenizer
+model_name = "deepset/roberta-base-squad2"
+qa_pipeline = pipeline("question-answering", model=model_name, tokenizer=model_name)
 
-    faq_questions = [faq['title'] for faq in faq_data]
-    faq_answers = [faq['answer'] for faq in faq_data]
+# Define the FAQ context with more descriptive titles and longer answers
+faq_context = [
+    {
+        "title": "About B-Circles",
+        "answer": "We are an innovative outsourcing company that offers a wide range of services to businesses, firms, and startups. With a strong emphasis on digital marketing, B-Circles acts as a strategic partner, assisting clients in achieving unparalleled success and market prominence. Our expert team in their respective fields can provide the most professional services for our clients. Our commitment to excellence and client satisfaction sets us apart in the industry. We have successfully collaborated with diverse clients, helping them navigate the evolving business landscape."
+    },
+    {
+        "title": "Services Provided by B-Circles",
+        "answer": "B-Circles offers a diverse range of specialized services tailored to meet the unique needs of our clients. Our comprehensive service portfolio includes:\n\n1. **Digital Marketing:** Leverage cutting-edge digital strategies to enhance your online presence and reach your target audience effectively.\n\n2. **Web Development:** Our skilled development team creates custom websites aligned with your business objectives, ensuring a seamless user experience.\n\n3. **Sales Strategy:** Drive revenue growth through strategic planning and effective sales initiatives, tailored to your industry and market dynamics.\n\n4. **Graphic Design:** Our creative team delivers visually captivating designs to enhance your brand identity, from logos to marketing collateral.\n\n5. **Business Partnership:** Collaborate with us as a strategic partner for mutual success and growth, leveraging our expertise to achieve shared business objectives.\n\n6. **Training and Workshops:** Empower your team with our specialized training programs covering the latest industry trends and technologies, fostering continuous growth and innovation."
+    },
+    {
+        "title": "List Services Provided by B-Circles",
+        "answer": "Digital Marketing, Web Development, Sales Strategy, Graphic Design, Business Partnership, Training and Workshops."
+    },
+    {
+        "title": "Contacting B-Circles Team",
+        "answer": "At B-Circles, we prioritize open communication with our clients. Our dedicated team is available 24/7 to address your inquiries and provide assistance. Feel free to reach out to us by emailing through our 'Contact Us' page on our website. We understand the urgency of your queries, and you can expect a prompt response within less than 24 hours. Your satisfaction is our top priority, and we are committed to ensuring a seamless communication experience."
+    },
+    {
+        "title": "Why Choose B-Circles",
+        "answer": "Choosing B-Circles means selecting a team of seasoned experts dedicated to your success. What sets us apart is not just our professional services but also our innovative approach. We strive to be the driving force behind your success, offering groundbreaking ideas and a comprehensive suite of services to propel your business to new heights. Our flexible and client-centric approach ensures that we are readily available to meet your evolving needs. When you choose B-Circles, you're choosing a strategic ally committed to achieving unparalleled success and market prominence for your business."
+    },
+    {
+        "title": "Time for Initial Project Plan",
+        "answer": "We recognize the importance of timely planning for the success of your projects. When you engage with B-Circles, we commit to delivering the initial business plan and designs within a maximum of one week. This ensures that you can kickstart your project with a well-thought-out strategy and a clear roadmap for success. Our efficient and experienced team works diligently to provide you with high-quality deliverables within the stipulated timeframe."
+    }
+]
 
-    return faq_questions, faq_answers
+# Dictionary to store chat history
+chat_history = {}
 
-# Preprocess Text
-def preprocess_text(text):
-    # Convert Markdown to plain text
-    plain_text = markdown2.markdown(text)
-
-    # Tokenization and removal of stopwords
-    tokens = word_tokenize(plain_text)
-    stop_words = set(stopwords.words('english'))
-    tokens = [word.lower() for word in tokens if word.isalnum() and word.lower() not in stop_words]
-
-    return tokens
-
-# Load FAQ data from the Markdown file
-faq_questions, faq_answers = load_faq_data()
-
-# Combine FAQ questions and answers into a single list for vectorization
-combined_texts = [' '.join(preprocess_text(q)) + ' ' + ' '.join(preprocess_text(a)) for q, a in zip(faq_questions, faq_answers)]
-
-# Embed Text using TF-IDF
-vectorizer = TfidfVectorizer()
-X = vectorizer.fit_transform(combined_texts).toarray()
-
-# Labels (use indices as labels)
-labels = list(range(len(faq_questions)))
-
-# Train Naive Bayes Classifier
-nb_classifier = MultinomialNB()
-nb_classifier.fit(X, labels)
-
-# Function for Question Answering
-def answer_question(question):
-    # Preprocess the user's question
-    preprocessed_question = preprocess_text(question)
-
-    # Embed the question using the same vectorizer
-    embedded_question = vectorizer.transform([' '.join(preprocessed_question)]).toarray()
-
-    # Predict the label using the trained Naive Bayes classifier
-    predicted_label = nb_classifier.predict(embedded_question)[0]
-
-    # Return the corresponding answer based on the predicted label
-    return faq_answers[predicted_label]
 
 @app.route('/ask', methods=['POST'])
-def ask():
-    try:
-        data = request.get_json()
-        user_question = data.get('question', '').strip()
+def ask_question():
+    # Get the question and user ID from the request
+    data = request.get_json()
+    user_question = data.get('question', '')
+    user_id = data.get('id', None)
 
-        # Provide an initial message when the user starts the conversation
-        initial_message = "Welcome! How can I assist you today?"
+    # Handle greetings and farewells
+    if is_greeting(user_question):
+        answer_text = "Hello! How can I assist you today?"
+    elif is_farewell(user_question):
+        answer_text = "Goodbye! If you have more questions, feel free to ask anytime."
+    else:
+        # Combine FAQ context answers with additional context
+        combined_context = " ".join([f"{faq['title']} {faq['answer']}" for faq in faq_context])
 
-        # If the user's question is empty, return the initial message
-        if not user_question:
-            return jsonify({'answer': initial_message})
+        # Using the question-answering pipeline to get the answer
+        answer = qa_pipeline(question=user_question, context=combined_context)
+        answer_text = answer["answer"]
 
-        # Otherwise, answer the user's question
-        answer = answer_question(user_question)
+    # Update chat history for the user
+    if user_id not in chat_history:
+        chat_history[user_id] = []
 
-        # If the answer is the same as the initial message, consider it out of context
-        if answer.strip().lower() == initial_message.strip().lower():
-            return jsonify({'answer': "I'm sorry, I didn't understand that. How can I assist you?"})
+    # Append the user's question and bot's answer to the chat history
+    chat_history[user_id].append({"user": user_question, "bot": answer_text})
 
-        return jsonify({'answer': answer})
-    except Exception as e:
-        return jsonify({'error': str(e)}), 500
+    # Return the result as JSON
+    return jsonify({"question": user_question, "answer": answer_text})
+
+
+@app.route('/chat_history/<user_id>', methods=['GET'])
+def get_chat_history(user_id):
+    # Retrieve the chat history for a specific user
+    history = chat_history.get(user_id, [])
+    return jsonify({"user_id": user_id, "chat_history": history})
+
+
+def is_greeting(text):
+    greetings = ["hi", "hello", "hey", "howdy"]
+    return any(greeting in text.lower() for greeting in greetings)
+
+
+def is_farewell(text):
+    farewells = ["bye", "goodbye", "see you", "adios"]
+    return any(farewell in text.lower() for farewell in farewells)
+
 
 if __name__ == '__main__':
-    from waitress import serve
-    serve(app, host='0.0.0.0', port=5000)
-
+    app.run(debug=True)
