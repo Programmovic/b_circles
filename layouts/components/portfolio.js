@@ -55,7 +55,7 @@ const Portfolio = ({ items, isHome = true, service = "all", classes }) => {
                 onClick={() => handleCategoryChange('all')}
                 type="button"
                 className={`uppercase border-b-4 px-5 py-2.5 text-center me-3 mb-3 font-bold transition-all duration-300 
-      ${selectedCategory === "all" ? 'text-[#e06923] border-[#e06923] animate-pulse' : 'text-blue-700 border-transparent'}`}
+      ${selectedCategory === "all" ? 'text-[#e06923] border-[#e06923] animate-pulse' : ' border-transparent'}`}
               >
                 All ({items.length})
               </button>
@@ -65,7 +65,7 @@ const Portfolio = ({ items, isHome = true, service = "all", classes }) => {
                   onClick={() => handleCategoryChange(category)}
                   type="button"
                   className={`uppercase border-b-4 px-5 py-2.5 text-center me-3 mb-3 font-bold transition-all duration-300 
-        ${selectedCategory === category ? ' text-[#e06923] border-[#e06923]  animate-pulse' : 'text-blue-700 border-transparent'}`}
+        ${selectedCategory === category ? ' text-[#e06923] border-[#e06923]  animate-pulse' : ' border-transparent'}`}
                 >
                   {category} ({items.filter((item) => item.category === category).length})
                 </button>

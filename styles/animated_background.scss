@@ -75,6 +75,8 @@ $hero-bg-mix: rgba(#29042f, 0.4);
 			object-position: 77% 50%;
 			height: auto;
 			width: 100%;
+			position: fixed;
+			
 		}
 	}
 
@@ -136,7 +138,36 @@ $hero-bg-mix: rgba(#29042f, 0.4);
 
 
 
+.hero__cnt::before,
+.hero__cnt::after {
+	content: "";
+	position: absolute;
+	width: 90%;
+	/* Adjust based on desired size */
+	height: 90%;
+	/* Adjust based on desired size */
+	background: #4552a4ab;
+	/* Example background color, adjust as needed */
+	border-radius: 50%;
+	/* Creates a circle, adjust for other shapes */
+	@apply animate-pulse;
+}
 
+.hero__cnt::before {
+	top: -30%;
+	left: -50%;
+	border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+	/* Custom border radius */
+	background-color: rgba(224, 104, 35, 0.404);
+}
+
+.hero__cnt::after {
+	bottom: -50%;
+	right: -50%;
+	border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
+	/* Custom border radius for contrast */
+	background-color: rgb(69 82 164 / 62%);
+}
 
 
 
@@ -260,24 +291,27 @@ $hero-bg-mix: rgba(#29042f, 0.4);
 }
 
 @keyframes animate_horizontal {
-    25% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 0;
-    }
+	25% {
+		transform: translateY(0) rotate(0deg);
+		opacity: 0;
+	}
 
-    50% {
-        transform: translateY(-60vh) rotate(360deg);
-        opacity: 1;
-    }
+	50% {
+		transform: translateY(-60vh) rotate(360deg);
+		opacity: 1;
+		@apply animate-ping;
+	}
 
-    75% {
-        opacity: 0;
-    }
+	75% {
+		opacity: 0;
+		@apply animate-ping;
+	}
 
-    100% {
-        transform: translateY(-120vh) rotate(720deg);
-        opacity: 0;
-    }
+	100% {
+		transform: translateY(-120vh) rotate(720deg);
+		opacity: 0;
+		@apply animate-ping;
+	}
 }
 
 @media only screen and (max-width: 600px) {
@@ -682,7 +716,7 @@ $drawer-open-transition: all cubic-bezier(0.92, -0.15, 0.21, 0.86) 0.25s;
 
 .christmas-hat {
 	position: absolute;
-	transform: translate(-50%, -50%) scaleX(-1) rotate(18deg);
+	transform: translate(-50%, -50%) rotate(18deg);
 	top: calc(50% - 93px);
 	right: calc(50% + -11px);
 	width: 100px;
@@ -693,41 +727,44 @@ $dot-color: #3b5998;
 $speed: 1.5s;
 
 .typing {
-  position: relative;
-  
-  span {
-    content: '';
-    animation: blink $speed infinite;
-    animation-fill-mode: both;
-    height: $dot-width;
-    width: $dot-width;
-    background: $dot-color;
-    position: absolute;
-    left:0;
-    top:0;
-    border-radius: 50%;
-    
-    &:nth-child(2) {
-      animation-delay: .2s;
-      margin-left: $dot-width * 1.5;
-    }
-    
-    &:nth-child(3) {
-      animation-delay: .4s;
-      margin-left: $dot-width * 3;
-    }
-  }
+	position: relative;
+
+	span {
+		content: '';
+		animation: blink $speed infinite;
+		animation-fill-mode: both;
+		height: $dot-width;
+		width: $dot-width;
+		background: $dot-color;
+		position: absolute;
+		left: 0;
+		top: 0;
+		border-radius: 50%;
+
+		&:nth-child(2) {
+			animation-delay: .2s;
+			margin-left: $dot-width * 1.5;
+		}
+
+		&:nth-child(3) {
+			animation-delay: .4s;
+			margin-left: $dot-width * 3;
+		}
+	}
 }
 
 
 @keyframes blink {
-  0% {
-    opacity: .1;
-  }
-  20% {
-    opacity: 1;
-  }
-  100% {
-    opacity: .1;
-  }
+	0% {
+		opacity: .1;
+	}
+
+	20% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: .1;
+	}
 }
+

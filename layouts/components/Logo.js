@@ -26,6 +26,7 @@ const Logo = ({ src, className }) => {
             priority
           /> */}
           <h1 className={`uppercase self-center font-third text-2xl font-semibold dark:text-white ${className}`}>{logo_text}</h1>
+          
         </>
       ) : logo_text ? (
         logo_text

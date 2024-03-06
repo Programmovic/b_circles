@@ -12,6 +12,7 @@ import "react-toastify/dist/ReactToastify.css";
 import ChatInterface from "./components/chat";
 
 
+
 const Base = ({
   title,
   meta_title,
@@ -247,21 +248,7 @@ const Base = ({
           <FaArrowUp />
         </button>
       )}
-      {false && (
-        <div className="christmas-modal">
-          <div className="overlay" />
-          <div className="content">
-            <p>🎄 Merry Christmas! 🎅 Wishing you joy and happiness this festive season. 🌟</p>
-            <button onClick={closeChristmasModal}>Close</button>
-          </div>
-        </div>
-      )}
-      <div className="container">
-        <div className={`message-box-floating bg-primary w-80 animate-bounce ${showMessage ? 'visible' : 'hidden'}`}>
-          <p className="text-white  ">Welcome to our website! If you have any questions or need assistance, feel free to contact us.</p>
-          <button className="text-white text-center font-bold uppercase w-full" onClick={closeMessage}>Ok, thank you</button>
-        </div>
-      </div>
+      
       <button className="floating-contact-button shadow-lg animate-pulse" onClick={toggleContactForm} title="Contact Us">
 
         {!showContactForm ? <img src={`/images/operator.png`} className=" w-[50px] h-[50px] rounded-full" alt="Info" /> : <img src={`/images/rejected.png`} className="w-[50px] h-[50px]" alt="Info" />}

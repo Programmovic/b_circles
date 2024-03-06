@@ -23,7 +23,7 @@ const Header = () => {
     };
   }, []);
   const handleScroll = () => {
-    if (window.scrollY > 1000) {
+    if (window.scrollY > 20) {
       setIsSticky(true);
     } else {
       setIsSticky(false);
@@ -34,7 +34,7 @@ const Header = () => {
   const isHomePage = router.pathname === "/";
   return (
     <header className={`dark:text-white header fixed w-full z-50 bg-transparent backdrop-blur-lg ${isSticky && "dark:bg-[#141111d9] shadow-md"}`}>
-      <nav className="navbar container">
+      <nav className={`transition-all transition-1000 ease-in-out navbar container ${!isSticky ? 'max-w-[90%]' : ''}`}>
         {/* logo */}
         <div className="order-0">
           <Logo src={logo} className={(isHomePage && !isSticky ? 'dark:text-white' : 'text-dark')} />
@@ -140,6 +140,7 @@ const Header = () => {
           </div>
         )}
       </nav>
+      
     </header>
   );
 };

@@ -61,6 +61,10 @@ def ask_question():
         answer = qa_pipeline(question=user_question, context=combined_context)
         answer_text = answer["answer"]
 
+        # Handle out-of-context messages
+        if not answer_text.strip():
+            answer_text = "I'm sorry, I didn't understand that. Can you please rephrase or ask another question?"
+
     # Update chat history for the user
     if user_id not in chat_history:
         chat_history[user_id] = []

@@ -53,42 +53,42 @@ function Hero({ banner }) {
 
       <ul className='circles'>
         <li className="circle">
-          {/* <img
+          <img
             className="absolute"
-            src="/images/santa-claus.png"
+            src="/images/ramadan.png"
             alt="Santa Claus icon"
-          /> */}
+          />
         </li>
         <li className="circle">
-          {/* <img
+          <img
             className="absolute"
-            src="/images/christmas-bell.png"
+            src="/images/iftar.png"
             alt="Santa Claus icon"
-          /> */}
+          />
         </li>
         <li className="circle">
-          {/* <img
+          <img
             className="absolute"
-            src="/images/sleigh.png"
+            src="/images/cannon.png"
             alt="Santa Claus icon"
-          /> */}
+          />
         </li>
         {/* <li className="circle" />
         <li className="circle" />
         <li className="circle" /> */}
         <li className="circle">
-          {/* <img
+          <img
             className="absolute"
-            src="/images/christmas-tree.png"
+            src="/images/praying.png"
             alt="Santa Claus icon"
-          /> */}
+          />
         </li>
         <li className="circle">
-          {/* <img
+          <img
             className="absolute"
-            src="/images/letter.png"
+            src="/images/moon.png"
             alt="Santa Claus icon"
-          /> */}
+          />
         </li>
       </ul>
       <div className="hero">
@@ -102,6 +102,7 @@ function Hero({ banner }) {
         </div>
         <div className="hero__overlay bg-[#ffffff54] dark:bg-[#0000008f]"></div>
         <div className="hero__cnt">
+
           <div className="container">
             <motion.div
               className="lg:col-12 hero-img"
@@ -120,8 +121,8 @@ function Hero({ banner }) {
                 />
                 {/* <motion.img
                   ref={hatRef}
-                  className="mx-auto mb-5 christmas-hat absolute pointer-events-none select-none"
-                  src="/images/hat.png"
+                  className="mx-auto mb-5 absolute pointer-events-none select-none"
+                  src="/images/lantern.png"
                   alt="Christmas hat"
                 /> */}
               </div>
