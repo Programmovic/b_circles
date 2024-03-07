@@ -79,8 +79,8 @@ const ChatInterface = () => {
   }, [chatHistory]);
 
   return (
-    <div className={`${!isChatOpen && "animate-pulse"} shadow-xl overflow-hidden rounded-t-xl fixed bottom-0 max-w-[350px] dark:bg-[#0e0c0c] bg-white w-full right-[10%] z-50 ${isChatOpen ? 'open' : 'closed'}`}>
-      <div className={`bg-blue-500 dark:bg-[#141111d9] text-white cursor-pointer p-2 `} onClick={toggleChat}>
+    <div className={`shadow-xl overflow-hidden rounded-t-xl fixed bottom-0 max-w-[350px] dark:bg-[#0e0c0c] bg-white w-full right-[10%] z-50 ${isChatOpen ? 'open' : 'closed'}`}>
+      <div className={`bg-blue-500 dark:bg-[#141111d9] text-white cursor-pointer p-2 ${!isChatOpen && "animate-pulse"} `} onClick={toggleChat}>
         <div className="grp-info">
           <h3 className="grp-name text-white">
             You, B-Circles

@@ -6,7 +6,10 @@ const PageHeader = ({ title, image, overlay = ".48" }) => {
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     zIndex: 1, // Lower z-index for the background image
+    backdropFilter: "blur(50px)", // Adjust the blur amount as needed
   };
+  
+  
 
   return (
     <section className="relative rounded-2xl">
@@ -18,7 +21,7 @@ const PageHeader = ({ title, image, overlay = ".48" }) => {
 
       {/* Overlay */}
       <div
-        className="dark-overlay absolute top-0 left-0 w-full h-full  rounded-2xl"
+        className="dark-overlay absolute top-0 left-0 w-full h-full  rounded-2xl animate-pulse"
         style={{
           backgroundColor: `rgb(70 82 164 / ${overlay})`, // Adjust opacity as needed
           zIndex: 2, // Higher z-index for the overlay

@@ -1,0 +1,23 @@
+---
+offers:
+  - title: "Ramadan Marketing Package"
+    description: "Boost your business during Ramadan with our specialized marketing package."
+    image: "/images/ramadan-marketing-package.jpg"
+    link: "/marketing-offer"
+    category: "marketing"
+  - title: "Ramadan Software Development Discount"
+    description: "Get exclusive discounts on software development services for your business this Ramadan."
+    image: "/images/ramadan-software-development-discount.jpg"
+    link: "/software-offer"
+    category: "software development"
+  - title: "Ramadan Graphic Design Bundle"
+    description: "Upgrade your brand's visual identity with our discounted graphic design bundle for Ramadan."
+    image: "/images/ramadan-graphic-design-bundle.jpg"
+    link: "/graphic-design-offer"
+    category: "graphic design"
+  - title: "Ramadan Web Development Offer"
+    description: "Enhance your online presence with our special web development offers for Ramadan."
+    image: "/images/ramadan-web-development-offer.jpg"
+    link: "/web-development-offer"
+    category: "web development"
+---

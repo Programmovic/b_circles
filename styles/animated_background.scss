@@ -76,7 +76,7 @@ $hero-bg-mix: rgba(#29042f, 0.4);
 			height: auto;
 			width: 100%;
 			position: fixed;
-			
+
 		}
 	}
 
@@ -766,5 +766,44 @@ $speed: 1.5s;
 	100% {
 		opacity: .1;
 	}
+}
+
+
+.wheel-container {
+	position: relative;
+}
+
+.wheel {
+	width: 300px;
+	height: 300px;
+	position: relative;
+}
+
+.segment {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	transform-origin: 50% 50%;
+}
+
+.segment-image {
+	object-fit: cover;
+	border-radius: 50%;
+	border: 2px solid #fff;
+}
+
+.spin-button {
+	background-color: #e06923;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	font-size: 16px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.spin-button:hover {
+	background-color: #ca581c;
 }
 
