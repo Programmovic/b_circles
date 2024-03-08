@@ -769,41 +769,75 @@ $speed: 1.5s;
 }
 
 
-.wheel-container {
-	position: relative;
-}
+.offer-box {
+	display: inline-block;
+	width: 120px;
+	height: 120px;
+	margin: 10px;
+	text-align: center;
+	line-height: 120px;
+	font-size: 18px;
+	border: 2px solid #000;
+  }
+  
+  .walking-box {
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	background-color: #009688; /* Adjust color as needed */
+	border: 2px solid #000;
+	border-radius: 50%;
+  }
+  
 
-.wheel {
-	width: 300px;
-	height: 300px;
-	position: relative;
-}
 
-.segment {
+  .ramadan-card-container {
+	perspective: 1000px; /* Perspective value for 3D effect */
+  }
+  
+  .ramadan-card {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	transform-style: preserve-3d; /* Ensures 3D transformations are applied */
+	transition: transform 0.5s; /* Smooth transition for flipping effect */
+  }
+  
+  .ramadan-card:hover {
+	cursor: pointer;
+  }
+  
+  .ramadan-card.flipped {
+	transform: rotateY(180deg); /* Flipped state with rotation */
+  }
+  
+  .ramadan-card-front,
+  .ramadan-card-back {
 	width: 100%;
 	height: 100%;
 	position: absolute;
-	transform-origin: 50% 50%;
-}
+	backface-visibility: hidden; /* Hides the back side when flipped */
+  }
+  
+  .ramadan-card-front {
+	z-index: 2; /* Ensure front side is above the back side */
+  }
+  
+  .ramadan-card-back {
+	transform: rotateY(180deg); /* Initially hidden behind the front side */
+  }
+  
 
-.segment-image {
-	object-fit: cover;
-	border-radius: 50%;
-	border: 2px solid #fff;
-}
-
-.spin-button {
-	background-color: #e06923;
-	color: #fff;
-	border: none;
-	padding: 10px 20px;
-	font-size: 16px;
-	border-radius: 5px;
-	cursor: pointer;
-	transition: background-color 0.3s;
-}
-
-.spin-button:hover {
-	background-color: #ca581c;
-}
-
+/* In your global.css file */
+@keyframes scroll {
+	0% {
+	  transform: translateX(0);
+	}
+	100% {
+	  transform: translateX(-50%);
+	}
+  }
+  .movingOffersBar {
+	animation: scroll 10s linear infinite;
+  }
+  

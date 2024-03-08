@@ -1,4 +1,4 @@
-// pages/api/save-offer.js
+// pages/api/check-offer.js
 import { MongoClient } from 'mongodb';
 
 const uri = process.env.MONGO_URI;
@@ -7,9 +7,9 @@ const collectionName = 'offers';
 
 export default async (req, res) => {
   try {
-    const { ip, offer } = req.body; // Assuming the request body contains the IP address and the won offer data
-    if (!ip || !offer) {
-      return res.status(400).json({ error: 'IP address and offer are required' });
+    const { ip } = req.body; // Assuming the request body contains the IP address
+    if (!ip) {
+      return res.status(400).json({ error: 'IP address is required' });
     }
 
     // Connect to MongoDB
@@ -23,14 +23,10 @@ export default async (req, res) => {
     const existingOffer = await collection.findOne({ ip });
 
     if (existingOffer) {
-      return res.status(400).json({ error: 'IP address already received an offer' });
+      return res.status(200).json({ hasOffer: true, offer: existingOffer });
+    } else {
+      return res.status(200).json({ hasOffer: false });
     }
-
-    // Save the IP address and the won offer data
-    await collection.insertOne({ ip, offer });
-
-    // Return success response
-    res.status(200).json({ message: 'Offer saved successfully' });
 
     await client.close();
   } catch (error) {
